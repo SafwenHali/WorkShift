@@ -1,64 +1,20 @@
 const express=require("express");
 const router = express.Router();
-const Article= require("../Models/article");
+const articleController = require('../controller/article');
 
-//post article
-router.post("/", async (req,res)   => {
-    //create article
-    try{
-    const article = await Article.create({
-        articleName: req.body.title,
-        articleText: req.body.text,
-        articleWriter: req.body.writer,
-        articleCover: req.body.cover        
-    })  
-    res.json({ articles: article });
- }
-    catch(err){
-        console.log(err.message)
-        res.json('article not Created');
-    }
-});
+// create new Article
+router.post('/', articleController.createNewArticle);
 
-//get articles
-router.get("/", async (req, res) => {
-    //find
-    const article = await Article.find();
-    //return
-    res.json({ articles: article });
- });
+// get all Articles
+router.get('/', articleController.getAllArticles);
 
-//get articleByID
-router.get("/:id", async (req, res) => {
-    try{
-    const article =await Article.findById(req.params.id);
-    res.json({ articles: article });
-    }
-    catch(err){
-        console.log(err.message);
-        res.json('article not found');
-    }
-});
+// get Article by ID
+router.get('/:id',articleController.getArticleByID);
 
-//delete article
-router.delete("/:id", async (req, res) => {
-    const article =await Article.findByIdAndDelete(req.params.id);
-});
+// update Article
+router.put('/:id', articleController.updateArticleByID);
 
-//update article
-router.put("/:id", async (req, res) => {
-    try{article =await Article.findByIdAndUpdate(req.params.id,
-        {
-            articleName: req.body.title,
-            articleText: req.body.text,
-            articleWriter: req.body.writer,
-            articleCover: req.body.cover  
-        });
-         res.json('article successfully updated');}
-    catch(err){
-        console.log(err.message);
-        res.json('article not updated');
-    }
-});
+// delete Article
+router.delete('/:id',articleController.deleteArticleByID);
 
 module.exports = router;
