@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 import Test from "./pages/Test";
+import Article from "./pages/articleList";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Test/>}/>
+        <Route path="/a" element={<Article/>}/>
       </Routes>
     </BrowserRouter>
   );
