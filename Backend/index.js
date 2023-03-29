@@ -1,6 +1,6 @@
 //dependancies
-const express = require('express');
-const connectDB = require('./config/database');
+const express = require("express");
+const connectDB = require("./config/database");
 
 //.env
 require("dotenv").config();
@@ -15,14 +15,15 @@ app.use(express.json());
 connectDB();
 
 //routing test
-app.get('/',(req,res) => { res.send('Test 2')});
+app.get("/", (req, res) => {
+  res.send("Test 2");
+});
 
 //routing
 app.use("/api/article", require("./routes/articles"));
+app.use("/api/course", require("./routes/courses"));
 
 //server
-app.listen(process.env.PORT,() => {
-    console.log('server started on',process.env.PORT);
-})
-
-
+app.listen(process.env.PORT, () => {
+  console.log("server started on", process.env.PORT);
+});
