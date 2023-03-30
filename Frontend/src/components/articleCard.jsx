@@ -3,7 +3,7 @@ const Card =(props) =>{
     return(
         <div className="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
             <article className="overflow-hidden rounded-lg shadow-lg bg-white">
-                <img className="block h-full w-full" 
+                <img className="block h-80 w-full" 
                     src={props.imageURL}></img>
                 <header className="flex items-center justify-between leading-tight p-2 md:p-4">
                     <h1 className="text-lg">
