@@ -4,10 +4,6 @@ const Joi = require("joi");
 const { string } = require("joi");
 
 const courseSchema = mongoose.Schema({
-  courseId: {
-    type: String,
-    required: true,
-  },
   courseName: {
     type: String,
     required: true,

@@ -3,10 +3,6 @@ const schema = mongoose.Schema;
 const Joi = require("joi");
 const Category = require("./category");
 const subCategorySchema = mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-  },
   name: {
     type: String,
     required: true,
