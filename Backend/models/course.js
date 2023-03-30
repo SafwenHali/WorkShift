@@ -1,14 +1,40 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 const Joi = require("joi");
+const { string } = require("joi");
 
-const courseSchema = Joi.object({
-  courseId: Joi.string().required(),
-  courseName: Joi.string().required(),
-  courseDuration: Joi.number().integer().positive().required(),
-  coursePrice: Joi.number().positive().required(),
-  courseInstructor: Joi.string().required(),
+const courseSchema = mongoose.Schema({
+  courseId: {
+    type: String,
+    required: true,
+  },
+  courseName: {
+    type: String,
+    required: true,
+  },
+  courseDuration: {
+    type: Number,
+    required: true,
+  },
+  coursePrice: {
+    type: Number,
+    required: true,
+  },
+  courseInstructor: {
+    type: String,
+    required: true,
+  },
+  courseCategory: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Category",
+    required: true,
+  },
+  SubCategory: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "SubCategory",
+    required: true,
+  },
 });
-const Course = mongoose.model("course", courseSchema);
 
+const Course = mongoose.model("course", courseSchema);
 module.exports = Course;

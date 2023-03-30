@@ -9,6 +9,8 @@ const createCourse = async (req, res) => {
       courseDuration: req.body.duration,
       coursePrice: req.body.price,
       courseInstructor: req.body.instructor,
+      courseCategory: req.body.courseCategory,
+      subCategory: req.body.subCategory,
     });
     res.json({ courses: course });
   } catch (err) {
@@ -49,6 +51,8 @@ const updateCourse = async (req, res) => {
       courseDuration: req.body.duration,
       coursePrice: req.body.price,
       courseInstructor: req.body.instructor,
+      courseCategory: req.body.courseCategory,
+      subCategory: req.body.subCategory,
     });
     res.json("course successfully updated");
   } catch (err) {

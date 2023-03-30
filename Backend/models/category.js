@@ -1,10 +1,15 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 const Joi = require("joi");
-
-const categorySchema = Joi.object({
-  categoryId: Joi.string().required(),
-  categoryName: Joi.string().required(),
+const categorySchema = mongoose.Schema({
+  id: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
 });
 const Category = mongoose.model("category", categorySchema);
 module.exports = Category;
