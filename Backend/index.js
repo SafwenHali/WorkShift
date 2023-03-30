@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 
 //routing
 app.use("/api/article", require("./routes/articles"));
-app.use("/api/course", require("./routes/courses"));
+app.use("/api/formation", require("./routes/formations"));
 
 //server
 app.listen(process.env.PORT, () => {

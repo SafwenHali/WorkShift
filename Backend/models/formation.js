@@ -3,24 +3,24 @@ const schema = mongoose.Schema;
 const Joi = require("joi");
 const { string } = require("joi");
 
-const courseSchema = mongoose.Schema({
-  courseName: {
+const formationSchema = mongoose.Schema({
+  formationName: {
     type: String,
     required: true,
   },
-  courseDuration: {
+  formationDuration: {
     type: Number,
     required: true,
   },
-  coursePrice: {
+  formationPrice: {
     type: Number,
     required: true,
   },
-  courseInstructor: {
+  formationInstructor: {
     type: String,
     required: true,
   },
-  courseCategory: {
+  formationCategory: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Category",
     required: true,
@@ -32,5 +32,5 @@ const courseSchema = mongoose.Schema({
   },
 });
 
-const Course = mongoose.model("course", courseSchema);
-module.exports = Course;
+const Formation = mongoose.model("formation", formationSchema);
+module.exports = Formation;
