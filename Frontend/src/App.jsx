@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 import Test from "./pages/Test";
-import Article from "./pages/articleList";
+import ArticleList from "./pages/articleList";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Test/>}/>
-        <Route path="/a" element={<Article/>}/>
+        <Route path="/a" element={<ArticleList/>}/>
       </Routes>
     </BrowserRouter>
   );
