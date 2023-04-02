@@ -1,13 +1,13 @@
 const SubCategory = require("../models/subcategory");
 
 //POST
-
+//lazem tjib id name idcategory namecategory
 const createSubCategory = async (req, res) => {
   //create
   try {
     const category = await SubCategory.create({
       name: req.body.name,
-      Category: req.body.Category,
+      Category: req.params.Category,
     });
     res.json({ subcategories: subcategory });
   } catch (err) {
@@ -20,7 +20,7 @@ const createSubCategory = async (req, res) => {
 const getAllSubCategories = async (req, res) => {
   //find
   const subcategory = await SubCategory.find();
-  //return category
+  //return category&&
   res.json({ subcategories: subcategory });
 };
 //GET category by Id

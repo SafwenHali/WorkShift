@@ -1,7 +1,7 @@
 const Category = require("../models/category");
 
 //POST
-
+// ki tjib category tjiblk maaha subcategories li teb3inha
 const createCategory = async (req, res) => {
   //create category
   try {
