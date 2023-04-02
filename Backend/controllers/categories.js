@@ -1,11 +1,12 @@
 const Category = require("../models/category");
 
 //POST
+
 const createCategory = async (req, res) => {
   //create category
   try {
     const category = await Category.create({
-      categoryName: req.body.name,
+      name: req.body.name,
     });
     res.json({ categories: category });
   } catch (err) {
@@ -34,15 +35,16 @@ const getCategoryById = async (req, res) => {
 //DELETE
 const deleteCategory = async (req, res) => {
   const category = await Category.findByIdAndDelete(req.params.id);
+  console.log("item deleted");
 };
 
 //UPDATE
 const updateCategory = async (req, res) => {
   try {
-    course = await Category.findByIdAndUpdate(req.params.id, {
-      categoryName: req.body.name,
+    category = await Category.findByIdAndUpdate(req.params.id, {
+      name: req.body.name,
     });
-    res.json("category updated successfully");
+    res.json(`category updated successfully`);
   } catch (err) {
     console.log(err.message);
     res.json("category not updated ");

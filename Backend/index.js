@@ -22,6 +22,8 @@ app.get("/", (req, res) => {
 //routing
 app.use("/api/article", require("./routes/articles"));
 app.use("/api/formation", require("./routes/formations"));
+app.use("/api/category", require("./routes/categories"));
+app.use("/api/subcategory", require("./routes/subcategories"));
 
 //server
 app.listen(process.env.PORT, () => {

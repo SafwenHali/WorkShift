@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
-const Joi = require("joi");
 const Category = require("./category");
 const subCategorySchema = mongoose.Schema({
   name: {
@@ -9,7 +8,7 @@ const subCategorySchema = mongoose.Schema({
   },
   Category: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Category",
+    ref: Category,
     required: true,
   },
 });
