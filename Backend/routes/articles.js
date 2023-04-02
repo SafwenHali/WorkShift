@@ -1,20 +1,26 @@
-const express=require("express");
+const express = require("express");
+const {
+  updateArticle,
+  deleteArticle,
+  getArticleById,
+  getArticle,
+  createArticle,
+} = require("../controllers/articles");
 const router = express.Router();
-const articleController = require('../controller/article');
 
-// create new Article
-router.post('/', articleController.createNewArticle);
+//post article
+router.post("/", createArticle);
 
-// get all Articles
-router.get('/', articleController.getAllArticles);
+//get articles
+router.get("/", getArticle);
 
-// get Article by ID
-router.get('/:id',articleController.getArticleByID);
+//get articleByID
+router.get("/:id", getArticleById);
 
-// update Article
-router.put('/:id', articleController.updateArticleByID);
+//delete article
+router.delete("/:id", deleteArticle);
 
-// delete Article
-router.delete('/:id',articleController.deleteArticleByID);
+//update article
+router.put("/:id", updateArticle);
 
 module.exports = router;
