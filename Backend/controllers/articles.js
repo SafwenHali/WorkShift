@@ -42,6 +42,8 @@ const getArticleById = async (req, res) => {
 //DELETE article
 const deleteArticle = async (req, res) => {
   const article = await Article.findByIdAndDelete(req.params.id);
+  //return
+  res.json("article deleted");
 };
 
 //UPDATE article

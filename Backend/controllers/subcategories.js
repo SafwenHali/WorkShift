@@ -1,11 +1,26 @@
 const SubCategory = require("../models/subcategory");
+const Categori= require("../models/category");
 
 //POST
 //lazem tjib id name idcategory namecategory
+// POST a new subcategory
+
+const createSubCategory = async (req, res) => {
+  try {
+  const category =  Categori.findById(req.body.category);
+  const subcategory = await SubCategory.create({
+  name: req.body.name,
+  category: category._id});
+  res.json(subcategory);
+  } catch (err) {
+    console.log(err.message);
+    res.json("subcategory not created");
+  }}
+/*
 const createSubCategory = async (req, res) => {
   //create
   try {
-    const category = await SubCategory.create({
+    const subcategory = await SubCategory.create({
       name: req.body.name,
       Category: req.params.Category,
     });
@@ -14,7 +29,7 @@ const createSubCategory = async (req, res) => {
     console.log(err.message);
     res.json("subcategory not created");
   }
-};
+};*/
 
 //GET all categories
 const getAllSubCategories = async (req, res) => {
@@ -35,14 +50,15 @@ const getSubCategoryById = async (req, res) => {
 };
 //DELETE
 const deleteSubCategory = async (req, res) => {
-  const subcategory = await SubCategory.findByIdAndDelete(req.params.id);
+  await SubCategory.findByIdAndDelete(req.params.id);
+  res.json("sub category deleted");
   console.log("item deleted");
 };
 
 //UPDATE
 const updateSubCategory = async (req, res) => {
   try {
-    subcategory = await SubCategory.findByIdAndUpdate(req.params.id, {
+    await SubCategory.findByIdAndUpdate(req.params.id, {
       name: req.body.name,
     });
     res.json(`subcategory updated successfully`);
