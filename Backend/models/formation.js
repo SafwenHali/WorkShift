@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
-const Joi = require("joi");
-const { string } = require("joi");
 
-const formationSchema = mongoose.Schema({
+const formationSchema = schema({
   formationName: {
     type: String,
     required: true,
