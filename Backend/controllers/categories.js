@@ -29,12 +29,13 @@ const getCategoryById = async (req, res) => {
     res.json({ categories: category });
   } catch (err) {
     console.log(err.message);
-    res.json("category not found");
+    //res.json("category not found");
   }
 };
 //DELETE
 const deleteCategory = async (req, res) => {
-  const category = await Category.findByIdAndDelete(req.params.id);
+  await Category.findByIdAndDelete(req.params.id);
+  res.json("category deleted");
   console.log("item deleted");
 };
 

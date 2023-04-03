@@ -16,7 +16,7 @@ connectDB();
 
 //routing test
 app.get("/", (req, res) => {
-  res.send("Test 2");
+  res.send("backend running");
 });
 
 //routing

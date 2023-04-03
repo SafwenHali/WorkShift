@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const schema = mongoose.Schema;
 const Category = require("./category");
-const subCategorySchema = mongoose.Schema({
+const schema = mongoose.Schema;
+const subCategorySchema = schema({
   name: {
     type: String,
     required: true,
