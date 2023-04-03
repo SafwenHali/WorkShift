@@ -17,6 +17,12 @@ function ArticleFetching(){
 */
     return(
         <div>
+             <div className="px-4 text-white">
+            {loading && <div> loading ...</div>}
+            {error && <div> error</div>}
+            <div>
+                <pre>{JSON.stringify(data,undefined,2)}</pre>
+            </div></div>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 //dependancies
 const express = require("express");
 const connectDB = require("./config/database");
+const cors = require('cors')
 
 //.env
 require("dotenv").config();
@@ -10,6 +11,7 @@ const app = express();
 
 //configure app
 app.use(express.json());
+app.use(cors())
 
 //connect to database
 connectDB();
