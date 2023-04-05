@@ -3,11 +3,11 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   BrowserRouter,
   Routes
 } from "react-router-dom";
 
+import Home from "./pages/Home";
 import Test from "./pages/Test";
 import ArticleList from "./pages/articleList";
 
@@ -16,8 +16,10 @@ function App() {
     
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Test/>}/>
-        <Route path="/a" element={<ArticleList/>}/>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/Home" element={<Home/>}/>
+        <Route path="/Putin" element={<Test/>}/>
+        <Route path="/Articles" element={<ArticleList/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -1,11 +1,10 @@
 import React from "react";
-/*import Nav from '../components/Navbar';
-import Footer from '../components/Footer';
-import Hero from '../components/Herosection';*/
+import Nav from "../components/Navbar"
 
 const Test =() => {
     return(
         <div className="max-h bg-gradient-to-b from-red-600 to-blue-900">
+            <Nav/>
         <center>
             <h1 className="py-24 mb-4 text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
                 With LOVE from RUSSIA

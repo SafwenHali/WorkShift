@@ -2,7 +2,6 @@ import { useReducer, useEffect } from "react";
 import reducer from "./fetchHookReducer"
 import axios from "axios";
 
-
 const initialState={
     data: [],
     loading: false
