@@ -10,7 +10,7 @@ const article =() =>{
     return(
         <div className="min-h-screen bg-black">
             <Nav/>
-            <h1 className="pl-14 pt-20 mb-4 text-4xl font-bold tracking-tight text-teal-400 ">
+            <h1 className="pl-14 pt-24 mb-4 text-4xl font-bold tracking-tight text-teal-600 ">
                 Articles 
             </h1>
             <div className="text-teal-300">
@@ -23,7 +23,7 @@ const article =() =>{
                             key={m._id}
                             title={m.articleName}
                             writer={m.articleWriter}
-                            category="category"
+                            category="Category"
                             imageURL={m.articleCover}
                         />
                         )

@@ -3,8 +3,13 @@ import Nav from "../components/Navbar"
 
 const Home =() => {
     return(
-    <div className="min-h-screen bg-black px-4">
+    <div className="min-h-screen bg-black">
         <Nav/>
+        <center>
+            <img className="h-screen pt-14" 
+                    src="../../icon/LOGO.svg"></img>
+        </center>
+        
     </div>
     )
     }
