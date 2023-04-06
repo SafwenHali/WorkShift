@@ -20,26 +20,29 @@ const Article =() => {
             }).catch(err =>{
                 console.log(err)
             })
-    
         },[])
     return state;}
     const {data} = useFetchArticles();
     console.log(data.articleName)
     return(
     <div className="min-h-screen bg-black">
-        <Nav PageName={"Articles, "+data.articleName}/>
-        <div> 
-            {<h1 className=" pt-36 px-14 text-4xl text-neutral-100 font-semibold">{data.articleName}</h1>}
-            <center className="px-21 py-21">
-                    {<img className="w-300 py-20" src={data.articleCover}/>}</center>
-                    {<p className=" py-24 pl-14 text-3xl bg-neutral-300 text-neutral-900 font-light">{data.articleText}</p>}
-                    {<h1 className=" pb-36 pt-14 pl-96 text-4xl text-neutral-100">{data.articleWriter} {data.createdAt}</h1>}
-            
-        </div>
-           
-        
+        <Nav PageName={`Articles, ${data.articleName}`}/>
+        <div>
+            {<h1 className=" pl-14 pt-24 mb-4 text-4xl font-semibold tracking-tight text-teal-600">{data.articleName}</h1>}
+            <div class="flex">
+                {<img className="m-auto w-fit pt-14" src={data.articleCover}/>}
+                </div> 
+                <div class="flex "> 
+                    <div className="m-auto p-14">     
+                {<div className="p-14 text-2xl rounded-lg bg-neutral-100 text-teal-900 font-light">{data.articleText}
+                    <div className="pt-5 mr-4 flex justify-end text-teal-700 text-xl">
+                        Written by {data.articleWriter} , {data.createdAt}
+                    </div>
+                </div>}
+                </div> 
+            </div>    
+        </div>   
     </div>
     )
-    }
-
+}
 export default Article;

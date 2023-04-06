@@ -18,7 +18,7 @@ const Navbar = (props) => {
       <div className='md:flex items-center justify-between py-4 md:px-10 px-7'>
         
           <span className='space-x-3 cursor-pointer flex items-center font-bold text-neutral-50 font-sansserif '>
-            <img src="icon/LOGO.svg" className="w-fit h-10"/> 
+            <img src="../../public/icon/LOGO.svg" className="w-fit h-10"/> 
             <a href="/" className='text-2xl'>Work Shift </a>
             <h1 className="bg-neutral-400 h-6 w-0.5 rounded"/>
           {<p className="font-light text-neutral-400">{props.PageName}</p>}
