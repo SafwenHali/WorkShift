@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/Home";
+import Article from "./pages/article";
 import Test from "./pages/Test";
 import ArticleList from "./pages/articleList";
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Home" element={<Home/>}/>
         <Route path="/Putin" element={<Test/>}/>
         <Route path="/Articles" element={<ArticleList/>}/>
+        <Route path="/articleUniqueTitle" element={<Article/>}/>
       </Routes>
     </BrowserRouter>
   );
