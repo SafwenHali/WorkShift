@@ -4,7 +4,7 @@ import Nav from "../components/Navbar"
 const Home =() => {
     return(
     <div className="min-h-screen bg-black">
-        <Nav/>
+        <Nav PageName={"WELCOME"}/>
         <center>
             <img className="h-screen pt-14" 
                     src="../../icon/LOGO.svg"></img>
