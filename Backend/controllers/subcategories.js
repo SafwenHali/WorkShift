@@ -1,14 +1,20 @@
 const SubCategory = require("../models/subcategory");
-
+const Category = require("../models/category");
 //POST
-//lazem tjib id name idcategory namecategory
+//lazem tjib idname idcategory namecategory
 const createSubCategory = async (req, res) => {
   //create
   try {
-    const category = await SubCategory.create({
-      name: req.body.name,
-      Category: req.params.Category,
-    });
+    const { name, description, Category } = req.body;
+    const subcategory = new SubCategory({ name, description, Category });
+    await subcategory.save();
+    // res.json(subcategory);
+
+    // const subcategory = await SubCategory.create({
+    //   name: req.body.name,
+    //   description: req.body.description,
+    // Category: req.body.Category,
+    // });
     res.json({ subcategories: subcategory });
   } catch (err) {
     console.log(err.message);
@@ -37,6 +43,7 @@ const getSubCategoryById = async (req, res) => {
 const deleteSubCategory = async (req, res) => {
   const subcategory = await SubCategory.findByIdAndDelete(req.params.id);
   console.log("item deleted");
+  res.json("sub deleted");
 };
 
 //UPDATE

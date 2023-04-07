@@ -1,15 +1,13 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
-const Joi = require("joi");
-const { string } = require("joi");
-
+const SubCategory = require("../models/subcategory");
 const formationSchema = mongoose.Schema({
   formationName: {
     type: String,
     required: true,
   },
   formationDuration: {
-    type: Number,
+    type: String,
     required: true,
   },
   formationPrice: {
