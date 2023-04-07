@@ -10,7 +10,7 @@ const createFormation = async (req, res) => {
       formationPrice: req.body.price,
       formationInstructor: req.body.instructor,
       formationCategory: req.body.formationCategory,
-      subCategory: req.body.subCategory,
+      SubCategory: req.body.SubCategory,
     });
     res.json({ formations: formation });
   } catch (err) {
