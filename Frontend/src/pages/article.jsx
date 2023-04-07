@@ -6,7 +6,7 @@ import reducer from "../hooks/fetchHookReducer"
 import axios from "axios";
 
 const Article =() => {
-    let ID= "6421bd99a1a6f8095defef92";
+    let ID= "642f6b1038c5d71272c2040c";
     function useFetchArticles() {
         const [state,dispatch]= useReducer(reducer,{data:[]});
         useEffect(()=>{
@@ -28,13 +28,19 @@ const Article =() => {
     <div className="min-h-screen bg-black">
         <Nav PageName={`Articles, ${data.articleName}`}/>
         <div>
-            {<h1 className=" pl-14 pt-24 mb-4 text-4xl font-semibold tracking-tight text-teal-600">{data.articleName}</h1>}
+            {<h1 className=" pl-14 pt-24 mb-4 text-4xl font-semibold tracking-tight text-neutral-300">
+                {data.articleName}
+                {<h1 className="mb-4 text-xl font-light tracking-tight text-neutral-300">
+                    by {data.articleWriter}
+                </h1>}
+            </h1>}
+            
             <div class="flex">
-                {<img className="m-auto w-fit pt-14" src={data.articleCover}/>}
+                {<img className="m-auto pt-14" src={data.articleCover}/>}
                 </div> 
                 <div class="flex "> 
                     <div className="m-auto p-14">     
-                {<div className="p-14 text-2xl rounded-lg bg-neutral-100 text-teal-900 font-light">{data.articleText}
+                {<div className="p-14 text-2xl rounded-lg bg-neutral-300 text-neutral-800 font-light">{data.articleText}
                     <div className="pt-5 mr-4 flex justify-end text-teal-700 text-xl">
                         Written by {data.articleWriter} , {data.createdAt}
                     </div>
