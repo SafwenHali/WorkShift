@@ -3,10 +3,10 @@ import Card from'../components/articleCard';
 import useFetch from "../hooks/useFetchArticles";
 import Loading from "../components/muiLoadingCircule"
 import Nav from "../components/Navbar"
+import Footer from "../components/Footer";
 
 const article =() =>{
     const {data,loading} = useFetch();
-    console.log('console log test')
     return(
         <div className="min-h-screen bg-black">
             <Nav PageName={"ARTICLES"}/>
@@ -20,6 +20,7 @@ const article =() =>{
                 {data.map( m => {
                     return(
                         <Card 
+                            id={m._id}
                             key={m._id}
                             title={m.articleName}
                             writer={m.articleWriter}
@@ -29,6 +30,7 @@ const article =() =>{
                         )
                     })} 
             </div>
+            <Footer/>
         </div>
     )}
 export default article

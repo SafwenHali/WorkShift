@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "../components/Navbar"
+import Footer from "../components/Footer";
 
 const Home =() => {
     return(
@@ -9,7 +10,7 @@ const Home =() => {
             <img className="h-screen pt-14" 
                     src="../../icon/LOGO.svg"></img>
         </center>
-        
+        <Footer/>
     </div>
     )
     }

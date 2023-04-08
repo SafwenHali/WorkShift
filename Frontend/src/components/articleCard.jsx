@@ -1,5 +1,6 @@
 import React from "react";
 const Card =(props) =>{
+    const id= props.id;
     return(
         <div className="w-full md:w-1/2 lg:w-1/3 p-4 mb-4">
             <article className="overflow-hidden rounded-lg shadow-lg bg-neutral-300">
@@ -7,7 +8,8 @@ const Card =(props) =>{
                     src={props.imageURL}></img>
                 <header className="flex items-center justify-between leading-tight p-2 md:p-4">
                     <h1 className="text-lg">
-                        <a className="no-underline hover:underline hover:text-teal-800 text-neutral-900 duration-300">
+                        <a href={`Articles/`+id}
+                        className="no-underline hover:underline hover:text-teal-800 text-neutral-900 duration-300">
                             {props.title}
                         </a>
                     </h1>
