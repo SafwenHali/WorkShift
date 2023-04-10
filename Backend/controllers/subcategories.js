@@ -1,5 +1,4 @@
 const SubCategory = require("../models/subcategory");
-const Category = require("../models/category");
 //POST
 //lazem tjib idname idcategory namecategory
 const createSubCategory = async (req, res) => {
