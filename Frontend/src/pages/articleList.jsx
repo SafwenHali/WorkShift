@@ -10,7 +10,7 @@ const article =() =>{
     return(
         <div className="min-h-screen bg-black">
             <Nav PageName={"ARTICLES"}/>
-            <h1 className="pl-14 pt-24 mb-4 text-4xl font-bold tracking-tight text-teal-600 ">
+            <h1 className="pl-14 pt-36 mb-4 text-4xl font-bold tracking-tight text-teal-600 ">
                 Articles 
             </h1>
             <div className="text-teal-300">

@@ -9,8 +9,6 @@ import axios from "axios";
 
 const Article =() => {
     const{id}= useParams();
-    console.log('id is = '+id)
-    let ID= "642f6b1038c5d71272c2040c";
     function useFetchArticles() {
         const [state,dispatch]= useReducer(reducer,{data:[]});
         useEffect(()=>{
@@ -27,11 +25,13 @@ const Article =() => {
         },[])
     return state;}
     const {data} = useFetchArticles();
-    const date= data.createdAt;
+    const date= data.updatedAt;
     const formattedDate = new Date(date).toLocaleDateString("en-GB", {
         year: "numeric",
         day: "2-digit",
-        month: "long"
+        month: "long",
+        hour:"2-digit",
+        minute:"2-digit",
         });
         
 
@@ -39,10 +39,13 @@ const Article =() => {
     <div className="min-h-screen bg-black">
        <Nav PageName={`ARTICLES`}/>
         <div>
-            {<div className=" pl-14 pt-36 mb-4 text-4xl font-semibold tracking-tight text-neutral-300">
+            {<div className=" pl-14 pt-36 mb-4 text-4xl font-semibold tracking-tight text-neutral-200">
                 {data.articleName}
-                {<div className="mb-4 text-xl font-light tracking-tight text-neutral-300">
-                    by {data.articleWriter}
+                {<div className="mb-4 text-xl font-normal tracking-tight text-teal-600">
+                    by {data.articleWriter}   &nbsp; 
+                    <div className="text-xs text-neutral-300 font-light">
+                        Last Update : {formattedDate}
+                    </div> 
                 </div>}
             </div>}
             
@@ -53,7 +56,7 @@ const Article =() => {
                     <div className="m-auto p-14">     
                 {<div className="p-14 text-2xl rounded-lg bg-neutral-300 text-neutral-800 font-light">{data.articleText}
                     <div className="pt-5 mr-4 flex justify-end text-teal-700 text-xl">
-                        Written by {data.articleWriter} , {formattedDate}
+                        Written by {data.articleWriter}
                     </div>
                 </div>}
                 </div> 
