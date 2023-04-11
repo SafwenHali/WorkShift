@@ -10,9 +10,9 @@ const subCategorySchema = schema({
     type: String,
     required: true,
   },
-  Category: {
+  category_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: Category,
+    ref: "category",
     required: true,
   },
   // category_name: {
