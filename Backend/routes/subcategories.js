@@ -2,6 +2,10 @@ const express = require("express");
 const {
   createSubCategory,
   getAllSubCategories,
+
+  getAllSubCategoriesByCategoryID,
+  getCategoryBySubId,
+
   getSubCategoryById,
   deleteSubCategory,
   updateSubCategory,
@@ -16,6 +20,8 @@ router.get("/", getAllSubCategories);
 
 //get courseByID
 router.get("/:id", getSubCategoryById);
+router.get("/category/:id", getAllSubCategoriesByCategoryID);
+router.get("/categorybysub/:id", getCategoryBySubId);
 
 //delete course
 router.delete("/:id", deleteSubCategory);
