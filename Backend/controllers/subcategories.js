@@ -1,6 +1,5 @@
 const SubCategory = require("../models/subcategory");
 const Category =require("../models/category")
-const {getCategoryById} = require("../controllers/categories");
 
 //POST
 const createSubCategory = async (req, res) => {
