@@ -15,6 +15,11 @@ import Plans from "./pages/Plans";
 import Article from "./pages/article";
 import ArticleList from "./pages/articleList";
 import Category from "./pages/category";
+import Admin from  "./admin/Admin";
+import AdminContenent from "./admin/pages/Contenent"
+import AdminArticles from "./admin/pages/Articles"
+import AdminAddArticle from "./admin/pages/addArticle"
+
 
 function App() {
   return (
@@ -22,16 +27,28 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route path="/*" element={<NotFound/>}/>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/Home" element={<Home/>}/>   
-        <Route path="/Categories" element={<Categories/>}/>
-        <Route path="/Category/:id" element={<Category/>}/>
+        {/*public Routes*/}
+          <Route path="/" element={<Home/>}/>
+          <Route path="/Home" element={<Home/>}/>
+          <Route path="/Plans" element={<Plans/>}/>   
+          {/*list all Categories*/}
+          <Route path="/Categories" element={<Categories/>}/>
+          {/*list all Sub Categories by category id*/}
+          <Route path="/Category/:id" element={<Category/>}/>
+          {/*list all Courses by sub category id*/}
 
-        <Route path="/Plans" element={<Plans/>}/>   
-        <Route path="/Articles" element={<ArticleList/>}/>
-        <Route path="/Articles/articleUniqueTitle" element={<Article/>}/>
-        <Route path="/Articles/:id" element={<Article/>}/>
-        
+          {/*Course details by id*/}
+
+          {/*list all Articles*/}   
+          <Route path="/Articles" element={<ArticleList/>}/>
+          {/*Article Page by id*/}
+          <Route path="/Articles/:id" element={<Article/>}/>
+        {/*Admin Routes*/}
+          <Route path="/Admin" element={<Admin/>}/>
+          <Route path="/Admin/Manage-Contenent" element={<AdminContenent/>}/>
+          <Route path="/Admin/Articles" element={<AdminArticles/>}/>
+          <Route path="/Admin/New-Article" element={<AdminAddArticle/>}/>
+        {/*Test Routes*/}
         <Route path="/Putin" element={<Test/>}/>
       </Routes>
     </BrowserRouter>

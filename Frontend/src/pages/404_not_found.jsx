@@ -33,7 +33,7 @@ const NotFound =() => {
             </div>
             <div className="flex "> 
                 <div className="m-auto py-5 pb-28">     
-                <a href="/"> 
+                <a href="/Home"> 
               <button className=" w-48 h-10 rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-neutral-900 font-semibold duration-300">
                 Go back to website
               </button></a> 
