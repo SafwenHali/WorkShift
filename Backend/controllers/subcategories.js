@@ -38,7 +38,7 @@ const getAllSubCategories = async (req, res) => {
 const getAllSubCategoriesByCategoryID= async (req, res) => {
   const id=req.params.id ;
  const subCategories = await SubCategory.find({ category_id: id })
-      res.json(subCategories);}
+      res.json({subcategories: subCategories});}
 
 //GET Subcategory by Id
 const getSubCategoryById = async (req, res) => {

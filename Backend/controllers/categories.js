@@ -35,7 +35,7 @@ const getAllCategories = async (req, res) => {
 const getCategoryById = async (req, res) => {
   try {
     const category = await Category.findById(req.params.id);
-    res.json(category);
+    res.json({category : category});
   } catch (err) {
     console.log(err.message);
     //res.json("category not found");
