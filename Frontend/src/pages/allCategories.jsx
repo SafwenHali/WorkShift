@@ -22,7 +22,7 @@ const Categories =() => {
                 <ul className="md:flex-grow pt-24 lg:pl-0 pl-14">  
                 {data.map((n)=>(
                     <li key={n._id}>
-                        <a href={'/Categories/'+n._id} >
+                        <a href={'/Category/'+n._id} >
                             <div className="pb-10 underline text-2xl font-light text-neutral-200 title-font mb-2 hover:text-teal-600">
                                 {n.name}
                             </div> 

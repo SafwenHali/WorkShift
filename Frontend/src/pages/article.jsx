@@ -2,29 +2,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Nav from "../components/Navbar"
 import Footer from "../components/Footer";
-
-import { useReducer, useEffect } from "react";
-import reducer from "../hooks/fetchHookReducer"
-import axios from "axios";
+ import useFetch from "../hooks/useFetchArticle";
 
 const Article =() => {
     const{id}= useParams();
-    function useFetchArticles() {
-        const [state,dispatch]= useReducer(reducer,{data:[]});
-        useEffect(()=>{
-            dispatch({type:"api_request"});
-            axios
-            //url+"apiurl"
-            .get("http://127.0.0.1:7000/api/article/"+id)
-            .then((res)=>{
-                //res.data.(esm el entity)
-                dispatch({type:"fetch_data", payload:res.data.articles});
-            }).catch(err =>{
-                console.log(err)
-            })
-        },[])
-    return state;}
-    const {data} = useFetchArticles();
+    const {data} = useFetch(id);
     const date= data.updatedAt;
     const formattedDate = new Date(date).toLocaleDateString("en-GB", {
         year: "numeric",
