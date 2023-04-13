@@ -10,11 +10,7 @@ const Category =() => {
     const{id}= useParams();
     const dat=useFetchCategory(id);
     const {data} = useFetch(id);
-    const category= {
-        "_id": "6430b378068e41d7398a442e",
-        "name": "Art & Entertainment",
-        "__v": 0
-    }
+    
 
     return(
         <div className="min-h-screen bg-black">
