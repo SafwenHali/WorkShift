@@ -1,15 +1,19 @@
 const Cours = require("../models/cours");
-
+const Formation = require("../models/formation");
 //POST
 const createCours = async (req, res) => {
   //create
   try {
-    const { nom, description, duree, formation } = req.body;
-    const cours = new Cours({ nom, description, duree, formation });
-    await cours.save();
-    res.status(201).json(cours);
+    const { name, description, duration, formation_id } = req.body;
+    const cours = await Cours.create({
+      name: name,
+      description: description,
+      formation_id: formation_id,
+    });
+    res.json({ cours: cours });
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    console.log(err.message);
+    res.json("cours not created");
   }
 };
 
