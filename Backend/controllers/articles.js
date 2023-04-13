@@ -50,10 +50,10 @@ const deleteArticle = async (req, res) => {
 const updateArticle = async (req, res) => {
   try {
     article = await Article.findByIdAndUpdate(req.params.id, {
-      articleName: req.body.title,
-      articleText: req.body.text,
-      articleWriter: req.body.writer,
-      articleCover: req.body.cover,
+      articleName: req.body.articleName,
+      articleText: req.body.articleText,
+      articleWriter: req.body.articleWriter,
+      articleCover: req.body.articleCover,
     });
     res.json("article successfully updated ");
   } catch (err) {
