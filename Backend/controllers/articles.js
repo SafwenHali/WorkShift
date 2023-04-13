@@ -6,10 +6,10 @@ const createArticle = async (req, res) => {
   //create article
   try {
     const article = await Article.create({
-      articleName: req.body.title,
-      articleText: req.body.text,
-      articleWriter: req.body.writer,
-      articleCover: req.body.cover,
+      articleName: req.body.articleName,
+      articleText: req.body.articleText,
+      articleWriter: req.body.articleWriter,
+      articleCover: req.body.articleCover,
     });
     res.json({ articles: article });
   } catch (err) {

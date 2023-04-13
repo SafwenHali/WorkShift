@@ -37,7 +37,7 @@ import React from 'react'
             <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
                 <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-neutral-600 group">
                 
-                    <span className="group-hover:text-neutral-700">Logout</span>
+                    <span className="group-hover:text-red-600 hover:underline">Logout</span>
                 </button>
             </div>
         </aside>
