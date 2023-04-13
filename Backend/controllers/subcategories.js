@@ -73,6 +73,7 @@ const updateSubCategory = async (req, res) => {
   try {
     subcategory = await SubCategory.findByIdAndUpdate(req.params.id, {
       name: req.body.name,
+      description: req.body.description
     });
     res.json(`subcategory updated successfully`);
   } catch (err) {

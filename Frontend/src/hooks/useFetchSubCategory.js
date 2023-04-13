@@ -13,7 +13,7 @@ function useFetchSubCategories(id) {
         dispatch({type:"api_request"});
         axios
         //url+"apiurl !!!! API MAZEL MOUCH MAWJOUD!!!!"
-        .get(url+"subcategory/category/"+id)
+        .get(url+"subcategory/"+id)
         .then((res)=>{
             //res.data.(esm el entity)
             dispatch({type:"fetch_data", payload:res.data.subcategories});
