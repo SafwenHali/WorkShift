@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 const SubCategory = require("../models/subcategory");
-const formationSchema = mongoose.Schema({
+const formationSchema = schema({
   nom: { type: String, required: true },
   description: { type: String, required: true },
   duree: { type: Number, required: true },
