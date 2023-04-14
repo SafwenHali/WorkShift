@@ -3,11 +3,12 @@ const schema = mongoose.Schema;
 const Formation = require("../models/formation");
 const coursSchema = mongoose.Schema(
   {
+    // _id: { type: String, required: true },
     name: { type: String, required: true },
     description: { type: String, required: true },
     formation_id: {
-      type: schema.Types.ObjectId,
-      ref: "Formation",
+      type: mongoose.Schema.Types.ObjectId,
+      ref: Formation,
       required: true,
     },
   },

@@ -58,12 +58,9 @@ const deleteFormation = async (req, res) => {
 const updateFormation = async (req, res) => {
   try {
     formation = await Formation.findByIdAndUpdate(req.params.id, {
-      Name: req.body.name,
-      formationName: req.body.name,
-      formationDuration: req.body.duration,
-      formationPrice: req.body.price,
-      formationInstructor: req.body.instructor,
-      formationCategory: req.body.formationCategory,
+      nom: req.body.nom,
+      description: req.body.description,
+      duree: req.body.duree,
       subCategory: req.body.subCategory,
     });
     res.json("formation successfully updated");
