@@ -1,0 +1,105 @@
+[
+     {
+       "category": "Science",
+       "fact": "The human nose can detect over 1 trillion different scents."
+     },
+     {
+       "category": "Geography",
+       "fact": "Mount Everest is not the tallest mountain on Earth. Mauna Kea, a dormant volcano in Hawaii, is actually taller if measured from its underwater base to its peak."
+     },
+     {
+       "category": "History",
+       "fact": "The Library of Alexandria in Egypt, which was one of the largest and most significant libraries of the ancient world, was destroyed by a fire in the 3rd century AD."
+     },
+     {
+       "category": "Science",
+       "fact": "Honey never spoils. You can eat 3,000-year-old honey and it will still be edible."
+     },
+     {
+       "category": "Geography",
+       "fact": "Russia is larger than Pluto, the dwarf planet."
+     },
+     {
+       "category": "History",
+       "fact": "The Great Wall of China is the longest wall in the world, stretching over 13,000 miles (21,000 kilometers)."
+     },
+     {
+       "category": "Science",
+       "fact": "A cockroach can live for several weeks without its head."
+     },
+     {
+       "category": "Geography",
+       "fact": "Australia is wider than the moon."
+     },
+     {
+       "category": "History",
+       "fact": "During World War II, the United States military developed a pigeon-guided missile system called Project Pigeon, but it was never put into use."
+     },
+     {
+      "category": "Science",
+          "fact": "The coldest known place in the universe is the Boomerang Nebula, which has a temperature of -272 degrees Celsius (-458 degrees Fahrenheit)."
+        },
+        {
+          "category": "Technology",
+          "fact": "The first computer mouse was invented by Doug Engelbart in 1964 and was made of wood."
+        },
+        {
+          "category": "Science",
+          "fact": "The human brain has a memory capacity equivalent to more than 4 terabytes of hard drive storage."
+        },
+        {
+          "category": "Technology",
+          "fact": "The first website, which provided information about the World Wide Web project, went live on August 6, 1991."
+        },
+        {
+          "category": "Science",
+          "fact": "The fastest land animal, the cheetah, can run up to 75 miles per hour (120 kilometers per hour)."
+        },
+        {
+          "category": "Technology",
+          "fact": "The first ever email was sent by Ray Tomlinson in 1971. He also chose the @ symbol to separate the user from the destination address."
+        },
+        {
+          "category": "Science",
+          "fact": "A lightning bolt can reach temperatures hotter than the surface of the sun, measuring up to 30,000 kelvins (53,540 degrees Fahrenheit)."
+        },
+        {
+          "category": "Technology",
+          "fact": "The first commercially available mobile phone, the Motorola DynaTAC 8000X, was released in 1983 and weighed 2.5 pounds (1.1 kilograms)."
+        },
+        {
+          "category": "Science",
+          "fact": "Diamonds are not actually rare - millions of them exist in the earth's crust - but they are valuable due to their hardness and the difficulty of extracting and processing them."
+        },
+        {
+         "category": "Business",
+         "fact": "The largest company in the world by revenue is Walmart, with over $500 billion in revenue in 2020."
+       },
+       {
+         "category": "Business",
+         "fact": "Apple was the first publicly traded company to reach a $1 trillion market capitalization in 2018."
+       },
+       {
+         "category": "Business",
+         "fact": "The most expensive domain name ever sold was 'LasVegas.com', which was sold for $90 million in 2005."
+       },
+       {
+         "category": "Business",
+         "fact": "The world's first stock exchange was established in Amsterdam in 1602, known as the Amsterdam Stock Exchange (now known as Euronext Amsterdam)."
+       },
+       {
+         "category": "Business",
+         "fact": "The highest valued company in history was Saudi Aramco, which had a market capitalization of $2.03 trillion in 2019."
+       },
+       {
+         "category": "Business",
+         "fact": "The first ever product to be sold on Amazon.com was a book called 'Fluid Concepts and Creative Analogies: Computer Models of the Fundamental Mechanisms of Thought' by Douglas Hofstadter."
+       },
+       {
+         "category": "Business",
+         "fact": "The term 'unicorn' is used to describe a startup company that has reached a valuation of $1 billion or more."
+       }
+     
+    
+   ]
+ 

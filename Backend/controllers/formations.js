@@ -4,19 +4,29 @@ const Formation = require("../models/formation");
 const createFormation = async (req, res) => {
   //create
   try {
-    const formation = await Formation.create({
-      formationName: req.body.name,
-      formationDuration: req.body.duration,
-      formationPrice: req.body.price,
-      formationInstructor: req.body.instructor,
-      formationCategory: req.body.formationCategory,
-      SubCategory: req.body.SubCategory,
-    });
+    const { nom, description, duree, SubCategory } = req.body;
+    const formation = new Formation({ nom, description, duree, SubCategory });
+    await formation.save();
     res.json({ formations: formation });
+
+    // res.status(201).json(formation);
   } catch (err) {
-    console.log(err.message);
-    res.json("formation not created");
+    res.status(400).json({ message: err.message });
   }
+  // try {
+  //   const formation = await Formation.create({
+  //     formationName: req.body.name,
+  //     formationDuration: req.body.duration,
+  //     formationPrice: req.body.price,
+  //     formationInstructor: req.body.instructor,
+  //     formationCategory: req.body.formationCategory,
+  //     SubCategory: req.body.SubCategory,
+  //   });
+  //   res.json({ formations: formation });
+  // } catch (err) {
+  //   console.log(err.message);
+  //   res.json("formation not created");
+  // }
 };
 
 //GET
@@ -41,18 +51,16 @@ const getFormationById = async (req, res) => {
 //DELETE
 const deleteFormation = async (req, res) => {
   const formation = await Formation.findByIdAndDelete(req.params.id);
+  res.json("formation deleted");
 };
 
 //UPDATE
 const updateFormation = async (req, res) => {
   try {
     formation = await Formation.findByIdAndUpdate(req.params.id, {
-      Name: req.body.name,
-      formationName: req.body.name,
-      formationDuration: req.body.duration,
-      formationPrice: req.body.price,
-      formationInstructor: req.body.instructor,
-      formationCategory: req.body.formationCategory,
+      nom: req.body.nom,
+      description: req.body.description,
+      duree: req.body.duree,
       subCategory: req.body.subCategory,
     });
     res.json("formation successfully updated");

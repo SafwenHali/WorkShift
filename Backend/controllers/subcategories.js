@@ -1,35 +1,48 @@
 const SubCategory = require("../models/subcategory");
 const Category = require("../models/category");
+
 //POST
-//lazem tjib idname idcategory namecategory
 const createSubCategory = async (req, res) => {
   //create
   try {
-    const { name, description, Category } = req.body;
-    const subcategory = new SubCategory({ name, description, Category });
-    await subcategory.save();
-    // res.json(subcategory);
+    const { name, description, category_id } = req.body;
+    const existingSubCategory = await SubCategory.findOne({
+      name: name,
+      category_id: category_id,
+    });
+    if (existingSubCategory) {
+      // A category with the same name already exists
+      throw new Error("SubCategory exists already");
+    }
 
-    // const subcategory = await SubCategory.create({
-    //   name: req.body.name,
-    //   description: req.body.description,
-    // Category: req.body.Category,
-    // });
-    res.json({ subcategories: subcategory });
+    const subCategory = await SubCategory.create({
+      name: name,
+      description: description,
+      category_id: category_id,
+    });
+    res.json({ subcategories: subCategory });
   } catch (err) {
     console.log(err.message);
     res.json("subcategory not created");
   }
 };
 
-//GET all categories
+//GET all Subcategories
 const getAllSubCategories = async (req, res) => {
   //find
   const subcategory = await SubCategory.find();
-  //return category&&
+  //return Subcategory&&
   res.json({ subcategories: subcategory });
 };
-//GET category by Id
+
+//GET Subcategories by categoryID
+const getAllSubCategoriesByCategoryID = async (req, res) => {
+  const id = req.params.id;
+  const subCategories = await SubCategory.find({ category_id: id });
+  res.json({ subcategories: subCategories });
+};
+
+//GET Subcategory by Id
 const getSubCategoryById = async (req, res) => {
   try {
     const subcategory = await SubCategory.findById(req.params.id);
@@ -39,6 +52,15 @@ const getSubCategoryById = async (req, res) => {
     res.json("subcategory not found");
   }
 };
+
+//get category by subcategory id
+const getCategoryBySubId = async (req, res) => {
+  const subcategory = await SubCategory.findById(req.params.id);
+  const s = subcategory.category_id.toString();
+  const category = await Category.findById(s);
+  res.json(category);
+};
+
 //DELETE
 const deleteSubCategory = async (req, res) => {
   const subcategory = await SubCategory.findByIdAndDelete(req.params.id);
@@ -51,6 +73,7 @@ const updateSubCategory = async (req, res) => {
   try {
     subcategory = await SubCategory.findByIdAndUpdate(req.params.id, {
       name: req.body.name,
+      description: req.body.description
     });
     res.json(`subcategory updated successfully`);
   } catch (err) {
@@ -61,6 +84,10 @@ const updateSubCategory = async (req, res) => {
 module.exports = {
   createSubCategory,
   getAllSubCategories,
+
+  getAllSubCategoriesByCategoryID,
+  getCategoryBySubId,
+
   getSubCategoryById,
   deleteSubCategory,
   updateSubCategory,

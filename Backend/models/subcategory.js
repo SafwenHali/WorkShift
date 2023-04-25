@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const schema = mongoose.Schema;
 const Category = require("./category");
-const subCategorySchema = mongoose.Schema({
+const schema = mongoose.Schema;
+const subCategorySchema = schema({
   name: {
     type: String,
     required: true,
@@ -10,9 +10,9 @@ const subCategorySchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  Category: {
+  category_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: Category,
+    ref: "category",
     required: true,
   },
   // category_name: {

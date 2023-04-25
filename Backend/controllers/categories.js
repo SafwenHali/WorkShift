@@ -1,10 +1,18 @@
 const Category = require("../models/category");
 
 //POST
-// ki tjib category tjiblk maaha subcategories li teb3inha
+
 const createCategory = async (req, res) => {
   //create category
   try {
+    
+    const existingCategory = await Category.findOne({ name: req.body.name });
+
+    if (existingCategory) {
+      // A category with the same name already exists
+      throw new Error('Category exists already');
+    }
+    
     const category = await Category.create({
       name: req.body.name,
     });
@@ -22,19 +30,28 @@ const getAllCategories = async (req, res) => {
   //return category
   res.json({ categories: category });
 };
+
 //GET category by Id
 const getCategoryById = async (req, res) => {
   try {
     const category = await Category.findById(req.params.id);
-    res.json({ categories: category });
+    res.json({category : category});
   } catch (err) {
     console.log(err.message);
-    res.json("category not found");
+    //res.json("category not found");
   }
 };
+
+//Get all Categories' names
+const getAllCategoriesNames= async (req, res) =>{
+  const categories = await Category.find();
+  const categoryNames = categories.map(category => category.name);
+  res.json(categoryNames);
+}
 //DELETE
 const deleteCategory = async (req, res) => {
-  const category = await Category.findByIdAndDelete(req.params.id);
+  await Category.findByIdAndDelete(req.params.id);
+  res.json("category deleted");
   console.log("item deleted");
 };
 
@@ -53,6 +70,7 @@ const updateCategory = async (req, res) => {
 module.exports = {
   createCategory,
   getAllCategories,
+  getAllCategoriesNames,
   getCategoryById,
   deleteCategory,
   updateCategory,

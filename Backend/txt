@@ -1,0 +1,63 @@
+//POST
+const createCours = async (req, res) => {
+  //create
+  try {
+    const { name, description, formation_id } = req.body;
+    const cours = await Cours.create({
+      name: name,
+      description: description,
+      formation_id: formation_id,
+    });
+    res.json({ cours: cours });
+  } catch (err) {
+    console.log(err.message);
+    res.json("cours not created");
+  }
+};
+//GET
+const getCours = async (req, res) => {
+  //find
+  console.log(req);
+  console.log(res);
+  const cours = await Cours.find();
+  //return
+  res.json({ cours: cours });
+};
+// get by id
+const getCoursById = async (req, res) => {
+  try {
+    const cours = await Cours.findById(req.params.id);
+    res.json({ cours: cours });
+  } catch (err) {
+    console.log(err.message);
+    res.json("cours not found");
+  }
+};
+// delete cours
+const deleteCours = async (req, res) => {
+  const cours = await Cours.findByIdAndDelete(req.params.id);
+  console.log("item deleted");
+  res.json("cours deleted");
+};
+//update
+const updateCours = async (req, res) => {
+  try {
+    cours = await Cours.findByIdAndUpdate(req.params.id, {
+      name: name,
+      description: description,
+      formation_id: formation_id,
+    });
+    res.json(`Cours updated successfully`);
+  } catch (err) {
+    console.log(err.message);
+    res.json("cours not updated ");
+  }
+};
+
+module.exports = {
+  createCours,
+  getCours,
+  getCoursById,
+  deleteCours,
+  updateCours,
+};
