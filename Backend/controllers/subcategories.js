@@ -1,26 +1,27 @@
 const SubCategory = require("../models/subcategory");
-const Category =require("../models/category")
+const Category = require("../models/category");
 
 //POST
 const createSubCategory = async (req, res) => {
   //create
   try {
     const { name, description, category_id } = req.body;
-    const existingSubCategory = await SubCategory.findOne({ name: name ,category_id:category_id});
-
+    const existingSubCategory = await SubCategory.findOne({
+      name: name,
+      category_id: category_id,
+    });
     if (existingSubCategory) {
       // A category with the same name already exists
-      throw new Error('SubCategory exists already');
+      throw new Error("SubCategory exists already");
     }
-     
-      const subCategory = await SubCategory.create({
-        name: name,
-        description:description,
-        category_id:category_id
-      });
-      res.json({ subcategories: subCategory });
-    } 
-  catch (err) {
+
+    const subCategory = await SubCategory.create({
+      name: name,
+      description: description,
+      category_id: category_id,
+    });
+    res.json({ subcategories: subCategory });
+  } catch (err) {
     console.log(err.message);
     res.json("subcategory not created");
   }
@@ -35,10 +36,11 @@ const getAllSubCategories = async (req, res) => {
 };
 
 //GET Subcategories by categoryID
-const getAllSubCategoriesByCategoryID= async (req, res) => {
-  const id=req.params.id ;
- const subCategories = await SubCategory.find({ category_id: id })
-      res.json({subcategories: subCategories});}
+const getAllSubCategoriesByCategoryID = async (req, res) => {
+  const id = req.params.id;
+  const subCategories = await SubCategory.find({ category_id: id });
+  res.json({ subcategories: subCategories });
+};
 
 //GET Subcategory by Id
 const getSubCategoryById = async (req, res) => {
@@ -56,7 +58,8 @@ const getCategoryBySubId = async (req, res) => {
   const subcategory = await SubCategory.findById(req.params.id);
   const s = subcategory.category_id.toString();
   const category = await Category.findById(s);
-  res.json(category);}
+  res.json(category);
+};
 
 //DELETE
 const deleteSubCategory = async (req, res) => {

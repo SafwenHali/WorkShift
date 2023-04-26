@@ -1,10 +1,20 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
-const coursSchema = schema({
-  nom: { type: String, required: true },
-  description: { type: String, required: true },
-  duree: { type: Number, required: true },
-  formation: { type: schema.Types.ObjectId, ref: "Formation", required: true },
-});
+const Formation = require("../models/formation");
+const coursSchema = mongoose.Schema(
+  {
+    // _id: { type: String, required: true },
+    name: { type: String, required: true },
+    description: { type: String, required: true },
+    formation_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: Formation,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 const Cours = mongoose.model("Cours", coursSchema);
 module.exports = Cours;

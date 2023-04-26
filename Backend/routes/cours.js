@@ -2,7 +2,6 @@ const express = require("express");
 const {
   createCours,
   getAllCours,
-  getCours,
   getCoursById,
   deleteCours,
   updateCours,
@@ -15,7 +14,7 @@ router.get("/", getAllCours);
 //GET by Id
 router.get("/:id", getCoursById);
 //DELETE
-router.delete(":/id", deleteCours);
+router.delete("/:id", deleteCours);
 //PUT
 router.put("/:id", updateCours);
 
