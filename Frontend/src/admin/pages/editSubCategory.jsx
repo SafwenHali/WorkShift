@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import useFetch from "../../hooks/useFetchSubCategory";
-import useFetchCat from "../../hooks/useFetchCategoryName";
+//import useFetchCat from "../../hooks/useFetchCategoryName";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -10,8 +10,7 @@ const editSubCategory =() => {
   const{id}= useParams();
   const {data} = useFetch(id);
 
-  const [post, setPost] =useState({
-  })
+  const [post, setPost] =useState()
   const handleInput = (event) =>{
     setPost({...post,[event.target.name]: event.target.value})
   }
@@ -77,7 +76,7 @@ const editSubCategory =() => {
                             onLoad={handleInput}>
                             </textarea>
                             <p className="text-gray-600 text-xs italic">
-                              Re-size can be disabled by set by resize-none / resize-y / resize-x / resize
+                            Any empty field wouls keep original data.
                             </p>
                           </div>
                         </div>

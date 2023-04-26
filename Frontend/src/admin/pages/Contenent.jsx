@@ -5,18 +5,19 @@ import Sidebar from "../components/Sidebar";
 const Contenent =() => {
     const pages= [
         {name:" ARTICLES",link:"/Admin/Articles"},
-        {name:" COURSES",link:"/Admin/"},
-        {name:" TESTS",link:"/Admin/"}, 
+        {name:" COURSES",link:"/Admin/COURSES"},
         {name:" CERTIFICATIONS",link:"/Admin/"},
-        {name:" CATEGORIES",link:"/Admin/Categories"}
+        {name:" CATEGORIES",link:"/Admin/Categories"}, 
+        {name:" TEACHERS TESTS",link:"/Admin/"},
+        {name:" SUGGESTIONS QUIZ",link:"/Admin/"}
     ]
 
     return(
         <div>
         <Sidebar/>
             <div className="pl-0 lg:pl-20">
-                <div className="h-full min-h-screen bg-teal-900 pl-36">
-                    <h1 className="p-14 mb-4 text-4xl font-bold tracking-tight text-neutral-200 shadow-lg ">
+                <div className="h-full min-h-screen bg-teal-900 pl-32">
+                    <h1 className="p-14 pl-32 mb-4 text-4xl font-bold tracking-tight text-neutral-200 shadow-lg ">
                         MANAGE CONTENENT :
                     </h1>
                     <div className=" px-3 md:lg:xl:px-40 py-20 bg-opacity-10">

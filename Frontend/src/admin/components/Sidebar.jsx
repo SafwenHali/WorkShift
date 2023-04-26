@@ -2,7 +2,7 @@ import React from 'react'
 
  const Sidebar =()=>{
     let Menu =[
-        {name:" Dashboard",link:"/Admin",icon:"pie-chart-outline"},
+        {name:" Dashboard",link:"/Admin/Dashboard",icon:"pie-chart-outline"},
         {name:" Users",link:"/Admin/Users",icon:"people-outline"},
         {name:" Contenent",link:"/Admin/Manage-Contenent",icon:"folder-open-outline"}, 
         {name:" Statistics",link:"/Admin/Statistics",icon:"bar-chart-outline"},

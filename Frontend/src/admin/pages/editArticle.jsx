@@ -9,12 +9,7 @@ const AddArticles =() => {
     const{id}= useParams();
     const {data} = useFetch(id);
 
-  const [post, setPost] =useState({
-    articleName:'',
-    articleWriter:'',
-    articleText:'',
-    articleCover:'',
-  })
+  const [post, setPost] =useState()
   const handleInput = (event) =>{
     setPost({...post,[event.target.name]: event.target.value})
   }
@@ -111,7 +106,7 @@ const AddArticles =() => {
                             onChange={handleInput}
                             onLoad={handleInput}></textarea>
                             <p className="text-neutral-600 text-xs italic">
-                              Re-size can be disabled by set by resize-none / resize-y / resize-x / resize
+                              Any empty field wouls keep original data.
                             </p>
                           </div>
                         </div>

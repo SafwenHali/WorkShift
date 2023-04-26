@@ -3,8 +3,7 @@ import reducer from "./fetchHookReducer"
 import axios from "axios";
 
 const initialState={
-    data: [],
-    loading: false
+    data: []
 }
 const url="http://127.0.0.1:7000/api/"
 function useFetchCategories() {

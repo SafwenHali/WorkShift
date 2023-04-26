@@ -10,9 +10,7 @@ const editCategory =() => {
     const {data}= useFetchSubCategories(id);
     const dat = useFetch(id);
 
-  const [post, setPost] =useState({
-    name:''
-  })
+  const [post, setPost] =useState()
   const handleInput = (event) =>{
     setPost({...post,[event.target.name]: event.target.value})
   }

@@ -1,9 +1,9 @@
 import React from "react";  
 const Footer=()=>{
     let Explore =[
-        {name:"PLANS ",link:"/"},
-        {name:"CATEGORIES ",link:"/"},
-        {name:"ARTICLES ",link:"/"},       
+        {name:"PLANS ",link:"/Plans"},
+        {name:"CATEGORIES ",link:"/Categories"},
+        {name:"ARTICLES ",link:"/Articles"},       
         {name:"QUIZ ",link:"/"},
         
       ];

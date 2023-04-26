@@ -30,7 +30,7 @@ const AddArticles =() => {
             <Sidebar/>
             <div className="pl-20">
                 <div className="p-20 pl-64 min-h-screen h-full bg-teal-900">  
-                <a href="/Admin/Categories" className="bg-teal-700 hover:bg-teal-600 hover:border rounded text-xl text-neutral-100 font-light">
+                <a href={"/Admin/Edit-Category/"+id} className="bg-teal-700 hover:bg-teal-600 hover:border rounded text-xl text-neutral-100 font-light">
                         &nbsp;<ion-icon name="arrow-back-outline"></ion-icon>
                         &nbsp; Back To Category: {data.name} &nbsp;
                     </a>

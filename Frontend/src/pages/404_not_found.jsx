@@ -6,7 +6,7 @@ import quotes from "../quotes.json"
 
 const NotFound =() => {
     return(
-        <div className="border-2 border-neutral-900 h-full bg-neutral-900">
+        <div className="border-2 border-neutral-900 min-h-screen h-full bg-neutral-900">
             
         <center className=" text-neutral-300 pt-5">
             <img src="/icon/LOGO.svg" className="w-80"></img>

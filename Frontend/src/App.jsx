@@ -8,13 +8,18 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Test from "./pages/Test";
 import NotFound from "./pages/404_not_found";
-import Categories from "./pages/allCategories"
+import Test from "./pages/Test";
 import Plans from "./pages/Plans";
+
+import Categories from "./pages/allCategories";
+import Category from "./pages/category";
+import SubCategory from "./pages/subCategory";
+
 import Article from "./pages/article";
 import ArticleList from "./pages/articleList";
-import Category from "./pages/category";
+
+
 import Admin from  "./admin/Admin";
 import AdminContenent from "./admin/pages/Contenent";
 
@@ -45,7 +50,7 @@ function App() {
           {/*list all Sub Categories by category id*/}
           <Route path="/Category/:id" element={<Category/>}/>
           {/*list all Courses by sub category id*/}
-
+          <Route path="/SubCategory/:id" element={<SubCategory/>}/>
           {/*Course details by id*/}
 
           {/*list all Articles*/}   
@@ -54,6 +59,7 @@ function App() {
           <Route path="/Articles/:id" element={<Article/>}/>
         {/*Admin Routes*/}
           <Route path="/Admin" element={<Admin/>}/>
+          <Route path="/Admin/Dashboard" element={<Admin/>}/>
           <Route path="/Admin/Manage-Contenent" element={<AdminContenent/>}/>
 
           <Route path="/Admin/Articles" element={<AdminArticles/>}/>
