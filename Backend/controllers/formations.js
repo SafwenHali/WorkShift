@@ -1,5 +1,5 @@
 const Formation = require("../models/formation");
-
+const SubCategory = require("../models/subcategory");
 //POST
 const createFormation = async (req, res) => {
   //create
@@ -47,7 +47,13 @@ const getFormationById = async (req, res) => {
     res.json("formation not found");
   }
 };
-
+//GET formation by subcategory id
+const getFormationBySubId = async (req, res) => {
+  const id = req.params.id;
+  //  const formation = await Formation.find({ subcategory_id: id });
+  const formation = await Formation.find({ SubCategory: id });
+  res.json({ formation: formation });
+};
 //DELETE
 const deleteFormation = async (req, res) => {
   const formation = await Formation.findByIdAndDelete(req.params.id);
@@ -76,4 +82,5 @@ module.exports = {
   createFormation,
   updateFormation,
   deleteFormation,
+  getFormationBySubId,
 };
