@@ -84,9 +84,6 @@ const AddArticles =() => {
                             name="articleText"
                             onChange={handleInput}>
                             </textarea>
-                            <p className="text-gray-600 text-xs italic">
-                              Re-size can be disabled by set by resize-none / resize-y / resize-x / resize
-                            </p>
                           </div>
                         </div>
                         <div className="md:flex md:items-center">

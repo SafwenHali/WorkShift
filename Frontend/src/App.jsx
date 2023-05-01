@@ -16,6 +16,8 @@ import Categories from "./pages/allCategories";
 import Category from "./pages/category";
 import SubCategory from "./pages/subCategory";
 
+import Formation from "./pages/formation"
+
 import Article from "./pages/article";
 import ArticleList from "./pages/articleList";
 
@@ -26,6 +28,9 @@ import AdminContenent from "./admin/pages/Contenent";
 import AdminArticles from "./admin/pages/Articles";
 import AdminAddArticle from "./admin/pages/addArticle";
 import AdminEditArticle from "./admin/pages/editArticle";
+
+import AdminCourses from "./admin/pages/Courses";
+import AdminAddCourse from "./admin/pages/addCourse";
 
 import AdminCategories from "./admin/pages/Categories";
 import AdminAddCategory from "./admin/pages/addCategory";
@@ -52,6 +57,7 @@ function App() {
           {/*list all Courses by sub category id*/}
           <Route path="/SubCategory/:id" element={<SubCategory/>}/>
           {/*Course details by id*/}
+          <Route path="/Formation/:id" element={<Formation/>}/>
 
           {/*list all Articles*/}   
           <Route path="/Articles" element={<ArticleList/>}/>
@@ -66,12 +72,16 @@ function App() {
           <Route path="/Admin/New-Article" element={<AdminAddArticle/>}/>
           <Route path="/Admin/Edit-Article/:id" element={<AdminEditArticle/>}/>
 
+          <Route path="/Admin/Courses" element={<AdminCourses/>}/>
+          <Route path="/Admin/New-Course" element={<AdminAddCourse/>}/>
+
           <Route path="/Admin/Categories" element={<AdminCategories/>}/>
           <Route path="/Admin/New-Category" element={<AdminAddCategory/>}/>
           <Route path="/Admin/Edit-Category/:id" element={<AdminEditCategory/>}/>
 
           <Route path="/Admin/New-SubCategory/:id" element={<AdminAddSubCategory/>}/>
           <Route path="/Admin/Edit-SubCategory/:id" element={<AdminEditSubCategory/>}/>
+
         {/*Test Routes*/}
         <Route path="/Putin" element={<Test/>}/>
       </Routes>

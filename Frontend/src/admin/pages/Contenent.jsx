@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 const Contenent = () => {
   const pages = [
     { name: " ARTICLES", link: "/Admin/Articles" },
-    { name: " COURSES", link: "/Admin/" },
+    { name: " COURSES", link: "/Admin/Courses" },
     { name: " TESTS", link: "/Admin/" },
     { name: " CERTIFICATIONS", link: "/Admin/" },
     { name: " CATEGORIES", link: "/Admin/Categories" },
