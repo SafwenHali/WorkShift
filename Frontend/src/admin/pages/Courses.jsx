@@ -29,6 +29,7 @@ const Category =() => {
       
         const handleSubCategoryChange = (event) => {
             setSelectedSubCategoryValue(event.target.value);
+            console.log(selectedSubCategoryValue)
             let formList=[];
             formations.forEach((element)=>{
                 if(event.target.value===element.SubCategory)

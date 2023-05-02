@@ -31,6 +31,7 @@ import AdminEditArticle from "./admin/pages/editArticle";
 
 import AdminCourses from "./admin/pages/Courses";
 import AdminAddCourse from "./admin/pages/addCourse";
+import AdminEditCourse from "./admin/pages/editCourse";
 
 import AdminCategories from "./admin/pages/Categories";
 import AdminAddCategory from "./admin/pages/addCategory";
@@ -49,6 +50,8 @@ function App() {
         {/*public Routes*/}
           <Route path="/" element={<Home/>}/>
           <Route path="/Home" element={<Home/>}/>
+          <Route path="/welcome" element={<Home/>}/>
+
           <Route path="/Plans" element={<Plans/>}/>   
           {/*list all Categories*/}
           <Route path="/Categories" element={<Categories/>}/>
@@ -63,6 +66,7 @@ function App() {
           <Route path="/Articles" element={<ArticleList/>}/>
           {/*Article Page by id*/}
           <Route path="/Articles/:id" element={<Article/>}/>
+          
         {/*Admin Routes*/}
           <Route path="/Admin" element={<Admin/>}/>
           <Route path="/Admin/Dashboard" element={<Admin/>}/>
@@ -74,6 +78,7 @@ function App() {
 
           <Route path="/Admin/Courses" element={<AdminCourses/>}/>
           <Route path="/Admin/New-Course" element={<AdminAddCourse/>}/>
+          <Route path="/Admin/Edit-Course/:id" element={<AdminEditCourse/>}/>
 
           <Route path="/Admin/Categories" element={<AdminCategories/>}/>
           <Route path="/Admin/New-Category" element={<AdminAddCategory/>}/>
