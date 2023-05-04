@@ -2,11 +2,10 @@ import React from 'react'
 
  const Sidebar =()=>{
     let Menu =[
-        {name:" Dashboard",link:"/Admin",icon:"pie-chart-outline"},
+        {name:" Dashboard",link:"/Admin/Dashboard",icon:"pie-chart-outline"},
         {name:" Users",link:"/Admin/Users",icon:"people-outline"},
         {name:" Contenent",link:"/Admin/Manage-Contenent",icon:"folder-open-outline"}, 
-        {name:" Statistics",link:"/Admin/Statistics",icon:"bar-chart-outline"},
-        {name:" Mail",link:"/Admin/Mail",icon:"mail-outline"}]
+        {name:" Statistics",link:"/Admin/Statistics",icon:"bar-chart-outline"}]
 
     return(
         <aside className="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-neutral-100 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
@@ -35,10 +34,10 @@ import React from 'react'
             </div>
 
             <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-                <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-neutral-600 group">
+                <a href='/Home' className="px-4 py-3 flex items-center space-x-4 rounded-md text-neutral-600 group">
                 
                     <span className="group-hover:text-red-600 hover:underline">Logout</span>
-                </button>
+                </a>
             </div>
         </aside>
     )

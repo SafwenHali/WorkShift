@@ -7,7 +7,7 @@ const handleOnClose=(e)=>{
 
     if(!props.visible) return null;
   return (
-    <div id="bg" onClick={handleOnClose} className='fixed insert-0 bg-black bg-opacity-40 backdrop-blur-sm flex justify-center items-center w-full h-full transition-all'>
+    <div id="bg" onClick={handleOnClose} className='z-30 fixed insert-0 bg-black bg-opacity-40 backdrop-blur-sm flex justify-center items-center w-full h-full transition-all'>
         <div className="p-10 xs:p-0 mx-auto md:w-full md:max-w-md"> 
     <div className="bg-neutral-100 shadow w-full rounded-lg">
     <center className='text-4xl font-extrabold text-teal-700 '>

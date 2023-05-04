@@ -14,7 +14,7 @@ const Category =() => {
 
     return(
         <div className="min-h-screen bg-black">
-            <Nav PageName={`ARTICLES`}/>
+            <Nav PageName={`SUB CATEGORIES`}/>
             <h1 className="pl-14 pt-36 mb-4 text-4xl font-bold tracking-tight text-teal-600 ">
                 {dat.data.name} 
             </h1>
@@ -22,10 +22,13 @@ const Category =() => {
                 <ul className="grid grid-cols-1 md:lg:xl:grid-cols-3 group lg:p-1"> 
                     {data.map((n)=>(
                         <div className="p-1">
-                           <li key={n._id} className="p-10 flex flex-col items-center text-center group bg-neutral-300 hover:bg-teal-600 hover:shadow-xl shadow-teal-900 cursor-pointer">
-                        <p className="text-2xl font-bold text-neutral-800 mt-3 ">{n.name}</p>
-                        <p className="mt-2 text-sm text-neutral-700">{n.description}</p>
-                        </li> 
+                           <li key={n._id}>
+                                <a href={"/SubCategory/"+n._id} className="p-10 flex flex-col items-center text-center text-teal-900 hover:text-neutral-900 group bg-neutral-300 hover:bg-teal-600 hover:shadow-xl shadow-teal-900 cursor-pointer">
+                                <p className="text-2xl font-bold  mt-3 ">
+                                    {n.name}
+                                </p>  
+                                </a>
+                            </li> 
                         </div>
                     
                     ))}

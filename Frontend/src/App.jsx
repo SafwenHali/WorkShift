@@ -8,19 +8,30 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Test from "./pages/Test";
 import NotFound from "./pages/404_not_found";
-import Categories from "./pages/allCategories"
+import Test from "./pages/Test";
 import Plans from "./pages/Plans";
+
+import Categories from "./pages/allCategories";
+import Category from "./pages/category";
+import SubCategory from "./pages/subCategory";
+
+import Formation from "./pages/formation"
+
 import Article from "./pages/article";
 import ArticleList from "./pages/articleList";
-import Category from "./pages/category";
+
+
 import Admin from  "./admin/Admin";
 import AdminContenent from "./admin/pages/Contenent";
 
 import AdminArticles from "./admin/pages/Articles";
 import AdminAddArticle from "./admin/pages/addArticle";
 import AdminEditArticle from "./admin/pages/editArticle";
+
+import AdminCourses from "./admin/pages/Courses";
+import AdminAddCourse from "./admin/pages/addCourse";
+import AdminEditCourse from "./admin/pages/editCourse";
 
 import AdminCategories from "./admin/pages/Categories";
 import AdminAddCategory from "./admin/pages/addCategory";
@@ -39,26 +50,35 @@ function App() {
         {/*public Routes*/}
           <Route path="/" element={<Home/>}/>
           <Route path="/Home" element={<Home/>}/>
+          <Route path="/welcome" element={<Home/>}/>
+
           <Route path="/Plans" element={<Plans/>}/>   
           {/*list all Categories*/}
           <Route path="/Categories" element={<Categories/>}/>
           {/*list all Sub Categories by category id*/}
           <Route path="/Category/:id" element={<Category/>}/>
           {/*list all Courses by sub category id*/}
-
+          <Route path="/SubCategory/:id" element={<SubCategory/>}/>
           {/*Course details by id*/}
+          <Route path="/Formation/:id" element={<Formation/>}/>
 
           {/*list all Articles*/}   
           <Route path="/Articles" element={<ArticleList/>}/>
           {/*Article Page by id*/}
           <Route path="/Articles/:id" element={<Article/>}/>
+          
         {/*Admin Routes*/}
           <Route path="/Admin" element={<Admin/>}/>
+          <Route path="/Admin/Dashboard" element={<Admin/>}/>
           <Route path="/Admin/Manage-Contenent" element={<AdminContenent/>}/>
 
           <Route path="/Admin/Articles" element={<AdminArticles/>}/>
           <Route path="/Admin/New-Article" element={<AdminAddArticle/>}/>
           <Route path="/Admin/Edit-Article/:id" element={<AdminEditArticle/>}/>
+
+          <Route path="/Admin/Courses" element={<AdminCourses/>}/>
+          <Route path="/Admin/New-Course" element={<AdminAddCourse/>}/>
+          <Route path="/Admin/Edit-Course/:id" element={<AdminEditCourse/>}/>
 
           <Route path="/Admin/Categories" element={<AdminCategories/>}/>
           <Route path="/Admin/New-Category" element={<AdminAddCategory/>}/>
@@ -66,6 +86,7 @@ function App() {
 
           <Route path="/Admin/New-SubCategory/:id" element={<AdminAddSubCategory/>}/>
           <Route path="/Admin/Edit-SubCategory/:id" element={<AdminEditSubCategory/>}/>
+
         {/*Test Routes*/}
         <Route path="/Putin" element={<Test/>}/>
       </Routes>

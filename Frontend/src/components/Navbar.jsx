@@ -23,7 +23,7 @@ const Navbar = (props) => {
   const {data} = useFetch();  
 
   return (
-    <div className='shadow-lg w-full fixed top-0 left-0'><SigninModal visible={visible} onClose={handleOnclose}/>
+    <div className='shadow-lg w-full fixed top-0 left-0 z-20'><SigninModal visible={visible} onClose={handleOnclose}/>
       <div className="bg-neutral-900 w-full h-20"> 
         <div className='lg:flex items-center justify-between py-4 lg:px-10 px-7'>
         {/*Name and LOGO*/}
