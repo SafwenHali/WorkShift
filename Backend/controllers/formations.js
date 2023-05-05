@@ -1,11 +1,19 @@
 const Formation = require("../models/formation");
 const SubCategory = require("../models/subcategory");
+
 //POST
 const createFormation = async (req, res) => {
   //create
   try {
-    const { nom, description, duree, SubCategory } = req.body;
-    const formation = new Formation({ nom, description, duree, SubCategory });
+    const { nom, description, duree, SubCategory, Formateur, Cover } = req.body;
+    const formation = new Formation({
+      nom,
+      description,
+      duree,
+      SubCategory,
+      Formateur,
+      Cover,
+    });
     await formation.save();
     res.json({ formations: formation });
 
@@ -69,6 +77,8 @@ const updateFormation = async (req, res) => {
       description: req.body.description,
       duree: req.body.duree,
       subCategory: req.body.subCategory,
+      Formateur: req.body.Formateur,
+      Cover: req.body.Cover,
     });
     res.json("formation successfully updated");
   } catch (err) {

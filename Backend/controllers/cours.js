@@ -35,6 +35,12 @@ const getCoursById = async (req, res) => {
   }
 };
 
+//GET cours by formation id
+const getCoursByFormationID = async (req, res) => {
+  const id = req.params.id;
+  const cours = await Cours.find({ Formation: id });
+  res.json({ cours: cours });
+};
 //DELETE
 const deleteCours = async (req, res) => {
   const cours = await Cours.findByIdAndDelete(req.params.id);

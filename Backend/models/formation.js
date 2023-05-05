@@ -11,6 +11,15 @@ const formationSchema = mongoose.Schema(
       ref: SubCategory,
       required: true,
     },
+    Formateur: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: Formateur,
+      required: true,
+    },
+    Cover: {
+      type: String,
+      required: true,
+    },
 
     // formationName: {
     //   type: String,
