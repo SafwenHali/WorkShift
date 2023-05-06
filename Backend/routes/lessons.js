@@ -5,6 +5,7 @@ const {
   createLesson,
   deleteLesson,
   updateLesson,
+  getLessonByCoursID,
 } = require("../controllers/lessons");
 const router = express.Router();
 
@@ -14,6 +15,9 @@ router.post("/", createLesson);
 router.get("/", getLessons);
 //GET by Id
 router.get("/:id", getLessonById);
+// get lesson  by cours  id
+router.get("/lessonbycoursid/:id", getLessonByCoursID);
+
 //DELETE
 router.delete("/:id", deleteLesson);
 //PUT

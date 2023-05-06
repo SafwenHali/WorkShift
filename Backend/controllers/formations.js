@@ -1,11 +1,19 @@
 const Formation = require("../models/formation");
 const SubCategory = require("../models/subcategory");
+
 //POST
 const createFormation = async (req, res) => {
   //create
   try {
-    const { nom, description, duree, SubCategory } = req.body;
-    const formation = new Formation({ nom, description, duree, SubCategory });
+    const { nom, description, duree, SubCategory, Formateur, Cover } = req.body;
+    const formation = new Formation({
+      nom,
+      description,
+      duree,
+      SubCategory,
+      Formateur,
+      Cover,
+    });
     await formation.save();
     res.json({ formations: formation });
 
@@ -47,13 +55,14 @@ const getFormationById = async (req, res) => {
     res.json("formation not found");
   }
 };
-//GET formation by subcategory id
-const getFormationBySubId = async (req, res) => {
+
+//get formation by sub id
+const getFormationBySubCategoryID = async (req, res) => {
   const id = req.params.id;
-  //  const formation = await Formation.find({ subcategory_id: id });
   const formation = await Formation.find({ SubCategory: id });
   res.json({ formation: formation });
 };
+
 //DELETE
 const deleteFormation = async (req, res) => {
   const formation = await Formation.findByIdAndDelete(req.params.id);
@@ -68,6 +77,8 @@ const updateFormation = async (req, res) => {
       description: req.body.description,
       duree: req.body.duree,
       subCategory: req.body.subCategory,
+      Formateur: req.body.Formateur,
+      Cover: req.body.Cover,
     });
     res.json("formation successfully updated");
   } catch (err) {
@@ -82,5 +93,5 @@ module.exports = {
   createFormation,
   updateFormation,
   deleteFormation,
-  getFormationBySubId,
+  getFormationBySubCategoryID,
 };

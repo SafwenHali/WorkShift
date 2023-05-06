@@ -33,6 +33,12 @@ const getLessonById = async (req, res) => {
     res.json("lesson not found ");
   }
 };
+//GET lesson by cours id
+const getLessonByCoursID = async (req, res) => {
+  const id = req.params.id;
+  const lesson = await Lesson.find({ cours_id: id });
+  res.json({ lesson: lesson });
+};
 
 //DELETE
 const deleteLesson = async (req, res) => {
@@ -61,4 +67,5 @@ module.exports = {
   createLesson,
   deleteLesson,
   updateLesson,
+  getLessonByCoursID,
 };
