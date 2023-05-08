@@ -13,10 +13,6 @@ const adminSchema = new schema(
       required: true,
     },
     password: {
-      type: string,
-      required: true,
-    },
-    fullName: {
       type: String,
       required: true,
     },
