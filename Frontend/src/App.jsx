@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/404_not_found";
 import Test from "./pages/Test";
 import Plans from "./pages/Plans";
+import Quiz from "./pages/Quiz/discover";
 
 import Categories from "./pages/allCategories";
 import Category from "./pages/category";
@@ -52,7 +53,9 @@ function App() {
           <Route path="/Home" element={<Home/>}/>
           <Route path="/welcome" element={<Home/>}/>
 
-          <Route path="/Plans" element={<Plans/>}/>   
+          <Route path="/Plans" element={<Plans/>}/> 
+          <Route path="/Discover" element={<Quiz/>}/>
+
           {/*list all Categories*/}
           <Route path="/Categories" element={<Categories/>}/>
           {/*list all Sub Categories by category id*/}

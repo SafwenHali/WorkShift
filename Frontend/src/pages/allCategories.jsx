@@ -14,7 +14,7 @@ const Categories =() => {
         </h1>                
         {/** HNEE EL QUIZZ request */}
         <div className=" pt-10 px-10">
-            <div className=" rounded border border-lg shadow">
+            <div className=" rounded border shadow">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
                         <h1 className="flex-grow sm:pr-16 text-4xl font-medium title-font text-neutral-200">
@@ -32,9 +32,9 @@ const Categories =() => {
             </div> 
         </div>
         <div className="container px-5 py-24 mx-auto">
-            <div className="flex flex-wrap -m-12">
+            <div  className="flex flex-wrap -m-12">
             <div className="p-12 md:w-1/2 flex flex-col items-start">
-                <div className="flex flex-wrap md:flex-nowrap">
+                <div  className="flex flex-wrap md:flex-nowrap">
                         <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                             <h1 className=" mb-4 text-4xl font-bold tracking-tight text-teal-600 ">
                                 Categories 
