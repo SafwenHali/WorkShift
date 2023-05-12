@@ -11,7 +11,7 @@ const quizSchema = new schema({
     },
     quizType:{
         type: String,
-        enum: ['test','qcm','autre'],
+        enum: ['test','qcm','entretient'],
         required: true
     },
     quizQuestions: [{
@@ -25,11 +25,9 @@ const quizSchema = new schema({
                 required: true
             },
             optionValue: {
-                type: Number,
-                min: 0,
-                max: 9,
+                type: Boolean,
                 required: true,
-                default : 0
+                default : false
               }
         }]
     }]
