@@ -24,7 +24,7 @@ const Categories =() => {
                             </p>
                         </h1>
                         <br/>
-                        <a href="./Discover" className="text-center bg-teal-800 p-2 border-2 border-teal-800 text-2xl text-neutral-200 hover:bg-neutral-200 hover:border-neutral-800 hover:text-neutral-800 rounded flex justify-center">
+                        <a href="./Discover" className="text-center bg-teal-800 p-2 border-2 border-teal-800 text-xl font-semibold text-neutral-200 hover:bg-neutral-200 hover:border-neutral-800 hover:text-neutral-800 rounded flex justify-center">
                             Take The Quiz
                         </a>
                     </div>

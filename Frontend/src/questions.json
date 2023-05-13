@@ -1,0 +1,83 @@
+[ {
+		"question_id" : "0",
+		"questionImg":"",
+        "questionText": "Do you know what you want to learn?",
+        "questionDesc": "...",
+		"answers": 
+            [{
+                "answerText": "Yes",
+                "value":"Categories"
+            },
+            {
+                "answerText": "No",
+                "value":"1"
+            }]
+    },{
+		"question_id" : "1",
+		"questionImg":"",
+        "questionText": "Why do you want to learn a new skill?",
+        "questionDesc": "...",
+		"answers": 
+            [{
+                "answerText": "I need a hobbie",
+                "value":"2"
+            },
+            {
+                "answerText": "I need to find work",
+                "value":"3"
+            }]
+    },{
+		"question_id" : "2",
+		"questionImg":"",
+        "questionText": "What are you most interested in?",
+        "questionDesc": "...",
+		"answers": 
+            [{
+                "answerText": "Design and style",
+                "value":"Category/64363dda222147e6da0bed3c"
+            },
+            {
+                "answerText": "Art and Enterntainment",
+                "value":"Category/64363dec222147e6da0bed3f"
+            },
+            {
+                "answerText": "Languages and writing",
+                "value":"Category/64363eab222147e6da0bed50"
+            }]
+    },{
+		"question_id" : "3",
+		"questionImg":"",
+        "questionText": "What do you do in life?",
+        "questionDesc": "...",
+		"answers": 
+            [{
+                "answerText": "Student",
+                "value":"4"
+            },
+            {
+                "answerText": "Employee / Entrepreneur",
+                "value":"5"
+            },
+            {
+                "answerText": "Non-Employed",
+                "value":"6"
+            }]
+    },{
+		"question_id" : "6",
+		"questionImg":"",
+        "questionText": "Are you...",
+        "questionDesc": "...",
+		"answers": 
+            [{
+                "answerText": "Graduated and looking for a job",
+                "value":"4"
+            },
+            {
+                "answerText": "Retired or in-between jobs",
+                "value":"5"
+            },
+            {
+                "answerText": "Neither",
+                "value":"MBTI"
+            }]
+    }]

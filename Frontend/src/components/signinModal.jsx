@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function signinModal(props) {
+  
 const handleOnClose=(e)=>{
     if(e.target.id ==="bg")props.onClose();
 }
