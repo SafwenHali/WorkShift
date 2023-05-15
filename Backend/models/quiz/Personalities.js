@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
-const Jobs = require("../quiz/jobs");
-
 const personalitiesSchema = new schema({
     personalityName: {
         type: String,
@@ -12,6 +10,10 @@ const personalitiesSchema = new schema({
         type: String,
         required: true 
     },
+    personalityDesc: {
+        type: String,
+        required: true
+      },
     personalityImage:{
         type: String,
         required: true
@@ -19,7 +21,7 @@ const personalitiesSchema = new schema({
     jobsList:[{
         job_id: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: Jobs,
+            ref: "jobs",
             required: true
           }
         }]

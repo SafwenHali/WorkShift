@@ -32,7 +32,8 @@ app.use("/api/lessons", require("./routes/lessons"));
 app.use("/api/quiz", require("./routes/quiz/quiz"));
 app.use("/api/field", require("./routes/quiz/careerfield"));
 app.use("/api/hobbies", require("./routes/quiz/hobbies"));
-app.use("/api/jobs", require("./routes/quiz/jobs"))
+app.use("/api/jobs", require("./routes/quiz/jobs"));
+app.use("/api/personality", require("./routes/quiz/personalities"));
 
 //server
 app.listen(process.env.PORT, () => {
