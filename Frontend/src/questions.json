@@ -1,83 +1,116 @@
 [ {
 		"question_id" : "0",
-		"questionImg":"",
-        "questionText": "Do you know what you want to learn?",
+		"questionImg":"https://i.ibb.co/MZYtYkK/Untitled-6-01.jpg",
+        "questionText": "I'm here to ...",
         "questionDesc": "...",
 		"answers": 
             [{
-                "answerText": "Yes",
-                "value":"Categories"
+                "answerText": "Explore",
+                "value":"Explore"
             },
             {
-                "answerText": "No",
+                "answerText": "Learn",
                 "value":"1"
             }]
     },{
 		"question_id" : "1",
-		"questionImg":"",
-        "questionText": "Why do you want to learn a new skill?",
+		"questionImg":"https://i.ibb.co/RDvXp6d/Untitled-7-01-01.jpg",
+        "questionText": "I'm here to learn ...",
         "questionDesc": "...",
 		"answers": 
             [{
-                "answerText": "I need a hobbie",
-                "value":"2"
+                "answerText": "A hobbie",
+                "value":"Hobbies"
             },
             {
-                "answerText": "I need to find work",
-                "value":"3"
+                "answerText": "A proffessional skill",
+                "value":"2"
             }]
     },{
 		"question_id" : "2",
-		"questionImg":"",
-        "questionText": "What are you most interested in?",
+		"questionImg":"https://i.ibb.co/RDwpXVt/Untitled-5o-01.png",
+        "questionText": "I'm here to learn a proffessional skill that matches ...",
         "questionDesc": "...",
 		"answers": 
             [{
-                "answerText": "Design and style",
-                "value":"Category/64363dda222147e6da0bed3c"
+                "answerText": "My experties",
+                "value":"job-Related"
             },
             {
-                "answerText": "Art and Enterntainment",
-                "value":"Category/64363dec222147e6da0bed3f"
+                "answerText": "My personality",
+                "value":"3"
             },
             {
-                "answerText": "Languages and writing",
-                "value":"Category/64363eab222147e6da0bed50"
+                "answerText": "The demand of recruiters",
+                "value":"Job-Demand"
             }]
     },{
 		"question_id" : "3",
-		"questionImg":"",
-        "questionText": "What do you do in life?",
+		"questionImg":"https://static.neris-assets.com/images/personality-types/headers/fb/entp-personality-type-header.png",
+        "questionText": "Do I know my MBTI personality?",
         "questionDesc": "...",
 		"answers": 
             [{
-                "answerText": "Student",
+                "answerText": "Yes I do",
                 "value":"4"
             },
             {
-                "answerText": "Employee / Entrepreneur",
-                "value":"5"
-            },
-            {
-                "answerText": "Non-Employed",
-                "value":"6"
+                "answerText": "No I don't",
+                "value":"MBTI"
             }]
     },{
-		"question_id" : "6",
-		"questionImg":"",
-        "questionText": "Are you...",
+		"question_id" : "4",
+		"questionImg":"https://i.ibb.co/K9fW6G2/Untitled-5-01.jpg",
+        "questionText": "I'm here to learn a proffessional skill that matches me being a ...",
         "questionDesc": "...",
 		"answers": 
             [{
-                "answerText": "Graduated and looking for a job",
-                "value":"4"
-            },
-            {
-                "answerText": "Retired or in-between jobs",
-                "value":"5"
-            },
-            {
-                "answerText": "Neither",
-                "value":"MBTI"
+                "answerText": "INFJ - The Advocate",
+                "value":"MBTI/INFJ"
+            },{
+                "answerText": "INFP - The Mediator",
+                "value":"MBTI/INFP"
+            },{
+                "answerText": "INTJ - The Architect",
+                "value":"MBTI/INTJ"
+            },{
+                "answerText": "INTP - The Logician",
+                "value":"MBTI/INTP"
+            },{
+                "answerText": "ISFJ - The Defender",
+                "value":"MBTI/ISFJ"
+            },{
+                "answerText": "ISFP - The Adventurer",
+                "value":"MBTI/ISFP"
+            },{
+                "answerText": "ISTJ - The Logistican",
+                "value":"MBTI/ISTJ"
+            },{
+                "answerText": "ISTP - The Virtioso",
+                "value":"MBTI/ISTP"
+            },{
+                "answerText": "ENFJ - The Protagonist",
+                "value":"MBTI/ENFJ"
+            },{
+                "answerText": "ENFP - The Compaigner",
+                "value":"MBTI/ENFP"
+            },{
+                "answerText": "ENTJ - The Commander",
+                "value":"MBTI/ENTJ"
+            },{
+                "answerText": "ENTP - The Debater",
+                "value":"MBTI/ENTP"
+            },{
+                "answerText": "ESFJ - The Consul",
+                "value":"MBTI/ESFJ"
+            },{
+                "answerText": "ESFP - The Entertainer",
+                "value":"MBTI/ESFP"
+            },{
+                "answerText": "ESTJ - The Executive",
+                "value":"MBTI/ESTJ"
+            },{
+                "answerText": "ESTP - The Entrepreneur",
+                "value":"MBTI/ESTP"
             }]
     }]

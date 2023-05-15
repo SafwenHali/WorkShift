@@ -20,7 +20,7 @@ const Categories =() => {
                         <h1 className="flex-grow sm:pr-16 text-4xl font-medium title-font text-neutral-200">
                             Take the discover quiz to get what you're looking for.
                             <p className="text-lg font-medium title-font text-neutral-300">
-                               <br/> With our quiz have a better chnace to find what exactly fits to your profile. <br/>
+                               <br/> With our quiz have a better chnace to find what exactly fits your profile. <br/>
                             </p>
                         </h1>
                         <br/>
