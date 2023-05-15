@@ -5,7 +5,7 @@ const {
   createQuiz,
   updateQuiz,
   deleteQuiz,
-} = require("../controllers/quiz");
+} = require("../../controllers/quiz/quiz");
 const router = express.Router();
 
 //post article

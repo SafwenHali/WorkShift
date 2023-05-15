@@ -29,7 +29,10 @@ app.use("/api/subcategory", require("./routes/subcategories"));
 app.use("/api/cours", require("./routes/cours"));
 app.use("/api/lessons", require("./routes/lessons"));
 
-app.use("/api/quiz", require("./routes/quiz"));
+app.use("/api/quiz", require("./routes/quiz/quiz"));
+app.use("/api/field", require("./routes/quiz/careerfield"));
+app.use("/api/hobbies", require("./routes/quiz/hobbies"));
+app.use("/api/jobs", require("./routes/quiz/jobs"))
 
 //server
 app.listen(process.env.PORT, () => {

@@ -3,12 +3,11 @@ import Sidebar from "../components/Sidebar";
 
 const Contenent = () => {
   const pages = [
-    { name: " ARTICLES", link: "/Admin/Articles" },
-    { name: " COURSES", link: "/Admin/Courses" },
-    { name: "  QUIZ", link: "/Admin/Manage-Quiz" },
-    { name: " TESTS", link: "/Admin/" },
-    { name: " CERTIFICATIONS", link: "/Admin/" },
-    { name: " CATEGORIES", link: "/Admin/Categories" },
+    { name: " Jobs", link: "/Admin/Articles" },
+    { name: " Recruiters Demand", link: "/Admin/Courses" },
+    { name: "  Hobbies", link: "/Admin/" },
+    { name: " Work-fields", link: "/Admin/" },
+    { name: " Personalities", link: "/Admin/" },
   ];
 
   return (
@@ -17,10 +16,10 @@ const Contenent = () => {
       <div className="pl-0 lg:pl-20">
         <div className="h-full min-h-screen bg-teal-900 pl-48">
           <h1 className="p-14 mb-4 text-4xl font-bold tracking-tight text-neutral-200 shadow-lg ">
-            MANAGE CONTENENT :
+            MANAGE THE SUGGESTION QUIZ :
           </h1>
           <div className=" px-3 md:lg:xl:px-40 py-20 bg-opacity-10">
-            <ul className="grid grid-cols-1 md:lg:xl:grid-cols-3 group lg:p-1">
+            <ul className="grid grid-cols-1 md:lg:xl:grid-cols-2 group lg:p-1">
               {pages.map((n) => (
                 <div className="p-1">
                   <a href={n.link}>
