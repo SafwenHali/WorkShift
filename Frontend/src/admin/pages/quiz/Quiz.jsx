@@ -1,13 +1,13 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../../components/Sidebar";
 
 const Contenent = () => {
   const pages = [
-    { name: " Jobs", link: "/Admin/Articles" },
-    { name: " Recruiters Demand", link: "/Admin/Courses" },
-    { name: "  Hobbies", link: "/Admin/" },
-    { name: " Work-fields", link: "/Admin/" },
-    { name: " Personalities", link: "/Admin/" },
+    { name: " Jobs", link: "/Admin/Jobs" },
+    { name: " Recruiters Demand", link: "/Admin/Demand" },
+    { name: "  Hobbies", link: "/Admin/Quiz/Hobbies" },
+    { name: " Work-fields", link: "/Admin/WorkFields" },
+    { name: " Personalities", link: "/Admin/Personalities" },
   ];
 
   return (
@@ -30,7 +30,7 @@ const Contenent = () => {
                       <p className="text-2xl font-bold text-teal-800 mt-3 ">
                         {n.name}
                       </p>
-                    </li>{" "}
+                    </li>
                   </a>
                 </div>
               ))}

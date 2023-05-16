@@ -1,13 +1,11 @@
 import React from "react";
 import Nav from "../components/Navbar"
 import Footer from "../components/Footer";
-import Aa from "../../algorithme"
 
 const Test =() => {
     return(
         <div>
-            <Aa/>
-            {/*<Nav PageName={"VLADIMIR PUTIN"}/>
+            <Nav PageName={"VLADIMIR PUTIN"}/>
             
         <center className="h-screen bg-gradient-to-b from-white via-blue-700 to-red-700">
             <h1 className="pt-36 mb-4 text-4xl font-extrabold tracking-tight text-red-600 md:text-5xl lg:text-6xl">
@@ -21,7 +19,7 @@ const Test =() => {
                     
             
         </center>
-    <Footer/>*/}
+    <Footer/>
         </div>
         
 

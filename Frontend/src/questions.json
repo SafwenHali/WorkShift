@@ -65,35 +65,11 @@
         "questionDesc": "...",
 		"answers": 
             [{
-                "answerText": "INFJ - The Advocate",
-                "value":"MBTI/INFJ"
-            },{
-                "answerText": "INFP - The Mediator",
-                "value":"MBTI/INFP"
-            },{
                 "answerText": "INTJ - The Architect",
                 "value":"MBTI/INTJ"
             },{
                 "answerText": "INTP - The Logician",
                 "value":"MBTI/INTP"
-            },{
-                "answerText": "ISFJ - The Defender",
-                "value":"MBTI/ISFJ"
-            },{
-                "answerText": "ISFP - The Adventurer",
-                "value":"MBTI/ISFP"
-            },{
-                "answerText": "ISTJ - The Logistican",
-                "value":"MBTI/ISTJ"
-            },{
-                "answerText": "ISTP - The Virtioso",
-                "value":"MBTI/ISTP"
-            },{
-                "answerText": "ENFJ - The Protagonist",
-                "value":"MBTI/ENFJ"
-            },{
-                "answerText": "ENFP - The Compaigner",
-                "value":"MBTI/ENFP"
             },{
                 "answerText": "ENTJ - The Commander",
                 "value":"MBTI/ENTJ"
@@ -101,16 +77,40 @@
                 "answerText": "ENTP - The Debater",
                 "value":"MBTI/ENTP"
             },{
-                "answerText": "ESFJ - The Consul",
-                "value":"MBTI/ESFJ"
+                "answerText": "INFJ - The Advocate",
+                "value":"MBTI/INFJ"
             },{
-                "answerText": "ESFP - The Entertainer",
-                "value":"MBTI/ESFP"
+                "answerText": "INFP - The Mediator",
+                "value":"MBTI/INFP"
+            },{
+                "answerText": "ENFJ - The Protagonist",
+                "value":"MBTI/ENFJ"
+            },{
+                "answerText": "ENFP - The Compaigner",
+                "value":"MBTI/ENFP"
+            },{
+                "answerText": "ISTJ - The Logistican",
+                "value":"MBTI/ISTJ"
+            },{
+                "answerText": "ISFJ - The Defender",
+                "value":"MBTI/ISFJ"
             },{
                 "answerText": "ESTJ - The Executive",
                 "value":"MBTI/ESTJ"
             },{
+                "answerText": "ESFJ - The Consul",
+                "value":"MBTI/ESFJ"
+            },{
+                "answerText": "ISTP - The Virtioso",
+                "value":"MBTI/ISTP"
+            },{
+                "answerText": "ISFP - The Adventurer",
+                "value":"MBTI/ISFP"
+            },{
                 "answerText": "ESTP - The Entrepreneur",
                 "value":"MBTI/ESTP"
+            },{
+                "answerText": "ESFP - The Entertainer",
+                "value":"MBTI/ESFP"
             }]
     }]

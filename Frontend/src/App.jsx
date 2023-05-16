@@ -34,7 +34,8 @@ import AdminCourses from "./admin/pages/Courses";
 import AdminAddCourse from "./admin/pages/addCourse";
 import AdminEditCourse from "./admin/pages/editCourse";
 
-import AdminQuiz from "./admin/pages/Quiz";
+import AdminQuiz from "./admin/pages/quiz/Quiz";
+import AdminHobbies from "./admin/pages/quiz/Hobbies";
 
 import AdminCategories from "./admin/pages/Categories";
 import AdminAddCategory from "./admin/pages/addCategory";
@@ -88,6 +89,7 @@ function App() {
 
           <Route path="/Admin/Manage-Quiz" element={<AdminQuiz/>}/>
           <Route path="/Admin/Quiz" element={<AdminQuiz/>}/>
+          <Route path="/Admin/Quiz/Hobbies" element={<AdminHobbies/>}/>
 
           <Route path="/Admin/Categories" element={<AdminCategories/>}/>
           <Route path="/Admin/New-Category" element={<AdminAddCategory/>}/>
