@@ -8,7 +8,6 @@ const { sendEmail } = require("../services/sendGrid");
 const { generateCode } = require("../utils/generateCode");
 const { emailCode } = require("../utils/email");
 const UserModel = require("../models/userModel");
-const authModel = require("../models/authModel");
 const VerifyAccountModel = require("../models/verifyAccount");
 //generate access token
 const generateAccessToken = (user) => {
