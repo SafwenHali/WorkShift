@@ -36,6 +36,7 @@ app.use("/api/formation", require("./routes/formations"));
 app.use("/api/category", require("./routes/categories"));
 app.use("/api/subcategory", require("./routes/subcategories"));
 app.use("/api/cours", require("./routes/cours"));
+app.use("/api/auth", require("./routes/authRouter"));
 
 app.listen(process.env.PORT, () => {
   console.log("server started on", process.env.PORT);

@@ -7,7 +7,9 @@ const { RegisterValidation } = require("../validation/authValidation");
 const { sendEmail } = require("../services/sendGrid");
 const { generateCode } = require("../utils/generateCode");
 const { emailCode } = require("../utils/email");
-
+const UserModel = require("../models/userModel");
+const authModel = require("../models/authModel");
+const VerifyAccountModel = require("../models/verifyAccount");
 //generate access token
 const generateAccessToken = (user) => {
   return jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
@@ -24,6 +26,7 @@ exports.register = async (req, res) => {
   try {
     let { value, error } = RegisterValidation.validate(req.body);
     if (error) {
+      console.log(error);
       // if error respond with bad request
       return res
         .status(400)
@@ -47,7 +50,7 @@ exports.register = async (req, res) => {
 
     sendEmail({
       to: newUser.email,
-      from: "tkdsayed@gmail.com",
+      from: "jebriaicha25@gmail.com",
       subject: "Verify your email",
       text: "message ",
       html: emailCode(code),
@@ -153,7 +156,7 @@ exports.verifyAccount = async (req, res) => {
     from: "",
     subject: "your account has been verified",
     text: "text",
-    html: `<h1>Welcome ${userVerified.firstName} your account has beeen verified </h1>`,
+    html: `<h1>Welcome ${userVerified.firstName} your account has been verified </h1>`,
   });
   res.json({ message: "Account verified" });
 };

@@ -6,6 +6,7 @@ const RegisterValidation = joi.object({
     .string()
     .email({ minDomainSegments: 2, tlds: { allow: ["com", "net", "fr"] } }),
   password: joi.string().required(),
+  role: joi.string().required(),
 });
 
 const loginValidation = joi.object({
