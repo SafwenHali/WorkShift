@@ -36,7 +36,7 @@ const getLessonById = async (req, res) => {
 //GET lesson by cours id
 const getLessonByCoursID = async (req, res) => {
   const id = req.params.id;
-  const lesson = await Lesson.find({ Cours: id });
+  const lesson = await Lesson.find({ cours_id: id });
   res.json({ lesson: lesson });
 };
 
@@ -67,4 +67,5 @@ module.exports = {
   createLesson,
   deleteLesson,
   updateLesson,
+  getLessonByCoursID,
 };

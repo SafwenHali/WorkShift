@@ -36,17 +36,6 @@ app.use("/api/formation", require("./routes/formations"));
 app.use("/api/category", require("./routes/categories"));
 app.use("/api/subcategory", require("./routes/subcategories"));
 app.use("/api/cours", require("./routes/cours"));
-// app.use("api/auth", require("./routes/route"));
-
-app.use("/api/auth", authRouter);
-
-// app.use("/api/auth", authenticate);
-
-// app.post("/register", authController.register);
-// app.post("/login", authController.login);
-// app.post("/refresh-token", authController.refreshToken);
-// app.post("/logout", authController.logout);
-//app.get("/profile", authController.authenticate, userController.getUserProfile);
 
 app.listen(process.env.PORT, () => {
   console.log("server started on", process.env.PORT);

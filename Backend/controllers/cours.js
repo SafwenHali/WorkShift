@@ -73,4 +73,5 @@ module.exports = {
   getCoursById,
   deleteCours,
   updateCours,
+  getCoursByFormationID,
 };
