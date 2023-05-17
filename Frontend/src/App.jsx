@@ -12,6 +12,9 @@ import NotFound from "./pages/404_not_found";
 import Test from "./pages/Test";
 import Plans from "./pages/Plans";
 
+import Quiz from "./pages/Quiz/discover";
+import QuizHobbies from "./pages/Quiz/hobbies";
+
 import Categories from "./pages/allCategories";
 import Category from "./pages/category";
 import SubCategory from "./pages/subCategory";
@@ -33,6 +36,11 @@ import AdminCourses from "./admin/pages/Courses";
 import AdminAddCourse from "./admin/pages/addCourse";
 import AdminEditCourse from "./admin/pages/editCourse";
 
+import AdminQuiz from "./admin/pages/quiz/Quiz";
+import AdminHobbies from "./admin/pages/quiz/Hobbies";
+import AdminAddHobby from "./admin/pages/quiz/addHobby";
+import AdminEditHobby from "./admin/pages/quiz/editHobby";
+
 import AdminCategories from "./admin/pages/Categories";
 import AdminAddCategory from "./admin/pages/addCategory";
 import AdminEditCategory from "./admin/pages/editCategory";
@@ -52,7 +60,10 @@ function App() {
           <Route path="/Home" element={<Home/>}/>
           <Route path="/welcome" element={<Home/>}/>
 
-          <Route path="/Plans" element={<Plans/>}/>   
+          <Route path="/Plans" element={<Plans/>}/> 
+          {/*Quiz*/}
+          <Route path="/Discover" element={<Quiz/>}/>
+          <Route path="/Hobbies" element={<QuizHobbies/>}/>
           {/*list all Categories*/}
           <Route path="/Categories" element={<Categories/>}/>
           {/*list all Sub Categories by category id*/}
@@ -71,6 +82,7 @@ function App() {
           <Route path="/Admin" element={<Admin/>}/>
           <Route path="/Admin/Dashboard" element={<Admin/>}/>
           <Route path="/Admin/Manage-Contenent" element={<AdminContenent/>}/>
+          <Route path="/Admin/Contenent" element={<AdminContenent/>}/>
 
           <Route path="/Admin/Articles" element={<AdminArticles/>}/>
           <Route path="/Admin/New-Article" element={<AdminAddArticle/>}/>
@@ -79,6 +91,12 @@ function App() {
           <Route path="/Admin/Courses" element={<AdminCourses/>}/>
           <Route path="/Admin/New-Course" element={<AdminAddCourse/>}/>
           <Route path="/Admin/Edit-Course/:id" element={<AdminEditCourse/>}/>
+
+          <Route path="/Admin/Manage-Quiz" element={<AdminQuiz/>}/>
+          <Route path="/Admin/Quiz" element={<AdminQuiz/>}/>
+          <Route path="/Admin/Quiz/Hobbies" element={<AdminHobbies/>}/>
+          <Route path="/Admin/Quiz/New-Hobby" element={<AdminAddHobby/>}/>
+          <Route path="/Admin/Quiz/Edit-Hobby/:id" element={<AdminEditHobby/>}/>
 
           <Route path="/Admin/Categories" element={<AdminCategories/>}/>
           <Route path="/Admin/New-Category" element={<AdminAddCategory/>}/>

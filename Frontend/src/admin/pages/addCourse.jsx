@@ -16,7 +16,7 @@ const AddCourse =() => {
     axios.post('http://127.0.0.1:7000/api/formation',post)
     .then(response=>console.log(response))
     .catch(err=>console.log(err))
-    window.location.href ="/Admin/Courses"
+    //window.location.href ="/Admin/Courses"
   }
 
     const cat = useFetchCat().data;

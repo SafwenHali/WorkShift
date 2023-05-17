@@ -4,7 +4,7 @@ const Footer=()=>{
         {name:"PLANS ",link:"/Plans"},
         {name:"CATEGORIES ",link:"/Categories"},
         {name:"ARTICLES ",link:"/Articles"},       
-        {name:"QUIZ ",link:"/"},
+        {name:"QUIZ ",link:"/Discover"},
         
       ];
       let About =[

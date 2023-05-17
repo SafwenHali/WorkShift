@@ -5,6 +5,7 @@ const Contenent = () => {
   const pages = [
     { name: " ARTICLES", link: "/Admin/Articles" },
     { name: " COURSES", link: "/Admin/Courses" },
+    { name: "  QUIZ", link: "/Admin/Manage-Quiz" },
     { name: " TESTS", link: "/Admin/" },
     { name: " CERTIFICATIONS", link: "/Admin/" },
     { name: " CATEGORIES", link: "/Admin/Categories" },
