@@ -36,6 +36,12 @@ app.use("/api/formation", require("./routes/formations"));
 app.use("/api/category", require("./routes/categories"));
 app.use("/api/subcategory", require("./routes/subcategories"));
 app.use("/api/cours", require("./routes/cours"));
+app.use("/api/hobbies", require("./routes/quiz/hobbies"));
+app.use("/api/quiz", require("./routes/quiz/quiz"));
+app.use("/api/careerfield", require("./routes/quiz/careerfield"));
+app.use("/api/jobs", require("./routes/quiz/jobs"));
+app.use("/api/personalities", require("./routes/quiz/personalities"));
+
 app.use("/api/auth", require("./routes/authRouter"));
 
 app.listen(process.env.PORT, () => {
