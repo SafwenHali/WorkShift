@@ -11,7 +11,9 @@ import Home from "./pages/Home";
 import NotFound from "./pages/404_not_found";
 import Test from "./pages/Test";
 import Plans from "./pages/Plans";
+
 import Quiz from "./pages/Quiz/discover";
+import QuizHobbies from "./pages/Quiz/hobbies";
 
 import Categories from "./pages/allCategories";
 import Category from "./pages/category";
@@ -36,6 +38,8 @@ import AdminEditCourse from "./admin/pages/editCourse";
 
 import AdminQuiz from "./admin/pages/quiz/Quiz";
 import AdminHobbies from "./admin/pages/quiz/Hobbies";
+import AdminAddHobby from "./admin/pages/quiz/addHobby";
+import AdminEditHobby from "./admin/pages/quiz/editHobby";
 
 import AdminCategories from "./admin/pages/Categories";
 import AdminAddCategory from "./admin/pages/addCategory";
@@ -57,8 +61,9 @@ function App() {
           <Route path="/welcome" element={<Home/>}/>
 
           <Route path="/Plans" element={<Plans/>}/> 
+          {/*Quiz*/}
           <Route path="/Discover" element={<Quiz/>}/>
-
+          <Route path="/Hobbies" element={<QuizHobbies/>}/>
           {/*list all Categories*/}
           <Route path="/Categories" element={<Categories/>}/>
           {/*list all Sub Categories by category id*/}
@@ -90,6 +95,8 @@ function App() {
           <Route path="/Admin/Manage-Quiz" element={<AdminQuiz/>}/>
           <Route path="/Admin/Quiz" element={<AdminQuiz/>}/>
           <Route path="/Admin/Quiz/Hobbies" element={<AdminHobbies/>}/>
+          <Route path="/Admin/Quiz/New-Hobby" element={<AdminAddHobby/>}/>
+          <Route path="/Admin/Quiz/Edit-Hobby/:id" element={<AdminEditHobby/>}/>
 
           <Route path="/Admin/Categories" element={<AdminCategories/>}/>
           <Route path="/Admin/New-Category" element={<AdminAddCategory/>}/>

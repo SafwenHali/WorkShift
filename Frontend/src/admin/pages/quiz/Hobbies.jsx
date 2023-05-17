@@ -20,7 +20,7 @@ const Hobbies =() => {
                     <div className="pb-10 flex justify-between ">
                          <span></span>
                          <span className="">
-                         <a href="/Admin/New-Hobby"
+                         <a href="/Admin/Quiz/New-Hobby"
                             className="border-2 border-green-700 bg-green-700 text-neutral-100 rounded-md px-4 py-2 m-2 transition duration-100 ease select-none hover:text-green-600 hover:bg-neutral-100">
                             + Add Hobby
                         </a>
@@ -55,7 +55,7 @@ const Hobbies =() => {
                                         {a.hobbyDesc}
                                     </td>
                                     <td className="px-6 py-4">
-                                        <a href={"/Admin/Edit-Hobby/"+a._id} className="font-medium text-blue-500  hover:underline">
+                                        <a href={"/Admin/Quiz/Edit-Hobby/"+a._id} className="font-medium text-blue-500  hover:underline">
                                             Edit
                                         </a>
                                     </td>
