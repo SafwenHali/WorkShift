@@ -48,6 +48,8 @@ import AdminEditCategory from "./admin/pages/editCategory";
 import AdminAddSubCategory from "./admin/pages/addSubCategory";
 import AdminEditSubCategory from "./admin/pages/editSubCategory";
 
+import Formateur from "./Formateur/Formateur";
+
 function App() {
   return (
     <BrowserRouter>
@@ -112,6 +114,8 @@ function App() {
           path="/Admin/Edit-SubCategory/:id"
           element={<AdminEditSubCategory />}
         />
+        {/*Formateur Routes*/}
+        <Route path="/Formateur" element={<Formateur />} />
 
         {/*Test Routes*/}
         <Route path="/Putin" element={<Test />} />

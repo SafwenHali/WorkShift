@@ -8,6 +8,9 @@ const authController = require("./controllers/authController");
 const userController = require("./controllers/userController");
 const { authenticate } = require("./middlewares/authMiddleware");
 const authRouter = require("./routes/authRouter");
+const usersRouter = require("./routes/usersRouter");
+// const usersRouter = require("./routes/usersRouter");
+
 //.env
 require("dotenv").config();
 
@@ -41,7 +44,7 @@ app.use("/api/quiz", require("./routes/quiz/quiz"));
 app.use("/api/careerfield", require("./routes/quiz/careerfield"));
 app.use("/api/jobs", require("./routes/quiz/jobs"));
 app.use("/api/personalities", require("./routes/quiz/personalities"));
-
+app.use("/api/users", require("./routes/usersRouter"));
 app.use("/api/auth", require("./routes/authRouter"));
 
 app.listen(process.env.PORT, () => {
