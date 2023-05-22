@@ -8,12 +8,13 @@ const {
   getFormationBySubCategoryID,
 } = require("../controllers/formations");
 const router = express.Router();
+const { checkProfile } = require("../middlewares/profileMiddleware");
 
 //post
 router.post("/", createFormation);
 
 //get
-router.get("/", getFormation);
+router.get("/", checkProfile, getFormation);
 
 //get ByID
 router.get("/:id", getFormationById);

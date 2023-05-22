@@ -77,7 +77,7 @@ const updateFormation = async (req, res) => {
       description: req.body.description,
       duree: req.body.duree,
       subCategory: req.body.subCategory,
-      Formateur: req.body.Formateur,
+      // Formateur: req.body.Formateur,
       Cover: req.body.Cover,
     });
     res.json("formation successfully updated");
@@ -85,6 +85,10 @@ const updateFormation = async (req, res) => {
     console.log(err.message);
     res.json("formation not updated");
   }
+};
+exports.userValidator = async (req, res) => {
+  console.log("after salem");
+  res.json({ message: "in salem" });
 };
 
 module.exports = {

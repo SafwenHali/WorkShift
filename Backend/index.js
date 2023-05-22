@@ -16,6 +16,7 @@ require("dotenv").config();
 
 //app
 const app = express();
+const router = express.Router();
 
 //parssing
 app.use(bodyParser.json());
@@ -46,6 +47,8 @@ app.use("/api/jobs", require("./routes/quiz/jobs"));
 app.use("/api/personalities", require("./routes/quiz/personalities"));
 app.use("/api/users", require("./routes/usersRouter"));
 app.use("/api/auth", require("./routes/authRouter"));
+
+// app.use("course/add", "middleware", CourseController::add);
 
 app.listen(process.env.PORT, () => {
   console.log("server started on", process.env.PORT);
