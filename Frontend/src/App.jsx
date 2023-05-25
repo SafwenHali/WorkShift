@@ -10,10 +10,12 @@ import {
 import Home from "./pages/Home";
 import NotFound from "./pages/404_not_found";
 import Test from "./pages/Test";
+import Explore from "./pages/Quiz/explore";
 import Plans from "./pages/Plans";
 
 import Quiz from "./pages/Quiz/discover";
 import QuizHobbies from "./pages/Quiz/hobbies";
+import JobRelated from "./pages/Quiz/job-related";
 
 import Categories from "./pages/allCategories";
 import Category from "./pages/category";
@@ -61,8 +63,10 @@ function App() {
           <Route path="/welcome" element={<Home/>}/>
 
           <Route path="/Plans" element={<Plans/>}/> 
-          {/*Quiz*/}
+          {/*Quiz*/}JobRelated
           <Route path="/Discover" element={<Quiz/>}/>
+          <Route path="/Explore" element={<Explore/>}/>
+          <Route path="/Job-Related" element={<QuizHobbies/>}/>
           <Route path="/Hobbies" element={<QuizHobbies/>}/>
           {/*list all Categories*/}
           <Route path="/Categories" element={<Categories/>}/>
