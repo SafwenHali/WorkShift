@@ -42,7 +42,9 @@ const getFormation = async (req, res) => {
   //find
   const formation = await Formation.find();
   //return
+  // res.send();
   res.json({ formations: formation });
+  // res.send("backend IZ 00001");
 };
 
 //GET  by ID

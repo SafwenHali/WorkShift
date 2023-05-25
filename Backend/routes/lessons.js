@@ -8,9 +8,10 @@ const {
   getLessonByCoursID,
 } = require("../controllers/lessons");
 const router = express.Router();
+const { checkProfile } = require("../middlewares/profileMiddleware");
 
 //POST
-router.post("/", createLesson);
+router.post("/", checkProfile, createLesson);
 //GET
 router.get("/", getLessons);
 //GET by Id
@@ -19,8 +20,8 @@ router.get("/:id", getLessonById);
 router.get("/lessonbycoursid/:id", getLessonByCoursID);
 
 //DELETE
-router.delete("/:id", deleteLesson);
+router.delete("/:id", checkProfile, deleteLesson);
 //PUT
-router.put("/:id", updateLesson);
+router.put("/:id", checkProfile, updateLesson);
 
 module.exports = router;

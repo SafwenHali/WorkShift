@@ -43,6 +43,7 @@ exports.updateUser = async (req, res) => {
       password: req.body.password,
       role: req.body.role,
     });
+
     res.json("User successfully updated");
   } catch (err) {
     console.log(err.message);

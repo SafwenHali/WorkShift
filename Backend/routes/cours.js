@@ -8,8 +8,10 @@ const {
   getCoursByFormationID,
 } = require("../controllers/cours");
 const router = express.Router();
+const { checkProfile } = require("../middlewares/profileMiddleware");
+
 //POST
-router.post("/", createCours);
+router.post("/", checkProfile, createCours);
 //GET
 router.get("/", getAllCours);
 //GET by Id
@@ -18,8 +20,8 @@ router.get("/:id", getCoursById);
 router.get("/coursbyformationid/:id", getCoursByFormationID);
 
 //DELETE
-router.delete("/:id", deleteCours);
+router.delete("/:id", checkProfile, deleteCours);
 //PUT
-router.put("/:id", updateCours);
+router.put("/:id", checkProfile, updateCours);
 
 module.exports = router;

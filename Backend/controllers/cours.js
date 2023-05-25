@@ -5,18 +5,48 @@ const Formation = require("../models/formation");
 const createCours = async (req, res) => {
   try {
     const { name, description, formation_id } = req.body;
-    const cours = new Cours({ name, description, formation_id });
+    const cours = new Cours({
+      name,
+      description,
+      formation_id,
+    });
     await cours.save();
-    // res.json({ formations: formation });
-    res.status(201).json(cours);
+    res.json({ cours: cours });
+
+    // res.status(201).json(formation);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
+  //  res.json("Ok updated ");
+  //   try {
+  //     const { name, description, formation_id } = req.body;
+  //     const cours = new Cours({ name, description, formation_id });
+  //     console.log("Before ");
+  //     let x = await cours.save();
+  //     // console.log(x);
+  //     // console.log("After ###");
+  //     // res.send();
+  //     // res.json("Ok updated ");
+  //     /*
+  //     const { name, description, formation_id } = req.body;
+  //     const cours = new Cours({ name, description, formation_id });
+  //     await cours.save();
+  //     // res.json({ formations: formation });
+  //     // res.json({ cours: cours });
+  // */
+  //     //  res.json("before updated ");
+  //   } catch (err) {
+  //     //res.status(400).json({ message: err.message });
+  //     //console.log("Forbidden as test");
+  //     //  res.json("lesson not updated ");
+  //   }
+  //   res.json("Ok updated ");
 };
 
 //GET
 const getAllCours = async (req, res) => {
   try {
+    // res.send();
     const cours = await Cours.find();
     res.json({ cours: cours });
   } catch (err) {

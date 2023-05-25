@@ -18,6 +18,7 @@ const createLesson = async (req, res) => {
 //GET all
 const getLessons = async (req, res) => {
   //find lessons
+  // res.send();
   const lesson = await Lesson.find();
   // return all lessons
   res.json({ lessons: lesson });
