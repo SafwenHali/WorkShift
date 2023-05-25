@@ -12,8 +12,6 @@ const createCours = async (req, res) => {
     });
     await cours.save();
     res.json({ cours: cours });
-
-    // res.status(201).json(formation);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

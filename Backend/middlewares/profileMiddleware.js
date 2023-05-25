@@ -21,7 +21,7 @@ exports.checkProfile = (req, res, next) => {
 
     // next();
   });
-  next();
+  // next();
   // Detect the role
   //res.send("backend IZ 00001");
   // console.log("in middle-ware ");
