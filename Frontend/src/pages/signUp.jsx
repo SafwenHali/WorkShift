@@ -7,12 +7,10 @@ import axios from "axios";
 const signUp = () => {
   const [post, setPost] = useState({});
   const [visible, setVisible] = useState(false);
-  const handleOnclose=()=>setVisible(false)
+  const handleOnclose = () => setVisible(false);
 
   const handleList = (event) => {
-    
-    
-    setPost({ ...post, "role": event.target.value });
+    setPost({ ...post, role: event.target.value });
   };
 
   const handleInput = (event) => {
@@ -30,7 +28,7 @@ const signUp = () => {
   };
   return (
     <div className="min-h-screen bg-black">
-      <SigninModal visible={visible} onClose={handleOnclose}/>
+      <SigninModal visible={visible} onClose={handleOnclose} />
       <Nav PageName={"REGISTER"} />
       <h1 className="pl-14 pt-32 mb-10 text-4xl font-bold tracking-tight text-teal-600 ">
         Registration Form
@@ -87,10 +85,7 @@ const signUp = () => {
                 Date of birth
               </label>
               <input
-                required
-                name=""
                 type="date"
-                onChange={handleInput}
                 className="border rounded-lg px-3 py-2 text-sm w-full bg-neutral-200 shadow-md"
               />
             </div>
@@ -132,7 +127,9 @@ const signUp = () => {
               />
             </div>
             <div>
-              <h3 className="mb-4 font-semibold text-neutral-600 ">You Are...</h3>
+              <h3 className="mb-4 font-semibold text-neutral-600 ">
+                You Are...
+              </h3>
               <ul className="items-center w-full text-sm font-medium text-neutral-600 bg-neutral-200 rounded-lg sm:flex dark:bg-neutral-200 shadow-md dark:text-white">
                 <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                   <div className="flex items-center pl-3">
@@ -178,7 +175,9 @@ const signUp = () => {
                   Already have an account?
                 </label>
                 <button
-                  onClick={()=>{setVisible(true)}}
+                  onClick={() => {
+                    setVisible(true);
+                  }}
                   className="transition duration-200 -2 border border-teal-700 text-teal-700 w-full py-2.5 rounded-lg text-sm shadow-md hover:bg-neutral-200 font-semibold text-center inline-block"
                 >
                   <span className="inline-block mr-2">Login</span>
