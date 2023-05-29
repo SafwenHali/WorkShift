@@ -101,19 +101,10 @@ function App() {
 
         <Route path="/Admin/Categories" element={<AdminCategories />} />
         <Route path="/Admin/New-Category" element={<AdminAddCategory />} />
-        <Route
-          path="/Admin/Edit-Category/:id"
-          element={<AdminEditCategory />}
-        />
+        <Route path="/Admin/Edit-Category/:id" element={<AdminEditCategory />}/>
 
-        <Route
-          path="/Admin/New-SubCategory/:id"
-          element={<AdminAddSubCategory />}
-        />
-        <Route
-          path="/Admin/Edit-SubCategory/:id"
-          element={<AdminEditSubCategory />}
-        />
+        <Route path="/Admin/New-SubCategory/:id"element={<AdminAddSubCategory />}/>
+        <Route path="/Admin/Edit-SubCategory/:id"element={<AdminEditSubCategory />}/>
         {/*Formateur Routes*/}
         <Route path="/Formateur" element={<Formateur />} />
 
