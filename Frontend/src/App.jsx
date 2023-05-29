@@ -49,6 +49,7 @@ import AdminAddSubCategory from "./admin/pages/addSubCategory";
 import AdminEditSubCategory from "./admin/pages/editSubCategory";
 
 import Formateur from "./Formateur/Formateur";
+import Student from "./Formateur/Student";
 
 function App() {
   return (
@@ -116,7 +117,8 @@ function App() {
         />
         {/*Formateur Routes*/}
         <Route path="/Formateur" element={<Formateur />} />
-
+        {/*student Routes*/}
+        <Route path="/Student" element={<Student />} />
         {/*Test Routes*/}
         <Route path="/Putin" element={<Test />} />
       </Routes>

@@ -72,6 +72,18 @@ const signUp = () => {
             </div>
             <div className="pb-2">
               <label className="font-semibold text-sm text-neutral-600 pb-1 block ">
+                Date of birth
+              </label>
+              <input
+                required
+                name=""
+                type="date"
+                onChange={handleInput}
+                className="border rounded-lg px-3 py-2 text-sm w-full bg-neutral-200 shadow-md"
+              />
+            </div>
+            <div className="pb-2">
+              <label className="font-semibold text-sm text-neutral-600 pb-1 block ">
                 Email
               </label>
               <input
