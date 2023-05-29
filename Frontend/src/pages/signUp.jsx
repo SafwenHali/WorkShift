@@ -87,8 +87,6 @@ const signUp = () => {
                 Date of birth
               </label>
               <input
-                required
-                name=""
                 type="date"
                 onChange={handleInput}
                 className="border rounded-lg px-3 py-2 text-sm w-full bg-neutral-200 shadow-md"
