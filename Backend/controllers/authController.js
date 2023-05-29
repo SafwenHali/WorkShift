@@ -12,7 +12,7 @@ const VerifyAccountModel = require("../models/verifyAccount");
 //generate access token
 const generateAccessToken = (user) => {
   return jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
-    expiresIn: "15m",
+    expiresIn: "1h",
   });
 };
 
@@ -38,9 +38,17 @@ exports.register = async (req, res) => {
     if (existingUser) {
       return res.status(400).json({ message: "email already is used" });
     }
+    //const hashedPassword = await bcrypt.hash("password", 10);
+    const hashedPassword = await bcrypt.hash(value.password, 10);
+    // let x = value.firstName;
+    console.log(value);
+    value.password = hashedPassword;
+    value.confirmPassword = hashedPassword;
 
-    let newUser = UserModel({ ...value });
-    //save the user
+    let newUser = UserModel({
+      ...value,
+    });
+    // save the user
     await newUser.save();
 
     // generate the code
@@ -63,12 +71,24 @@ exports.register = async (req, res) => {
 
   // res.status(200).json({ message: "Get goals" });
   // try {
-  //   const { name, email, password, role } = req.body;
+  //   const {
+  //     firstName,
+  //     lastName,
+  //     userName,
+  //     email,
+  //     password,
+  //     confirmPassword,
+  //     role,
+  //   } = req.body;
   //   const hashedPassword = await bcrypt.hash(password, 10);
+  //   console.log(hashedPassword);
   //   const user = await User.create({
-  //     name,
+  //     firstName,
+  //     lastName,
+  //     userName,
   //     email,
   //     password: hashedPassword,
+  //     confirmPassword,
   //     role,
   //   });
   //   const accessToken = generateAccessToken(user);
@@ -78,7 +98,8 @@ exports.register = async (req, res) => {
   //   res.json({ accessToken, refreshToken });
   //   //res.status(200).json({ message: "Get goals" });
   // } catch (err) {
-  //   res.status(500).json({ message: err.message });
+  //   console.log("issue");
+  //   // res.status(500).json({ message: err.message });
   // }
 };
 //Login
@@ -184,4 +205,9 @@ exports.verifyAccount = async (req, res) => {
     html: `<h1>Welcome ${userVerified.firstName} your account has been verified </h1>`,
   });
   res.json({ message: "Account verified" });
+};
+
+exports.salem = async (req, res) => {
+  console.log("after salem");
+  res.json({ message: "in salem" });
 };

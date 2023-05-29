@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import Nav from "../components/Navbar";
 import Footer from "../components/Footer";
+import SigninModal from "../components/signinModal";
+import axios from "axios";
+
 const signUp = () => {
   const [post, setPost] = useState({});
+  const [visible, setVisible] = useState(false);
+  const handleOnclose=()=>setVisible(false)
+
+  const handleList = (event) => {
+    
+    
+    setPost({ ...post, "role": event.target.value });
+  };
 
   const handleInput = (event) => {
     setPost({ ...post, [event.target.name]: event.target.value });
@@ -11,7 +22,7 @@ const signUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://127.0.0.1:7000/api/auth", post)
+      .post("http://127.0.0.1:7000/api/auth/register", post)
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
 
@@ -19,6 +30,7 @@ const signUp = () => {
   };
   return (
     <div className="min-h-screen bg-black">
+      <SigninModal visible={visible} onClose={handleOnclose}/>
       <Nav PageName={"REGISTER"} />
       <h1 className="pl-14 pt-32 mb-10 text-4xl font-bold tracking-tight text-teal-600 ">
         Registration Form
@@ -36,7 +48,7 @@ const signUp = () => {
                 </label>
                 <input
                   required
-                  name=""
+                  name="firstName"
                   type="title"
                   onChange={handleInput}
                   className="border rounded-lg px-3 py-2 text-sm w-full bg-neutral-200 shadow-md"
@@ -49,7 +61,7 @@ const signUp = () => {
                 </label>
                 <input
                   required
-                  name=""
+                  name="lastName"
                   type="title"
                   onChange={handleInput}
                   className="border rounded-lg px-3 py-2 text-sm w-full bg-neutral-200 shadow-md"
@@ -63,7 +75,7 @@ const signUp = () => {
               </label>
               <input
                 required
-                name=""
+                name="userName"
                 type="title"
                 onChange={handleInput}
                 className="border rounded-lg px-3 py-2 text-sm w-full bg-neutral-200 shadow-md"
@@ -76,16 +88,75 @@ const signUp = () => {
               </label>
               <input
                 required
-                name=""
+                name="email"
                 type="email"
                 onChange={handleInput}
                 className="border rounded-lg px-3 py-2 text-sm w-full bg-neutral-200 shadow-md"
                 placeholder="foolenfooleni@gmail.com"
               />
             </div>
+            <div className="pb-2">
+              <label className="font-semibold text-sm text-neutral-600 pb-1 block ">
+                Password
+              </label>
+              <input
+                required
+                name="password"
+                type="password"
+                onChange={handleInput}
+                className="border rounded-lg px-3 py-2 text-sm w-full bg-neutral-200 shadow-md"
+              />
+            </div>
+            <div className="pb-2">
+              <label className="font-semibold text-sm text-neutral-600 pb-1 block ">
+                Comfirm Password
+              </label>
+              <input
+                required
+                name="confirmPassword"
+                type="password"
+                onChange={handleInput}
+                className="border rounded-lg px-3 py-2 text-sm w-full bg-neutral-200 shadow-md"
+              />
+            </div>
+            <div>
+              <h3 className="mb-4 font-semibold text-neutral-600 ">You Are...</h3>
+              <ul className="items-center w-full text-sm font-medium text-neutral-600 bg-neutral-200 rounded-lg sm:flex dark:bg-neutral-200 shadow-md dark:text-white">
+                <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
+                  <div className="flex items-center pl-3">
+                    <input
+                      id="horizontal-list-radio-license"
+                      type="radio"
+                      value="student"
+                      name="role"
+                      onChange={handleList}
+                      className=""
+                    />
+                    <span className="w-full py-3 ml-2 font-medium text-gray-900 dark:bg-neutral-200 ">
+                      Student
+                    </span>
+                  </div>
+                </li>
+                <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
+                  <div className="flex items-center pl-3">
+                    <input
+                      id="horizontal-list-radio-id"
+                      type="radio"
+                      value="instructor"
+                      name="role"
+                      onChange={handleList}
+                      className=""
+                    />
+                    <span className="w-full py-3 ml-2 font-medium text-gray-900 dark:bg-neutral-200 ">
+                      Instructor
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
             <div className="pt-4">
               <button
-                type="button"
+                type="submit"
                 className=" transition duration-200 bg-teal-600 text-white w-full py-2.5 rounded-lg text-sm shadow-md hover:bg-teal-900 font-semibold text-center inline-block"
               >
                 <span className="inline-block mr-2">Register</span>
@@ -95,7 +166,7 @@ const signUp = () => {
                   Already have an account?
                 </label>
                 <button
-                  type="button"
+                  onClick={()=>{setVisible(true)}}
                   className="transition duration-200 -2 border border-teal-700 text-teal-700 w-full py-2.5 rounded-lg text-sm shadow-md hover:bg-neutral-200 font-semibold text-center inline-block"
                 >
                   <span className="inline-block mr-2">Login</span>
