@@ -3,16 +3,17 @@ import Nav from "../components/Navbar";
 import Footer from "../components/Footer";
 import SigninModal from "../components/signinModal";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const signUp = () => {
   const [post, setPost] = useState({});
   const [visible, setVisible] = useState(false);
-  const handleOnclose=()=>setVisible(false)
+  const handleOnclose = () => setVisible(false);
+  const navigate = useNavigate();
 
   const handleList = (event) => {
-    
-    
-    setPost({ ...post, "role": event.target.value });
+    setPost({ ...post, role: event.target.value });
   };
 
   const handleInput = (event) => {
@@ -23,14 +24,44 @@ const signUp = () => {
     event.preventDefault();
     axios
       .post("http://127.0.0.1:7000/api/auth/register", post)
-      .then((response) => console.log(response))
+      .then((response) => {
+        console.log(response);
+        if (response.status === 201) {
+          toast.success("User created.");
+          navigate("/", { replace: true });
+        }
+        // sessionStorage.setItem("email", "sample@mail.com");
+        // let data = sessionStorage.getItem("key");
+        // console.log(data);
+        // Check the User profile
+        /*
+        axios
+          .post(
+            "http://127.0.0.1:7000/getRole",
+            { key: "posted-elem" },
+            {
+              headers: { "Content-Type": "application/json", at: access_token },
+            }
+          )
+          .then((r) => {
+            console.log(r);
+            if (r.data.role === "instructor") {
+              navigate("/formateur", { replace: true });
+            } else if (r.data.role === "student") {
+              navigate("/student", { replace: true });
+            } else {
+              alert("undefined Role");
+            }
+          }); */
+        // redirect to dash board profile
+      })
       .catch((err) => console.log(err));
 
     //window.location.href = "/Admin/Articles";
   };
   return (
     <div className="min-h-screen bg-black">
-      <SigninModal visible={visible} onClose={handleOnclose}/>
+      <SigninModal visible={visible} onClose={handleOnclose} />
       <Nav PageName={"REGISTER"} />
       <h1 className="pl-14 pt-32 mb-10 text-4xl font-bold tracking-tight text-teal-600 ">
         Registration Form
@@ -82,17 +113,15 @@ const signUp = () => {
                 placeholder="@foolen_fooleni"
               />
             </div>
-            <div className="pb-2">
+            {/* <div className="pb-2">
               <label className="font-semibold text-sm text-neutral-600 pb-1 block ">
                 Date of birth
               </label>
               <input
                 type="date"
-                name="dateOfBirth"
-                onChange={handleInput}
                 className="border rounded-lg px-3 py-2 text-sm w-full bg-neutral-200 shadow-md"
               />
-            </div>
+            </div> */}
             <div className="pb-2">
               <label className="font-semibold text-sm text-neutral-600 pb-1 block ">
                 Email
@@ -131,7 +160,9 @@ const signUp = () => {
               />
             </div>
             <div>
-              <h3 className="mb-4 font-semibold text-neutral-600 ">You Are...</h3>
+              <h3 className="mb-4 font-semibold text-neutral-600 ">
+                You Are...
+              </h3>
               <ul className="items-center w-full text-sm font-medium text-neutral-600 bg-neutral-200 rounded-lg sm:flex dark:bg-neutral-200 shadow-md dark:text-white">
                 <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                   <div className="flex items-center pl-3">
@@ -177,7 +208,9 @@ const signUp = () => {
                   Already have an account?
                 </label>
                 <button
-                  onClick={()=>{setVisible(true)}}
+                  onClick={() => {
+                    setVisible(true);
+                  }}
                   className="transition duration-200 -2 border border-teal-700 text-teal-700 w-full py-2.5 rounded-lg text-sm shadow-md hover:bg-neutral-200 font-semibold text-center inline-block"
                 >
                   <span className="inline-block mr-2">Login</span>

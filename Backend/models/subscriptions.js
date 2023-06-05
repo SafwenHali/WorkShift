@@ -1,23 +1,23 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
-const Formation = require("./formation");
-const User = require("./userModel");
+const { formation_id } = require("./formation");
+const { user_id } = require("./userModel");
 
 const subscriptionSchema = new schema(
   {
     formation_id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "formation",
+      ref: "Formation",
       required: true,
     },
     user_id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "user",
+      ref: "User",
       required: true,
     },
     price: {
       type: String,
-      value: "0 TND",
+      value: "0",
       required: true,
     },
   },
