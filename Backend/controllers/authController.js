@@ -23,6 +23,7 @@ const generateRefreshToken = () => {
 //Register
 exports.register = async (req, res) => {
   try {
+    console.log(req);
     let { value, error } = RegisterValidation.validate(req.body);
     if (error) {
       console.log(error);
@@ -44,11 +45,8 @@ exports.register = async (req, res) => {
     console.log(value);
     value.password = hashedPassword;
     value.confirmPassword = hashedPassword;
-
-    let newUser = UserModel({
-      ...value,
-    });
-    // save the user
+    let newUser = UserModel({ ...value });
+    //save the user
     await newUser.save();
 
     // generate the code
@@ -173,7 +171,7 @@ exports.verifyAccount = async (req, res) => {
 
   sendEmail({
     to: userVerified.email,
-    from: "",
+    from: "jebriaicha25@gmail.com",
     subject: "your account has been verified",
     text: "text",
     html: `<h1>Welcome ${userVerified.firstName} your account has been verified </h1>`,
@@ -181,31 +179,31 @@ exports.verifyAccount = async (req, res) => {
   res.json({ message: "Account verified" });
 };
 
-exports.verifyAccount = async (req, res) => {
-  // verify account
-  let { code, userId } = req.body;
-  let verifyAccount = await VerifyAccountModel.findOne({ userId: userId });
-  if (!verifyAccount) {
-    return res.status(400).json({ message: "bad request" });
-  }
-  if (verifyAccount.code != code) {
-    return res.status(400).json({ message: "Code error" });
-  }
-  const userVerified = await UserModel.findOneAndUpdate(
-    { _id: userId },
-    { isVerifed: true }
-  );
-  await verifyAccount.deleteOne();
+// exports.verifyAccount = async (req, res) => {
+//   // verify account
+//   let { code, userId } = req.body;
+//   let verifyAccount = await VerifyAccountModel.findOne({ userId: userId });
+//   if (!verifyAccount) {
+//     return res.status(400).json({ message: "bad request" });
+//   }
+//   if (verifyAccount.code != code) {
+//     return res.status(400).json({ message: "Code error" });
+//   }
+//   const userVerified = await UserModel.findOneAndUpdate(
+//     { _id: userId },
+//     { isVerifed: true }
+//   );
+//   await verifyAccount.deleteOne();
 
-  sendEmail({
-    to: userVerified.email,
-    from: "",
-    subject: "your account has been verified",
-    text: "text",
-    html: `<h1>Welcome ${userVerified.firstName} your account has been verified </h1>`,
-  });
-  res.json({ message: "Account verified" });
-};
+//   sendEmail({
+//     to: userVerified.email,
+//     from: "jebriaicha25@gmail.com",
+//     subject: "your account has been verified",
+//     text: "text",
+//     html: `<h1>Welcome ${userVerified.firstName} your account has been verified </h1>`,
+//   });
+//   res.json({ message: "Account verified" });
+// };
 
 exports.salem = async (req, res) => {
   console.log("after salem");

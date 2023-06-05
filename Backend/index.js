@@ -82,26 +82,26 @@ app.post("/getRole", (req, res) => {
   });
 });
 
-// (req, res) => {
-//   // console.log(req.headers.authorization);
-//   // check tHe JWT token
-//   let token = req.headers.at;
-//   if (token === undefined) {
-//     console.log("AT does not exist");
-//   }
-//   //console.log(token);
-//   const jwt = require("jsonwebtoken");
-//   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-//     //console.log(err)
-//     // if (err) return res.sendStatus(403)
-//     // req.user = user
-//     console.log(user.role);
-//     // next()
-//   });
+(req, res) => {
+  // console.log(req.headers.authorization);
+  // check tHe JWT token
+  let token = req.headers.at;
+  if (token === undefined) {
+    console.log("AT does not exist");
+  }
+  //console.log(token);
+  const jwt = require("jsonwebtoken");
+  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+    //console.log(err)
+    // if (err) return res.sendStatus(403)
+    // req.user = user
+    console.log(user.role);
+    // next()
+  });
 
-//   // Detect the role
-//   res.send("backend IZ 00001");
-// });
+  // Detect the role
+  res.send("backend IZ 00001");
+};
 // app.use("course/add", "middleware", CourseController::add);
 
 app.listen(process.env.PORT, () => {

@@ -3,11 +3,14 @@ import Nav from "../components/Navbar";
 import Footer from "../components/Footer";
 import SigninModal from "../components/signinModal";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const signUp = () => {
   const [post, setPost] = useState({});
   const [visible, setVisible] = useState(false);
   const handleOnclose = () => setVisible(false);
+  const navigate = useNavigate();
 
   const handleList = (event) => {
     setPost({ ...post, role: event.target.value });
@@ -21,7 +24,37 @@ const signUp = () => {
     event.preventDefault();
     axios
       .post("http://127.0.0.1:7000/api/auth/register", post)
-      .then((response) => console.log(response))
+      .then((response) => {
+        console.log(response);
+        if (response.status === 201) {
+          toast.success("User created.");
+          navigate("/", { replace: true });
+        }
+        // sessionStorage.setItem("email", "sample@mail.com");
+        // let data = sessionStorage.getItem("key");
+        // console.log(data);
+        // Check the User profile
+        /*
+        axios
+          .post(
+            "http://127.0.0.1:7000/getRole",
+            { key: "posted-elem" },
+            {
+              headers: { "Content-Type": "application/json", at: access_token },
+            }
+          )
+          .then((r) => {
+            console.log(r);
+            if (r.data.role === "instructor") {
+              navigate("/formateur", { replace: true });
+            } else if (r.data.role === "student") {
+              navigate("/student", { replace: true });
+            } else {
+              alert("undefined Role");
+            }
+          }); */
+        // redirect to dash board profile
+      })
       .catch((err) => console.log(err));
 
     //window.location.href = "/Admin/Articles";
@@ -80,7 +113,7 @@ const signUp = () => {
                 placeholder="@foolen_fooleni"
               />
             </div>
-            <div className="pb-2">
+            {/* <div className="pb-2">
               <label className="font-semibold text-sm text-neutral-600 pb-1 block ">
                 Date of birth
               </label>
@@ -88,7 +121,7 @@ const signUp = () => {
                 type="date"
                 className="border rounded-lg px-3 py-2 text-sm w-full bg-neutral-200 shadow-md"
               />
-            </div>
+            </div> */}
             <div className="pb-2">
               <label className="font-semibold text-sm text-neutral-600 pb-1 block ">
                 Email
