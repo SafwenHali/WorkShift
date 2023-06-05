@@ -10,6 +10,7 @@ const { authenticate } = require("./middlewares/authMiddleware");
 const authRouter = require("./routes/authRouter");
 const usersRouter = require("./routes/usersRouter");
 const { checkProfile } = require("./middlewares/profileMiddleware");
+// const subscriptions = require("./routes/subscriptions");
 // const usersRouter = require("./routes/usersRouter");
 
 //.env
@@ -49,28 +50,58 @@ app.use("/api/jobs", require("./routes/quiz/jobs"));
 app.use("/api/personalities", require("./routes/quiz/personalities"));
 app.use("/api/users", require("./routes/usersRouter"));
 app.use("/api/auth", require("./routes/authRouter"));
+app.use("/api/subs", require("./routes/subscriptions"));
 
 app.get("/in", checkProfile);
-// (req, res) => {
-//   // console.log(req.headers.authorization);
-//   // check tHe JWT token
-//   let token = req.headers.at;
-//   if (token === undefined) {
-//     console.log("AT does not exist");
-//   }
-//   //console.log(token);
-//   const jwt = require("jsonwebtoken");
-//   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-//     //console.log(err)
-//     // if (err) return res.sendStatus(403)
-//     // req.user = user
-//     console.log(user.role);
-//     // next()
-//   });
 
-//   // Detect the role
-//   res.send("backend IZ 00001");
-// });
+// Added 30-05-2023
+// Check user Role by AT
+app.post("/getRole", (req, res) => {
+  const jwt = require("jsonwebtoken");
+  // -----
+  let token = req.headers.at;
+  //console.log("hani hna");
+  if (token === undefined) {
+    console.log("AT does not exist");
+    return res.sendStatus(401);
+  }
+  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+    // console.log(err);
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    console.log(user.role);
+    if (
+      user.role == "admin" ||
+      user.role == "instructor" ||
+      user.role == "student"
+    ) {
+      res.status(200).json({ role: user.role });
+    } else {
+      return res.sendStatus(403);
+    }
+  });
+});
+
+(req, res) => {
+  // console.log(req.headers.authorization);
+  // check tHe JWT token
+  let token = req.headers.at;
+  if (token === undefined) {
+    console.log("AT does not exist");
+  }
+  //console.log(token);
+  const jwt = require("jsonwebtoken");
+  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+    //console.log(err)
+    // if (err) return res.sendStatus(403)
+    // req.user = user
+    console.log(user.role);
+    // next()
+  });
+
+  // Detect the role
+  res.send("backend IZ 00001");
+};
 // app.use("course/add", "middleware", CourseController::add);
 
 app.listen(process.env.PORT, () => {

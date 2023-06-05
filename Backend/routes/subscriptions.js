@@ -2,24 +2,26 @@
 const express = require("express");
 const router = express.Router();
 const {
-  createSubscription,
+  newSubscription,
   getAllSubscriptions,
   getSubscriptionById,
   updateSubscription,
   deleteSubscription,
+  testNow,
 } = require("../controllers/Subscriptions");
 
 //post
-router.post("/", createSubscription);
+router.post("/", newSubscription);
+router.get("/tst", testNow);
 
-//get
-router.get("/", getAllSubscriptions);
 //get by id
 router.get("/:id", getSubscriptionById);
-
 //put
 router.put("/:id", updateSubscription);
 //delete
 router.delete("/:id", deleteSubscription);
+
+//get
+router.get("/", getAllSubscriptions);
 
 module.exports = router;

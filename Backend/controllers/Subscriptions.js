@@ -1,15 +1,14 @@
 const Subscription = require("../models/subscriptions");
 
 // Create a new subscription
-const createSubscription = async (req, res) => {
-  const { userId, formation_id } = req.body;
-
+const newSubscription = async (req, res) => {
+  const { user_id, formation_id, price } = req.body;
   try {
     const newSubscription = new Subscription({
-      userId,
+      user_id,
       formation_id,
+      price,
     });
-
     await newSubscription.save();
 
     res.status(201).json({ message: "Subscription created successfully" });
@@ -23,10 +22,12 @@ const createSubscription = async (req, res) => {
 const getAllSubscriptions = async (req, res) => {
   try {
     const subscriptions = await Subscription.find();
+    console.log("ici2");
 
     res.status(200).json({ subscriptions });
   } catch (err) {
     console.error(err);
+    console.log("ici 22");
     res.status(500).json({ error: "Internal server error" });
   }
 };
@@ -52,7 +53,7 @@ const getSubscriptionById = async (req, res) => {
 // Update subscription
 const updateSubscription = async (req, res) => {
   const { subscriptionId } = req.params;
-  const { userId, formation_id } = req.body;
+  const { user_id, formation_id, price } = req.body;
 
   try {
     const subscription = await Subscription.findById(subscriptionId);
@@ -61,8 +62,9 @@ const updateSubscription = async (req, res) => {
       return res.status(404).json({ error: "Subscription not found" });
     }
 
-    subscription.userId = userId;
+    subscription.user_id = user_id;
     subscription.formation_id = formation_id;
+    subscription.price = price;
 
     await subscription.save();
 
@@ -93,10 +95,17 @@ const deleteSubscription = async (req, res) => {
   }
 };
 
+// Delete subscription
+const testNow = async (req, res) => {
+  console.log("in tst method");
+  res.status(200).json({ message: "In test Now method " });
+};
+
 module.exports = {
-  createSubscription,
+  newSubscription,
   getAllSubscriptions,
   getSubscriptionById,
   updateSubscription,
   deleteSubscription,
+  testNow,
 };
