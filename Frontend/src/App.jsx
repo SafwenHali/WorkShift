@@ -48,8 +48,8 @@ import AdminEditCategory from "./admin/pages/editCategory";
 import AdminAddSubCategory from "./admin/pages/addSubCategory";
 import AdminEditSubCategory from "./admin/pages/editSubCategory";
 
-import Formateur from "./Formateur/Formateur";
-import Student from "./Formateur/Student";
+import Formateur from "./Users/formateur";
+import Student from "./Users/student";
 
 function App() {
   return (

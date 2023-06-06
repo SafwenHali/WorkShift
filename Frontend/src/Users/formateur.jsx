@@ -1,13 +1,13 @@
 import React,{useState} from "react";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "../components/FormateurSidebar";
 import jwt_decode from "jwt-decode";
 
-const Admin =() => {
+const Formateur =() => {
     try {
         const token = sessionStorage.getItem("at")
         const [role] = useState(jwt_decode(token).role || "");
         console.log(role)
-        if (role!="admin"){
+        if (role!="instructor"){
             throw error
         }
         } 
@@ -36,19 +36,15 @@ const Admin =() => {
                 </div> 
                 </center>
                 </div>
-            )
-            }
+            )}
     return(
         <div>
             <Sidebar/>
-            <div className="pl-0 lg:pl-20">
-                <div className="h-full min-h-screen bg-gradient-to-r from-neutral-100 to-teal-600">
-            
-            
-                </div>
+            <div className="pl-0 lg:pl-20 h-screen bg-neutral-200">
+                
             </div>
             
         </div>
     )
 }
-export default Admin;
+export default Formateur;
