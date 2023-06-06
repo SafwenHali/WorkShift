@@ -15,6 +15,8 @@ exports.checkProfile = (req, res, next) => {
     console.log(user.role);
     if (user.role == "admin" || user.role == "instructor") {
       next();
+    } else if (user.role == "enterprise") {
+      next();
     } else {
       return res.sendStatus(403);
     }

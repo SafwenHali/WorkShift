@@ -51,6 +51,7 @@ app.use("/api/personalities", require("./routes/quiz/personalities"));
 app.use("/api/users", require("./routes/usersRouter"));
 app.use("/api/auth", require("./routes/authRouter"));
 app.use("/api/subs", require("./routes/subscriptions"));
+app.use("/api/offers", require("./routes/offer"));
 
 app.get("/in", checkProfile);
 

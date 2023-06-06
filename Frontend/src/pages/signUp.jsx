@@ -194,6 +194,21 @@ const signUp = () => {
                     </span>
                   </div>
                 </li>
+                <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
+                  <div className="flex items-center pl-3">
+                    <input
+                      id="horizontal-list-radio-id"
+                      type="radio"
+                      value="enterprise"
+                      name="role"
+                      onChange={handleList}
+                      className=""
+                    />
+                    <span className="w-full py-3 ml-2 font-medium text-gray-900 dark:bg-neutral-200 ">
+                      Enterprise
+                    </span>
+                  </div>
+                </li>
               </ul>
             </div>
             <div className="pt-4">
