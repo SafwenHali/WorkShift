@@ -31,8 +31,10 @@ const Navbar = (props) => {
     }
   }, []);
   const handlelogout = () => {
-    sessionStorage.clear();
-    window.location.href = "/Home"
+    const confirmed = window.confirm('Are you sure you want to log out?');
+    if (confirmed) {
+      sessionStorage.clear();
+      window.location.href = "/Home"}
   };
  
 
