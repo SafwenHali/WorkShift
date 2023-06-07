@@ -20,7 +20,23 @@ const Navbar = (props) => {
         setUpdown(false);
       })
     })
-  const {data} = useFetch();  
+  const {data} = useFetch();
+  const [singin, setSignin] = useState(true); 
+  useEffect(() => {
+    // Check if there is data in sessionStorage
+    const [role] = sessionStorage.getItem('at') || "";
+
+    if (role) {
+      setSignin(false);
+    }
+  }, []);
+  const handlelogout = () => {
+    const confirmed = window.confirm('Are you sure you want to log out?');
+    if (confirmed) {
+      sessionStorage.clear();
+      window.location.href = "/Home"}
+  };
+ 
 
   return (
     <div className='shadow-lg w-full fixed top-0 left-0 z-20'><SigninModal visible={visible} onClose={handleOnclose}/>
@@ -78,9 +94,12 @@ const Navbar = (props) => {
         {/*NAVBAR Login Button*/}
           <li key="Login" className='lg:ml-8 lg:my-0 my-7 lg:pt-0 pt-3 lg:font-semibold font-bold'>
           
-              <button onClick={()=>{setVisible(true)}} className="w-28 h-10 lg:rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-neutral-900 font-semibold duration-300">
+          {singin && <button onClick={()=>{setVisible(true)}} className="w-28 h-10 lg:rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-neutral-900 font-semibold duration-300">
                 Sign in
-              </button> 
+              </button> }
+          {!singin && <button onClick={handlelogout} className="w-28 h-10 lg:rounded-lg border border-red-900 text-neutral-100 bg-red-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-red-900 font-semibold duration-300">
+                Log out
+              </button> }
           </li>
 
         {/*END Login*/}
