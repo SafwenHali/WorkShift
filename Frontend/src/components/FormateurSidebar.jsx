@@ -1,31 +1,26 @@
-import React,{useState} from "react";
-import jwt_decode from "jwt-decode";
-import useFetchUser from "../hooks/useFetchUser";
+import React from "react";
 
 const Sidebar = () => {
   let Menu = [
     { name: " Formations",
-      link: "/formateur",
+      link: "",
       icon: "pie-chart-outline" },
 
     { name: " Etudiants",
-      link: "/formateur/Students",
+      link: "/Admin/Users",
       icon: "people-outline" },
     {
       name: " QCM",
-      link: "/formateur/qcm",
+      link: "/Admin/Manage-Contenent",
       icon: "folder-open-outline",
     }
   ];
   
   const handlelogout = () => {
-    const confirmed = window.confirm('Are you sure you want to log out?');
-  if (confirmed) {
-    sessionStorage.clear();
-    window.location.href = "/Home"}};
-    const token = sessionStorage.getItem("at")
-        const [id] = useState(jwt_decode(token).id || "");
-        const {data} = useFetchUser(id);
+    localStorage.clear();
+
+    window.location.href = "/Home"
+  };
 
   return (
     <aside className="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-neutral-100 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
@@ -38,7 +33,7 @@ const Sidebar = () => {
 
         <div className="mt-8 text-center">
           <h5 className="hidden mt-4 text-xl font-semibold text-neutral-600 lg:block">
-           {data.firstName} {data.lastName}
+            nom Formateur
           </h5>
 
           <span className="hidden text-neutral-500 lg:block">Formateur</span>

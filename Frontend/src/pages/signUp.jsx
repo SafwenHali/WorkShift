@@ -8,7 +8,6 @@ import toast, { Toaster } from "react-hot-toast";
 
 const signUp = () => {
   const [post, setPost] = useState({});
-  const [post2, setPost2] = useState({});
   const [visible, setVisible] = useState(false);
   const handleOnclose = () => setVisible(false);
   const navigate = useNavigate();
@@ -29,23 +28,13 @@ const signUp = () => {
         console.log(response);
         if (response.status === 201) {
           toast.success("User created.");
-          setPost2({email:post.email,password:post.password})
-          alert("account created sucessfully")
-          axios
-      .post("http://127.0.0.1:7000/api/auth/login", post)
-      .then((response) => {
-        // console.log(response.accessToken);
-        // console.log(response.data.accessToken);
-
-        // Save the access in session storage
-        let access_token = response.data.accessToken;
-        sessionStorage.setItem("at", access_token);
-
-        // sessionStorage.setItem("email", "sample@mail.com");
-        // let data = sessionStorage.getItem("key");
+          navigate("/", { replace: true });
+        }
+        // localStorage.setItem("email", "sample@mail.com");
+        // let data = localStorage.getItem("key");
         // console.log(data);
-
         // Check the User profile
+        /*
         axios
           .post(
             "http://127.0.0.1:7000/getRole",
@@ -60,29 +49,16 @@ const signUp = () => {
               navigate("/formateur", { replace: true });
             } else if (r.data.role === "student") {
               navigate("/student", { replace: true });
-            } else if (r.data.role === "admin") {
-              navigate("/Admin", { replace: true });
-            } else if (r.data.role === "enterprise") {
-              navigate("/enterprise", { replace: true }); 
             } else {
               alert("undefined Role");
             }
-          });
-
+          }); */
         // redirect to dash board profile
       })
-      .catch((err) => {
-        console.log(err);
-        // console.warn("error");
-        alert("Wrong credentials");
-      });
-          //navigate("/", { replace: true });
-        };
-        
-      })
       .catch((err) => console.log(err));
+
     //window.location.href = "/Admin/Articles";
-      }
+  };
   return (
     <div className="min-h-screen bg-black">
       <SigninModal visible={visible} onClose={handleOnclose} />
@@ -221,7 +197,7 @@ const signUp = () => {
                 <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                   <div className="flex items-center pl-3">
                     <input
-                      id="horizontal-list-radio-license"
+                      id="horizontal-list-radio-id"
                       type="radio"
                       value="enterprise"
                       name="role"
@@ -229,7 +205,7 @@ const signUp = () => {
                       className=""
                     />
                     <span className="w-full py-3 ml-2 font-medium text-gray-900 dark:bg-neutral-200 ">
-                      Entreprise
+                      Enterprise
                     </span>
                   </div>
                 </li>

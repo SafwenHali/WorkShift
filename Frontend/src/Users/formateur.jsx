@@ -4,7 +4,7 @@ import jwt_decode from "jwt-decode";
 
 const Formateur =() => {
     try {
-        const token = sessionStorage.getItem("at")
+        const token = localStorage.getItem("at")
         const [role] = useState(jwt_decode(token).role || "");
         console.log(role)
         if (role!="instructor"){

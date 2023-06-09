@@ -1,11 +1,8 @@
 import React , {useEffect, useRef, useState} from "react";
 import SigninModal from "../components/signinModal";
 import useFetch from "../hooks/useFetchCategories";
-import { useNavigate } from "react-router-dom";
-import jwt_decode from "jwt-decode";
 
 const Navbar = (props) => {
-  const navigate = useNavigate();
     let Links =[
       {name:"VIEW PLANS",link:"/Plans"},
       {name:"READ ARTICLES",link:"/Articles"},
@@ -14,7 +11,7 @@ const Navbar = (props) => {
     const [updown, setUpdown] = useState(false);
     const [visible, setVisible] = useState(false);
     const handleOnclose=()=>setVisible(false)
-    const [role, setRole] = useState("");
+
     const buttonRef = useRef();
 
     useEffect(()=>{
@@ -23,39 +20,7 @@ const Navbar = (props) => {
         setUpdown(false);
       })
     })
-  const {data} = useFetch();
-  const [singin, setSignin] = useState(true); 
-  useEffect(() => {
-    // Check if there is data in sessionStorage
-    const r = sessionStorage.getItem('at') || "";
-
-    if (r) {
-      setRole(r)
-      setSignin(false);
-    }
-  }, []);
-  const handlespace = () => {
-    
-    const rol = jwt_decode(role).role || "";
-    if (rol === "instructor") {
-      navigate("/formateur", { replace: true });
-    } else if (rol === "student") {
-      navigate("/student", { replace: true });
-    } else if (rol === "admin") {
-      navigate("/Admin", { replace: true });
-    } else if (r.data.role === "entreprise") {
-      navigate("/Entreprise", { replace: true }); 
-    } else {
-      console.log("tokrn role error");
-    }
-  };
-  const handlelogout = () => {
-    const confirmed = window.confirm('Are you sure you want to log out?');
-    if (confirmed) {
-      sessionStorage.clear();
-      window.location.href = "/Home"}
-  };
- 
+  const {data} = useFetch();  
 
   return (
     <div className='shadow-lg w-full fixed top-0 left-0 z-20'><SigninModal visible={visible} onClose={handleOnclose}/>
@@ -113,16 +78,9 @@ const Navbar = (props) => {
         {/*NAVBAR Login Button*/}
           <li key="Login" className='lg:ml-8 lg:my-0 my-7 lg:pt-0 pt-3 lg:font-semibold font-bold'>
           
-          {singin && <button onClick={()=>{setVisible(true)}} className="w-28 h-10 lg:rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-neutral-900 font-semibold duration-300">
+              <button onClick={()=>{setVisible(true)}} className="w-28 h-10 lg:rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-neutral-900 font-semibold duration-300">
                 Sign in
-              </button> }
-          {!singin && <span>
-            <button onClick={handlespace} className="w-28 h-10 mr-7 rounded-lg border border-teal-700 text-teal-800 bg-neutral-200 hover:shadow-2xl hover:bg-teal-700 hover:text-neutral-900 font-semibold duration-300">
-                My Space
-              </button>
-            <button onClick={handlelogout} className="w-28 h-10 rounded-lg border border-red-900 text-neutral-100 bg-red-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-red-900 font-semibold duration-300">
-                Log out
-              </button> </span>}
+              </button> 
           </li>
 
         {/*END Login*/}

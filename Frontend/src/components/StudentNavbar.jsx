@@ -1,9 +1,6 @@
 import React , { useState} from "react";
-import jwt_decode from "jwt-decode";
-import useFetchUser from "../hooks/useFetchUser";
 
 const Navbar = () => {
-  
     let Links =[
       {name:"OPTION 1",link:"/Plans"},
       {name:"OPTION 2",link:"/Articles"},
@@ -11,15 +8,9 @@ const Navbar = () => {
     let [open,setOpen]=useState(false);
 
     const handlelogout = () => {
-      const confirmed = window.confirm('Are you sure you want to log out?');
-    if (confirmed) {
-      sessionStorage.clear();
-      window.location.href = "/Home"}
+      localStorage.clear();
+      window.location.href = "/Home"
     };
-    const token = sessionStorage.getItem("at")
-        const [id] = useState(jwt_decode(token).id || "");
-        const {data} = useFetchUser(id);
-        console.log(data)
 
   return (
     <div className='shadow-lg w-full fixed top-0 left-0 z-20'>
@@ -48,24 +39,23 @@ const Navbar = () => {
           <button 
             onClick={handlelogout}
             className="w-24 h-10 rounded-lg border border-red-700 text-neutral-100 bg-red-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-red-700 font-semibold hover:font-bold duration-300">
-          Log Out
+          Sign Out
         </button>   
           </li>
       </ul>
           </span>
        {/*END Name and LOGO*/}
-       <span className=' hidden lg:flex cursor-pointer flex items-center font-bold text-neutral-50 font-sansserif '>
-       <a href="/" className='text-2xl block'>{data.firstName} {data.lastName} </a>
-       </span>
       <span>
         <button 
         onClick={handlelogout}
         className="hidden lg:flex pt-2 pl-4 w-24 h-10 rounded-lg border border-red-700 text-neutral-100 bg-red-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-red-700 font-semibold hover:font-bold duration-300">
-          Log Out
+          Sign Out
         </button>
       <div  onClick={()=>setOpen(!open)} className='text-4xl text-white hover:text-teal-600 absolute right-8 top-3 cursor-pointer lg:hidden'> 
         <span className={`${open ? 'hidden':''} `}> ≡</span>
-        <span className={`${open ? '':'hidden'}`}> ⨯</span>             
+        <span className={`${open ? '':'hidden'}`}> ⨯</span>
+          
+              
       </div>
       </span>
         </div>

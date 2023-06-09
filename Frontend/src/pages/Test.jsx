@@ -9,7 +9,7 @@ const Test =() => {
             
         <center className="h-screen bg-gradient-to-b from-white via-blue-700 to-red-700">
             <h1 className="pt-36 mb-4 text-4xl font-extrabold tracking-tight text-red-600 md:text-5xl lg:text-6xl">
-             SLAVA RUSSIA <br/> слава россия.
+             SLAVA RUSSIA <br/> слава россия
             
                 
             </h1>

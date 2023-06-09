@@ -1,0 +1,13 @@
+# Version 1.3.08 - Edited 08-06-2023
+
+- Stuck on "Fetching AT from the session Accross multiple tabs from browser
++ Changed Session storage into LocalStorage .. {Resolved }
+
+- Fixing an issue in the footer (Footer.jsx:31 Warning: Each child in a list should have a unique "key" prop.)
++ Fixed issue add new key id: 1 to each array of the footer link_List 
+
+- Detect the connected user - check the AT in localStorage and Redirect to specific dash if AT is still  valid 
+
+## Extract the main Thread 
+
+
