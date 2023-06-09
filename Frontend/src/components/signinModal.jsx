@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 export default function signinModal(props) {
   const [post, setPost] = useState({});
   const navigate = useNavigate();
+
   const handleOnClose = (e) => {
     if (e.target.id === "bg") props.onClose();
   };
 
   if (!props.visible) return null;
+
   const handleInput = (event) => {
     setPost({ ...post, [event.target.name]: event.target.value });
   };
@@ -22,12 +24,15 @@ export default function signinModal(props) {
       .then((response) => {
         // console.log(response.accessToken);
         // console.log(response.data.accessToken);
+
         // Save the access in session storage
         let access_token = response.data.accessToken;
         localStorage.setItem("at", access_token);
+
         // localStorage.setItem("email", "sample@mail.com");
         // let data = localStorage.getItem("key");
         // console.log(data);
+
         // Check the User profile
         axios
           .post(

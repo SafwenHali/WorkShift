@@ -2,24 +2,22 @@ import React from "react";
 
 const Sidebar = () => {
   let Menu = [
-    { name: " Formations",
-      link: "",
-      icon: "pie-chart-outline" },
+    { name: " Formations", link: "", icon: "pie-chart-outline" },
 
-    { name: " Etudiants",
-      link: "/Admin/Users",
-      icon: "people-outline" },
+    { name: " Etudiants", link: "/Admin/Users", icon: "people-outline" },
     {
       name: " QCM",
       link: "/Admin/Manage-Contenent",
       icon: "folder-open-outline",
-    }
+    },
   ];
-  
-  const handlelogout = () => {
-    localStorage.clear();
 
-    window.location.href = "/Home"
+  const handlelogout = () => {
+    const confirmed = window.confirm("Are you sure you want to log out?");
+    if (confirmed) {
+      localStorage.clear();
+      window.location.href = "/Home";
+    }
   };
 
   return (
