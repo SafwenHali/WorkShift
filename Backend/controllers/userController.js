@@ -42,7 +42,6 @@ exports.updateUser = async (req, res) => {
       dateOfBirth: req.body.dateOfBirth,
       email: req.body.email,
       password: req.body.password,
-      role: req.body.role,
     });
 
     res.json("User successfully updated");
