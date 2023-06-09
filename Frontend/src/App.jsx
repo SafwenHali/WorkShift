@@ -110,6 +110,8 @@ function App() {
         <Route path="/Formateur" element={<Formateur />} />
         {/*student Routes*/}
         <Route path="/Student" element={<Student />} />
+        {/*student Routes*/}
+        <Route path="/Entreprise" element={<Student />} />
         {/*Test Routes*/}
         <Route path="/Putin" element={<Test />} />
       </Routes>

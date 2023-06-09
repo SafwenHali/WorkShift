@@ -4,18 +4,9 @@ import useFetchUser from "../hooks/useFetchUser";
 
 const Sidebar = () => {
   let Menu = [
-    { name: " Formations",
-      link: "/formateur",
-      icon: "pie-chart-outline" },
-
-    { name: " Etudiants",
-      link: "/formateur/Students",
-      icon: "people-outline" },
-    {
-      name: " QCM",
-      link: "/formateur/qcm",
-      icon: "folder-open-outline",
-    }
+    { name: " Posts",
+      link: "/entreprise",
+      icon: "pie-chart-outline" }
   ];
   
   const handlelogout = () => {
@@ -38,10 +29,10 @@ const Sidebar = () => {
 
         <div className="mt-8 text-center">
           <h5 className="hidden mt-4 text-xl font-semibold text-neutral-600 lg:block">
-           {data.firstName} {data.lastName}
+           {data.userName}
           </h5>
 
-          <span className="hidden text-neutral-500 lg:block">Formateur</span>
+          <span className="hidden text-neutral-500 lg:block">Entreprise</span>
         </div>
 
         <ul className="space-y-2 tracking-wide mt-8">

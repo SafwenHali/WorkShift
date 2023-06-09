@@ -62,6 +62,8 @@ const signUp = () => {
               navigate("/student", { replace: true });
             } else if (r.data.role === "admin") {
               navigate("/Admin", { replace: true });
+            } else if (r.data.role === "enterprise") {
+              navigate("/enterprise", { replace: true }); 
             } else {
               alert("undefined Role");
             }
@@ -213,6 +215,21 @@ const signUp = () => {
                     />
                     <span className="w-full py-3 ml-2 font-medium text-gray-900 dark:bg-neutral-200 ">
                       Instructor
+                    </span>
+                  </div>
+                </li>
+                <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
+                  <div className="flex items-center pl-3">
+                    <input
+                      id="horizontal-list-radio-license"
+                      type="radio"
+                      value="enterprise"
+                      name="role"
+                      onChange={handleList}
+                      className=""
+                    />
+                    <span className="w-full py-3 ml-2 font-medium text-gray-900 dark:bg-neutral-200 ">
+                      Entreprise
                     </span>
                   </div>
                 </li>

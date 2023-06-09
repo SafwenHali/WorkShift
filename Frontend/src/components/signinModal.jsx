@@ -50,6 +50,8 @@ export default function signinModal(props) {
               navigate("/student", { replace: true });
             } else if (r.data.role === "admin") {
               navigate("/Admin", { replace: true });
+            } else if (r.data.role === "entreprise") {
+              navigate("/Entreprise", { replace: true });  
             } else {
               alert("undefined Role");
             }
