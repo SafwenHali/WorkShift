@@ -11,6 +11,7 @@ import SignUp from "./pages/signUp";
 import NotFound from "./pages/404_not_found";
 import Test from "./pages/Test";
 import Plans from "./pages/Plans";
+import Jobs from "./pages/Jobs";
 import Quiz from "./pages/Quiz/discover";
 import QuizHobbies from "./pages/Quiz/hobbies";
 import Categories from "./pages/allCategories";
@@ -38,6 +39,7 @@ import AdminAddSubCategory from "./admin/pages/addSubCategory";
 import AdminEditSubCategory from "./admin/pages/editSubCategory";
 import Formateur from "./Users/formateur";
 import Student from "./Users/student";
+import Enterprise from "./Users/enterprise";
 
 function App() {
   return (
@@ -55,6 +57,8 @@ function App() {
 
         <Route path="/register" element={<SignUp />} />
         <Route path="/Plans" element={<Plans />} />
+        {/*Quiz*/}
+        <Route path="/Find-A-Job" element={<Jobs />} />
         {/*Quiz*/}
         <Route path="/Discover" element={<Quiz />} />
         <Route path="/Hobbies" element={<QuizHobbies />} />
@@ -95,8 +99,10 @@ function App() {
         <Route path="/Formateur" element={<Formateur />} />
         {/*student Routes*/}
         <Route path="/Student" element={<Student />} />
+        {/*Enterprise Routes*/}
+        <Route path="/Enterprise" element={<Enterprise />} />
         {/*Test Routes*/}
-        <Route path="/Px" element={<Test />} />
+        <Route path="/Putin" element={<Test />} />
       </Routes>
     </BrowserRouter>
   );

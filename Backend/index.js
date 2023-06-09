@@ -73,6 +73,7 @@ app.post("/getRole", (req, res) => {
     console.log(user.role);
     if (
       user.role == "admin" ||
+      user.role == "enterprise" ||
       user.role == "instructor" ||
       user.role == "student"
     ) {

@@ -1,11 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import SigninModal from "../components/signinModal";
 import useFetch from "../hooks/useFetchCategories";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Navbar = (props) => {
+  const navigate = useNavigate();
   let Links = [
     { name: "VIEW PLANS", link: "/Plans" },
     { name: "READ ARTICLES", link: "/Articles" },
+    { name: "FIND A JOB", link: "/Find-A-Job" },
+    
   ];
   let [open, setOpen] = useState(false);
   const [updown, setUpdown] = useState(false);
@@ -23,9 +28,9 @@ const Navbar = (props) => {
   const [singin, setSignin] = useState(true);
   useEffect(() => {
     // Check if there is data in localStorage
-    const [role] = localStorage.getItem("at") || "";
+    const token = localStorage.getItem("at");
 
-    if (role) {
+    if (token) {
       setSignin(false);
     }
   }, []);
@@ -35,6 +40,42 @@ const Navbar = (props) => {
       localStorage.clear();
       window.location.href = "/Home";
     }
+  };
+  const handleSpace = () => {
+    const token = localStorage.getItem("at");
+  axios
+    .post(
+      "http://127.0.0.1:7000/getRole",
+      {
+        key: "posted-elem",
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          at: token,
+        },
+      }
+    )
+    .then((r) => {
+      const x= r.data.role;
+      if (x === "instructor") {
+        navigate("/formateur", { replace: true });
+      } else if (x === "student") {
+        navigate("/student", { replace: true });
+      } else if (x === "admin") {
+        navigate("/Admin", { replace: true });
+      } else if (x === "enterprise") {
+        navigate("/Enterprise", { replace: true });
+      } else {
+        //return to the default route
+        navigate("/", { replace: true });
+        console.warn("Unable to detect user ");
+      }
+    })
+    .catch(function (error) {
+      console.log("Navbar in catch section ");
+      console.log(error.toJSON());
+    });
   };
 
   return (
@@ -58,12 +99,7 @@ const Navbar = (props) => {
               className="text-4xl text-white hover:text-teal-600 absolute right-8 top-3 cursor-pointer lg:hidden"
             >
               <span className={`${open ? "hidden" : ""} `}> ≡</span>
-              <span
-                className={`${open ? "" : "hidden"}${visible ? "hidden" : ""}`}
-              >
-                {" "}
-                ⨯
-              </span>
+              <span className={`${open ? "" : "hidden"}${visible ? "hidden" : ""}`}>{" "}⨯</span>
             </div>
             <ul
               className={`
@@ -113,11 +149,10 @@ const Navbar = (props) => {
               ))}
               {/*END pages*/}
               {/*NAVBAR Login Button*/}
-              <li
+              
+                {singin && (<li
                 key="Login"
-                className="lg:ml-8 lg:my-0 my-7 lg:pt-0 pt-3 lg:font-semibold font-bold"
-              >
-                {singin && (
+                className="lg:ml-8 lg:my-0 my-7 lg:pt-0 pt-3 lg:font-semibold font-bold">
                   <button
                     onClick={() => {
                       setVisible(true);
@@ -125,17 +160,26 @@ const Navbar = (props) => {
                     className="w-28 h-10 lg:rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-neutral-900 font-semibold duration-300"
                   >
                     Sign in
-                  </button>
+                  </button></li>
                 )}
-                {!singin && (
-                  <button
+                {!singin && (<li
+                key="Login"
+                className="lg:ml-8 lg:my-0 my-7 lg:pt-0 pt-3 lg:font-semibold font-bold">
+                    <button
+                      onClick={handleSpace}
+                      className="w-24 h-10  lg:rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-teal-900 font-semibold duration-300"
+                    >
+                      My Space
+                    </button>
+                    <button
                     onClick={handlelogout}
-                    className="w-28 h-10 lg:rounded-lg border border-red-900 text-neutral-100 bg-red-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-red-900 font-semibold duration-300"
+                    className="w-9 h-10 ml-5 lg:rounded-lg border border-red-900 text-neutral-100 bg-red-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-red-900 font-semibold duration-300"
                   >
-                    Log out
+                    <ion-icon name="log-out-outline"></ion-icon>
                   </button>
+                    </li>
                 )}
-              </li>
+              
 
               {/*END Login*/}
             </ul>
@@ -143,7 +187,7 @@ const Navbar = (props) => {
         </div>
         {/*Categories menu*/}
         {updown === true && visible === false && (
-          <div className="hidden lg:flex p-2 pt-4 w-72 absolute right-80">
+          <div className="hidden lg:flex p-2 pt-4 w-72 absolute right-96">
             <ul className=" bg-neutral-900 text-neutral-100 rounded shadow-lg overflow-y-auto">
               {data.map((n) => (
                 <li key={n._id}>

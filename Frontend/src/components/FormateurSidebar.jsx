@@ -1,4 +1,6 @@
-import React from "react";
+import React,{useState} from "react";
+import jwt_decode from "jwt-decode";
+import useFetchUser from "../hooks/useFetchUser";
 
 const Sidebar = () => {
   let Menu = [
@@ -19,6 +21,9 @@ const Sidebar = () => {
       window.location.href = "/Home";
     }
   };
+  const token = localStorage.getItem("at");
+  const [id] = useState(jwt_decode(token).id || "");
+  const { data } = useFetchUser(id);
 
   return (
     <aside className="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-neutral-100 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
@@ -31,7 +36,7 @@ const Sidebar = () => {
 
         <div className="mt-8 text-center">
           <h5 className="hidden mt-4 text-xl font-semibold text-neutral-600 lg:block">
-            nom Formateur
+          {data.firstName} {data.lastName}
           </h5>
 
           <span className="hidden text-neutral-500 lg:block">Formateur</span>

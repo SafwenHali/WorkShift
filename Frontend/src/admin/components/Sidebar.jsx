@@ -2,7 +2,6 @@ import React from "react";
 
 const Sidebar = () => {
   let Menu = [
-    { name: " Dashboard", link: "/Admin/Dashboard", icon: "pie-chart-outline" },
     { name: " Users", link: "/Admin/Users", icon: "people-outline" },
     {
       name: " Contenent",

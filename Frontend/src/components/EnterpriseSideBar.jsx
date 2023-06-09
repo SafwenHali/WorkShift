@@ -12,9 +12,9 @@ const Sidebar = () => {
   const handlelogout = () => {
     const confirmed = window.confirm('Are you sure you want to log out?');
   if (confirmed) {
-    sessionStorage.clear();
+    localStorage.clear();
     window.location.href = "/Home"}};
-    const token = sessionStorage.getItem("at")
+    const token = localStorage.getItem("at")
         const [id] = useState(jwt_decode(token).id || "");
         const {data} = useFetchUser(id);
 

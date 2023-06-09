@@ -65,6 +65,8 @@ const signUp = () => {
                     navigate("/student", { replace: true });
                   } else if (r.data.role === "admin") {
                     navigate("/Admin", { replace: true });
+                   } else if (r.data.role === "enterprise") {
+                      navigate("/Enterprise", { replace: true });
                   } else {
                     alert("undefined Role");
                   }

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+import Sidebar from "../components/EnterpriseSideBar";
 import jwt_decode from "jwt-decode";
-import Contenent from "./pages/Contenent";
 
-const Admin = () => {
+const Formateur = () => {
   try {
     const token = localStorage.getItem("at");
-    const role = jwt_decode(token).role;
+    const [role] = useState(jwt_decode(token).role || "");
     console.log(role);
-    if (role != "admin") {
+    if (role != "enterprise") {
       throw error;
     }
   } catch (error) {
@@ -16,7 +16,7 @@ const Admin = () => {
         <center className=" text-neutral-300 pt-8">
           <img src="/icon/LOGO.svg" className="w-80"></img>
           <span className="text-4xl font-bold text-neutral-100">
-            Oops,&nbsp;,
+            Oops,&nbsp;
           </span>
           <span className="pt-3 text-2xl font-semibold text-neutral-100">
             you're not authorized to access this page
@@ -38,7 +38,10 @@ const Admin = () => {
     );
   }
   return (
-    <Contenent/>
+    <div>
+      <Sidebar />
+      <div className="pl-0 lg:pl-20 h-screen bg-neutral-200"></div>
+    </div>
   );
 };
-export default Admin;
+export default Formateur;

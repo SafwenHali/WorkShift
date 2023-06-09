@@ -43,7 +43,7 @@ export default function signinModal(props) {
             }
           )
           .then((r) => {
-            console.log(r);
+            console.log(r.data);
             if (r.data.role === "instructor") {
               navigate("/formateur", { replace: true });
             } else if (r.data.role === "student") {

@@ -20,7 +20,6 @@ const Navbar = () => {
   const token = localStorage.getItem("at");
   const [id] = useState(jwt_decode(token).id || "");
   const { data } = useFetchUser(id);
-  console.log(data);
 
   return (
     <div className="shadow-lg w-full fixed top-0 left-0 z-20">
