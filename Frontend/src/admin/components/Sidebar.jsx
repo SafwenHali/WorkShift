@@ -16,10 +16,11 @@ const Sidebar = () => {
     },
   ];
   const handlelogout = () => {
-    const confirmed = window.confirm('Are you sure you want to log out?');
+    const confirmed = window.confirm("Are you sure you want to log out?");
     if (confirmed) {
-    sessionStorage.clear();
-    window.location.href = "/Home"}
+      localStorage.clear();
+      window.location.href = "/Home";
+    }
   };
 
   return (
@@ -54,11 +55,11 @@ const Sidebar = () => {
         </ul>
       </div>
 
-      <button onClick={handlelogout} className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-        <div
-          
-          className="px-4 py-3 flex items-center space-x-4 rounded-md text-neutral-600 group"
-        >
+      <button
+        onClick={handlelogout}
+        className="px-6 -mx-6 pt-4 flex justify-between items-center border-t"
+      >
+        <div className="px-4 py-3 flex items-center space-x-4 rounded-md text-neutral-600 group">
           <span className="group-hover:text-red-600 hover:underline">
             Logout
           </span>

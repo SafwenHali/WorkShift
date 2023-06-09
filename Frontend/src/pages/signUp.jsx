@@ -29,58 +29,60 @@ const signUp = () => {
         console.log(response);
         if (response.status === 201) {
           toast.success("User created.");
-          setPost2({email:post.email,password:post.password})
-          alert("account created sucessfully")
+          setPost2({ email: post.email, password: post.password });
+          alert("account created sucessfully");
           axios
-      .post("http://127.0.0.1:7000/api/auth/login", post)
-      .then((response) => {
-        // console.log(response.accessToken);
-        // console.log(response.data.accessToken);
+            .post("http://127.0.0.1:7000/api/auth/login", post)
+            .then((response) => {
+              // console.log(response.accessToken);
+              // console.log(response.data.accessToken);
 
-        // Save the access in session storage
-        let access_token = response.data.accessToken;
-        sessionStorage.setItem("at", access_token);
+              // Save the access in session storage
+              let access_token = response.data.accessToken;
+              localStorage.setItem("at", access_token);
 
-        // sessionStorage.setItem("email", "sample@mail.com");
-        // let data = sessionStorage.getItem("key");
-        // console.log(data);
+              // localStorage.setItem("email", "sample@mail.com");
+              // let data = localStorage.getItem("key");
+              // console.log(data);
 
-        // Check the User profile
-        axios
-          .post(
-            "http://127.0.0.1:7000/getRole",
-            { key: "posted-elem" },
-            {
-              headers: { "Content-Type": "application/json", at: access_token },
-            }
-          )
-          .then((r) => {
-            console.log(r);
-            if (r.data.role === "instructor") {
-              navigate("/formateur", { replace: true });
-            } else if (r.data.role === "student") {
-              navigate("/student", { replace: true });
-            } else if (r.data.role === "admin") {
-              navigate("/Admin", { replace: true });
-            } else {
-              alert("undefined Role");
-            }
-          });
+              // Check the User profile
+              axios
+                .post(
+                  "http://127.0.0.1:7000/getRole",
+                  { key: "posted-elem" },
+                  {
+                    headers: {
+                      "Content-Type": "application/json",
+                      at: access_token,
+                    },
+                  }
+                )
+                .then((r) => {
+                  console.log(r);
+                  if (r.data.role === "instructor") {
+                    navigate("/formateur", { replace: true });
+                  } else if (r.data.role === "student") {
+                    navigate("/student", { replace: true });
+                  } else if (r.data.role === "admin") {
+                    navigate("/Admin", { replace: true });
+                  } else {
+                    alert("undefined Role");
+                  }
+                });
 
-        // redirect to dash board profile
-      })
-      .catch((err) => {
-        console.log(err);
-        // console.warn("error");
-        alert("Wrong credentials");
-      });
+              // redirect to dash board profile
+            })
+            .catch((err) => {
+              console.log(err);
+              // console.warn("error");
+              alert("Wrong credentials");
+            });
           //navigate("/", { replace: true });
-        };
-        
+        }
       })
       .catch((err) => console.log(err));
     //window.location.href = "/Admin/Articles";
-      }
+  };
   return (
     <div className="min-h-screen bg-black">
       <SigninModal visible={visible} onClose={handleOnclose} />

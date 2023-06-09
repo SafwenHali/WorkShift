@@ -27,10 +27,10 @@ export default function signinModal(props) {
 
         // Save the access in session storage
         let access_token = response.data.accessToken;
-        sessionStorage.setItem("at", access_token);
+        localStorage.setItem("at", access_token);
 
-        // sessionStorage.setItem("email", "sample@mail.com");
-        // let data = sessionStorage.getItem("key");
+        // localStorage.setItem("email", "sample@mail.com");
+        // let data = localStorage.getItem("key");
         // console.log(data);
 
         // Check the User profile
