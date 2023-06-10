@@ -8,9 +8,6 @@ const {
   updateJobOffer,
 } = require("../controllers/JobOffer");
 const router = express.Router();
-// const { checkProfile } = require("../middlewares/profileMiddleware");
-const { get } = require("./authRouter");
-
 //post
 router.post("/", createJobOffer);
 
@@ -19,7 +16,7 @@ router.get("/", getJobOffers);
 
 //get ByID
 router.get("/:id", getJobOfferById);
-router.get("/jobyrecruiter/:id", getJobOfferByRecruiter);
+router.get("/jobrecruiter/:Recruiter", getJobOfferByRecruiter);
 
 //delete
 router.delete("/:id", deleteJobOffer);

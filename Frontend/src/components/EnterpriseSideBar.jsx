@@ -9,7 +9,7 @@ const Sidebar = () => {
         icon: "person-circle-outline",
       },
     { name: " Posts",
-      link: "/Entreprise",
+      link: "/Enterprise",
       icon: "pie-chart-outline" },
       
   ];

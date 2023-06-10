@@ -66,42 +66,42 @@ const profile = () => {
         :   (console.log("User role not identified"))
     }
         </div>
-        <div className={`p-4 ${data.role==="student" ? "lg:p-24 p-10 pt-20" : "px-10 pl-72"}`}>
+        <div className={`p-4  ${data.role==="student" ? "lg:p-24 p-10 pt-20" : "px-10 pl-72 h-screen bg-neutral-800"}`}>
             <div className="p-8 bg-teal-800 shadow mt-24 rounded-lg">
                 <div className="grid grid-cols-1 md:grid-cols-3">
                     <div className="grid grid-cols-3 text-center order-last md:order-first mt-20 md:mt-0">
-                    <div>
-                        <p className="font-bold text-neutral-200 text-xl">
-                        {   data.role==="student" ? 
-                            ("2") 
-                        :   data.role==="enterprise" ? 
-                            ("2")
-                        :   data.role==="admin" ? 
-                            ("")
-                        :   data.role==="instructor" ? 
-                            ("2")
-                        :   (console.log("User role not identified"))
-                    }
-                        </p>
-                        <p className="text-neutral-300">
-                        {   data.role==="student" ? 
-                            ("Courses Owned") 
-                        :   data.role==="enterprise" ? 
-                            ("Posts Active")
-                        :   data.role==="admin" ? 
-                            ("")
-                        :   data.role==="instructor" ? 
-                            ("Courses Uploaded")
-                        :   (console.log("User role not identified"))
-                    }</p>
-                    </div>
+                      <div>
+                          <p className="font-bold text-neutral-200 text-xl">
+                          {   data.role==="student" ? 
+                              ("2") 
+                          :   data.role==="enterprise" ? 
+                              ("2")
+                          :   data.role==="admin" ? 
+                              ("")
+                          :   data.role==="instructor" ? 
+                              ("2")
+                          :   (console.log("User role not identified"))
+                      }
+                          </p>
+                          <p className="text-neutral-300">
+                          {   data.role==="student" ? 
+                              ("Courses Owned") 
+                          :   data.role==="enterprise" ? 
+                              ("Posts Active")
+                          :   data.role==="admin" ? 
+                              ("")
+                          :   data.role==="instructor" ? 
+                              ("Courses Uploaded")
+                          :   (console.log("User role not identified"))
+                      }</p>
+                      </div>
                     </div>
                     <div className="relative">
-                    <div className="w-48 h-48 overflow-hidden bg-neutral-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 top-0 -mt-24 flex items-center justify-center text-indigo-500">
-                        <img 
-                        className="w-full h-full object-cover"
-                        src=""/>
-                    </div>
+                      <div className="w-48 h-48 overflow-hidden bg-neutral-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 top-0 -mt-24 flex items-center justify-center text-indigo-500">
+                          <img 
+                          className="w-full h-full object-cover"
+                          src=""/>
+                      </div>
                     </div>
 
                     <div className="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">

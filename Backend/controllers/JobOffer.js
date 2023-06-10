@@ -61,7 +61,7 @@ const updateJobOffer = async (req, res) => {
       jobName: req.body.jobName,
       jobDescription: req.body.jobDescription,
       Recruiter: req.body.Recruiter,
-      jobCover: req.body.jobCover,
+      jobCover: req.body.jobCover
     });
     res.json("job offer successfully updated");
   } catch (err) {
@@ -72,6 +72,7 @@ const updateJobOffer = async (req, res) => {
 
 //delete offer
 const deleteJobOffer = async (req, res) => {
+  console.log(req.param.id)
   const jobOffer = await JobOffer.findByIdAndDelete(req.param.id);
   res.json("job offer deleted");
 };

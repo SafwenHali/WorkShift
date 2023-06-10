@@ -43,6 +43,8 @@ import AdminEditSubCategory from "./admin/pages/editSubCategory";
 import Formateur from "./Users/formateur";
 import Student from "./Users/student";
 import Enterprise from "./Users/enterprise";
+import EnterpriseAddJobOffer from "./Users/addJobOffer";
+import EnterpriseEditJobOffer from "./Users/editJobOffer"
 
 function App() {
   return (
@@ -110,6 +112,11 @@ function App() {
         <Route path="/Student" element={<Student />} />
         {/*Enterprise Routes*/}
         <Route path="/Enterprise" element={<Enterprise />} />
+        <Route path="/Enterprise/New-Job-Offer" element={<EnterpriseAddJobOffer />} />
+        <Route path="/Enterprise/New-Post" element={<EnterpriseAddJobOffer />} />
+        <Route path="/Enterprise/Add-Job-Offer" element={<EnterpriseAddJobOffer />} />
+        <Route path="/Enterprise/Edit-Job-Offer" element={<EnterpriseAddJobOffer />} />
+        <Route path="/Enterprise/Edit-Post/:id" element={<EnterpriseEditJobOffer />} />
         {/*Test Routes*/}
         <Route path="/Putin" element={<Test />} />
       </Routes>

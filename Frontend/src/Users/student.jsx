@@ -40,7 +40,9 @@ const Student = () => {
   return (
     <div>
       <Navbar />
-      <div></div>
+      <div className="h-screen bg-neutral-200">
+        
+      </div>
     </div>
   );
 };

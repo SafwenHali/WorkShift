@@ -63,7 +63,7 @@ const profile = () => {
         :   ("")
     }
         </div>
-        <div className={`p-4 ${data.role==="student" ? "lg:p-24 p-10 pt-20" : "px-10 pl-72"}`}>
+        <div className={`p-4 ${data.role==="student" ? "lg:p-24 p-10 pt-20" : "px-10 pl-72 h-screen bg-neutral-800"}`}>
             <div className="p-8 bg-teal-900 shadow mt-14 rounded-lg">
       <center>
         <div
