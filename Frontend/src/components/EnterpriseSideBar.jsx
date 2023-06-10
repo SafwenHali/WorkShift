@@ -3,15 +3,15 @@ import jwt_decode from "jwt-decode";
 import useFetchUser from "../hooks/useFetchUser";
 
 const Sidebar = () => {
-  let Menu = [
+  let Menu = [{
+        name: " Profile",
+        link: "/User/Profile",
+        icon: "person-circle-outline",
+      },
     { name: " Posts",
       link: "/Entreprise",
       icon: "pie-chart-outline" },
-      {
-        name: " Profile",
-        link: "/Enterprise/Profile",
-        icon: "person-circle-outline",
-      },
+      
   ];
   
   const handlelogout = () => {

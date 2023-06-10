@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import SignUp from "./pages/signUp";
+import Profile from "./Users/Profile";
 import NotFound from "./pages/404_not_found";
 import Test from "./pages/Test";
 import Plans from "./pages/Plans";
@@ -57,6 +58,10 @@ function App() {
         <Route path="/*" element={<NotFound />} />
 
         <Route path="/register" element={<SignUp />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/User/Profile" element={<Profile />} />
+        <Route path="Profile" element={<Profile />} />
+        <Route path="/User" element={<Profile />} />
         <Route path="/Plans" element={<Plans />} />
         <Route path="/Explore" element={<Explore />} />
         {/*Quiz*/}

@@ -20,7 +20,9 @@ const Navbar = () => {
   const token = localStorage.getItem("at");
   const [id] = useState(jwt_decode(token).id || "");
   const { data } = useFetchUser(id);
-
+  const profile = () => {
+      window.location.href = "/User/Profile";
+  };
   return (
     <div className="shadow-lg w-full fixed top-0 left-0 z-20">
       <div className="bg-neutral-900 w-full h-20">
@@ -54,7 +56,7 @@ const Navbar = () => {
               
               <li className={`${open ? "" : "hidden"}`}>
               <button
-                  onClick={handlelogout}
+                  onClick={profile}
                   className="w-24 h-10 mr-10 lg:hidden rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-teal-900 font-semibold duration-300"
                 >
                   Profile
@@ -76,6 +78,7 @@ const Navbar = () => {
           </span>
           <span>
           <button
+            onClick={profile}
             className="w-24 h-10 items-center pl-6 lg:inline-flex hidden lg:rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-teal-900 font-semibold duration-300">
               Profile
           </button>

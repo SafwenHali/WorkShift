@@ -4,6 +4,11 @@ import useFetchUser from "../hooks/useFetchUser";
 
 const Sidebar = () => {
   let Menu = [
+    {
+      name: " Profile",
+      link: "/User/Profile",
+      icon: "person-circle-outline",
+    },
     { name: " Formations", link: "", icon: "pie-chart-outline" },
 
     { name: " Etudiants", link: "/Admin/Users", icon: "people-outline" },
@@ -12,6 +17,7 @@ const Sidebar = () => {
       link: "/Admin/Manage-Contenent",
       icon: "folder-open-outline",
     },
+    
   ];
 
   const handlelogout = () => {

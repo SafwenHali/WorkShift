@@ -3,6 +3,11 @@ import React from "react";
 const Sidebar = () => {
   let Menu = [
     {
+      name: " Profile",
+      link: "User/Profile",
+      icon: "person-circle-outline",
+    },
+    {
       name: " Contenent",
       link: "/Admin/Manage-Contenent",
       icon: "folder-open-outline",
@@ -11,11 +16,7 @@ const Sidebar = () => {
       name: " Users", 
       link: "/Admin/Users", 
       icon: "people-outline" },
-    {
-      name: " Profile",
-      link: "/Admin/Profile",
-      icon: "person-circle-outline",
-    },
+    
   ];
   const handlelogout = () => {
     const confirmed = window.confirm("Are you sure you want to log out?");
