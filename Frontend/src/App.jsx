@@ -12,6 +12,7 @@ import NotFound from "./pages/404_not_found";
 import Test from "./pages/Test";
 import Plans from "./pages/Plans";
 import Jobs from "./pages/Jobs";
+import Explore from "./pages/Explore";
 import Quiz from "./pages/Quiz/discover";
 import QuizHobbies from "./pages/Quiz/hobbies";
 import Categories from "./pages/allCategories";
@@ -57,6 +58,7 @@ function App() {
 
         <Route path="/register" element={<SignUp />} />
         <Route path="/Plans" element={<Plans />} />
+        <Route path="/Explore" element={<Explore />} />
         {/*Quiz*/}
         <Route path="/Find-A-Job" element={<Jobs />} />
         {/*Quiz*/}

@@ -85,9 +85,8 @@ const Navbar = (props) => {
         <div className="lg:flex items-center justify-between py-4 lg:px-10 px-7">
           {/*Name and LOGO*/}
           <span className="space-x-3 cursor-pointer flex items-center font-bold text-neutral-50 font-sansserif ">
-            <img src="/icon/LOGO.svg" className="w-fit h-10" />
-            <a href="/" className="text-2xl block">
-              Work Shift{" "}
+            <a href="/" className="shadow-xl text-2xl block">
+            <img src="/icon/Name.png" className="w-fit h-10" />
             </a>
             <h1 className="bg-neutral-400 h-6 w-0.5 rounded" />
             {<p className="font-light text-neutral-400">{props.PageName}</p>}

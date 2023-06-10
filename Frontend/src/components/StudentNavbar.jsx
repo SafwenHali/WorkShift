@@ -51,10 +51,17 @@ const Navbar = () => {
                 </li>
               ))}
               {/*END pages*/}
+              
               <li className={`${open ? "" : "hidden"}`}>
+              <button
+                  onClick={handlelogout}
+                  className="w-24 h-10 mr-10 lg:hidden rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-teal-900 font-semibold duration-300"
+                >
+                  Profile
+                </button>
                 <button
                   onClick={handlelogout}
-                  className="w-24 h-10 rounded-lg border border-red-700 text-neutral-100 bg-red-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-red-700 font-semibold hover:font-bold duration-300"
+                  className="w-24 h-10 lg:hidden rounded-lg border border-red-700 text-neutral-100 bg-red-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-red-700 font-semibold hover:font-bold duration-300"
                 >
                   Log Out
                 </button>
@@ -68,12 +75,16 @@ const Navbar = () => {
             </a>
           </span>
           <span>
-            <button
-              onClick={handlelogout}
-              className="hidden lg:flex pt-2 pl-4 w-24 h-10 rounded-lg border border-red-700 text-neutral-100 bg-red-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-red-700 font-semibold hover:font-bold duration-300"
-            >
-              Log Out
-            </button>
+          <button
+            className="w-24 h-10 items-center pl-6 lg:inline-flex hidden lg:rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-teal-900 font-semibold duration-300">
+              Profile
+          </button>
+          <button
+                  onClick={handlelogout}
+                  className="ml-5 w-24 h-10  items-center pl-4 lg:inline-flex hidden rounded-lg border border-red-700 text-neutral-100 bg-red-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-red-700 font-semibold hover:font-bold duration-300"
+                >
+                  Log Out
+                </button>
             <div
               onClick={() => setOpen(!open)}
               className="text-4xl text-white hover:text-teal-600 absolute right-8 top-3 cursor-pointer lg:hidden"

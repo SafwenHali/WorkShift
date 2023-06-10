@@ -1,10 +1,10 @@
-const Job = require("../models/offer");
+const JobOffer = require("../models/offer");
 
 //post job offer
 const createJobOffer = async (req, res) => {
   try {
     console.log("in create");
-    const jobOffer = await Job.create({
+    const jobOffer = await JobOffer.create({
       jobName: req.body.jobName,
       jobDescription: req.body.jobDescription,
       Recruiter: req.body.Recruiter,
@@ -19,14 +19,14 @@ const createJobOffer = async (req, res) => {
 
 //get offers
 const getJobOffers = async (req, res) => {
-  const jobOffer = await Job.find();
+  const jobOffer = await JobOffer.find();
   res.json({ jobOffers: jobOffer });
 };
 
 //get offer by id
 const getJobOfferById = async (req, res) => {
   try {
-    const jobOffer = await Job.findById(req.params.id);
+    const jobOffer = await JobOffer.findById(req.params.id);
     res.json({ jobOffers: jobOffer });
   } catch (err) {
     console.log(err.message);
@@ -39,7 +39,7 @@ const getJobOfferByRecruiter = async (req, res) => {
   const { Recruiter } = req.params;
 
   try {
-    const jobOffer = await Job.find({ Recruiter });
+    const jobOffer = await JobOffer.find({ Recruiter });
 
     if (jobOffer.length === 0) {
       return res
@@ -57,7 +57,7 @@ const getJobOfferByRecruiter = async (req, res) => {
 //update offer
 const updateJobOffer = async (req, res) => {
   try {
-    const jobOffer = await Job.findByIdAndUpdate(req.params.id, {
+    const jobOffer = await JobOffer.findByIdAndUpdate(req.params.id, {
       jobName: req.body.jobName,
       jobDescription: req.body.jobDescription,
       Recruiter: req.body.Recruiter,
@@ -72,7 +72,7 @@ const updateJobOffer = async (req, res) => {
 
 //delete offer
 const deleteJobOffer = async (req, res) => {
-  const jobOffer = await Job.findByIdAndDelete(req.param.id);
+  const jobOffer = await JobOffer.findByIdAndDelete(req.param.id);
   res.json("job offer deleted");
 };
 module.exports = {

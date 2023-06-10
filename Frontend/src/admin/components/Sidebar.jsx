@@ -2,16 +2,19 @@ import React from "react";
 
 const Sidebar = () => {
   let Menu = [
-    { name: " Users", link: "/Admin/Users", icon: "people-outline" },
     {
       name: " Contenent",
       link: "/Admin/Manage-Contenent",
       icon: "folder-open-outline",
     },
+    { 
+      name: " Users", 
+      link: "/Admin/Users", 
+      icon: "people-outline" },
     {
-      name: " Statistics",
-      link: "/Admin/Statistics",
-      icon: "bar-chart-outline",
+      name: " Profile",
+      link: "/Admin/Profile",
+      icon: "person-circle-outline",
     },
   ];
   const handlelogout = () => {
@@ -25,9 +28,9 @@ const Sidebar = () => {
   return (
     <aside className="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-neutral-100 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
       <div>
-        <div className="-mx-6 px-6 py-4">
+        <div className="px-6 py-4 pt-20">
           <a href="/Home">
-            <img src="/icon/LOGO.svg" />
+          <img src="/icon/LOGO.svg" className="bg-neutral-700 rounded-full" />
           </a>
         </div>
 

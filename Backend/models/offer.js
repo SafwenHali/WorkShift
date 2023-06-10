@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
-const jobSchema = new schema(
+const jobOfferSchema = new schema(
   {
     jobName: {
       type: String,
@@ -24,5 +24,5 @@ const jobSchema = new schema(
     timestamps: true,
   }
 );
-const Job = mongoose.model("job", jobSchema);
-module.exports = Job;
+const JobOffer = mongoose.model("jobOffer", jobOfferSchema);
+module.exports = JobOffer;
