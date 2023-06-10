@@ -9,6 +9,7 @@ import {
 import Home from "./pages/Home";
 import SignUp from "./pages/signUp";
 import Profile from "./Users/Profile";
+import EditProfile from "./Users/editProfile";
 import NotFound from "./pages/404_not_found";
 import Test from "./pages/Test";
 import Plans from "./pages/Plans";
@@ -62,6 +63,7 @@ function App() {
         <Route path="/User/Profile" element={<Profile />} />
         <Route path="Profile" element={<Profile />} />
         <Route path="/User" element={<Profile />} />
+        <Route path="/Edit-Profile" element={<EditProfile />} />
         <Route path="/Plans" element={<Plans />} />
         <Route path="/Explore" element={<Explore />} />
         {/*Quiz*/}

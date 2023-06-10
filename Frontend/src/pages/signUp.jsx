@@ -4,11 +4,10 @@ import Footer from "../components/Footer";
 import SigninModal from "../components/signinModal";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const signUp = () => {
   const [post, setPost] = useState({});
-  const [post2, setPost2] = useState({});
   const [visible, setVisible] = useState(false);
   const handleOnclose = () => setVisible(false);
   const navigate = useNavigate();
@@ -29,7 +28,6 @@ const signUp = () => {
         console.log(response);
         if (response.status === 201) {
           toast.success("User created.");
-          setPost2({ email: post.email, password: post.password });
           alert("account created sucessfully");
           axios
             .post("http://127.0.0.1:7000/api/auth/login", post)
