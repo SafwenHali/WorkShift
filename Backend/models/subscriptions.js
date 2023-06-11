@@ -1,25 +1,21 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
-const { formation_id } = require("./formation");
-const { user_id } = require("./userModel");
 
 const subscriptionSchema = new schema(
   {
-    formation_id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Formation",
-      required: true,
-    },
     user_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
+      unique: true 
     },
-    price: {
-      type: String,
-      value: "0",
+    formationList:[{
+      formation_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Formation",
       required: true,
     },
+      }]
   },
   {
     timestamps: true,

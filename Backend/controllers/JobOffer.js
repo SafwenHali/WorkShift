@@ -72,8 +72,7 @@ const updateJobOffer = async (req, res) => {
 
 //delete offer
 const deleteJobOffer = async (req, res) => {
-  console.log(req.param.id)
-  const jobOffer = await JobOffer.findByIdAndDelete(req.param.id);
+  const jobOffer = await JobOffer.findByIdAndDelete(req.pam.id);
   res.json("job offer deleted");
 };
 module.exports = {

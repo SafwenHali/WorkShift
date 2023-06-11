@@ -1,111 +1,63 @@
 const Subscription = require("../models/subscriptions");
 
-// Create a new subscription
-const newSubscription = async (req, res) => {
-  const { user_id, formation_id, price } = req.body;
+//POST
+const createSubscription = async (req, res) => {
+  //create
   try {
-    const newSubscription = new Subscription({
-      user_id,
-      formation_id,
-      price,
+    const subscription = await Subscription.create({
+      user_id: req.body.user_id,
+      formationList: req.body.formationList
     });
-    await newSubscription.save();
-
-    res.status(201).json({ message: "Subscription created successfully" });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+    res.json({ subscription: subscription });
+  } catch (error) { 
+    console.log(error);
+    res.json("subscription not created");
+ }  
 };
 
-// Get all subscriptions
-const getAllSubscriptions = async (req, res) => {
-  try {
-    const subscriptions = await Subscription.find();
-    console.log("ici2");
-
-    res.status(200).json({ subscriptions });
-  } catch (err) {
-    console.error(err);
-    console.log("ici 22");
-    res.status(500).json({ error: "Internal server error" });
-  }
+//GET all subscription
+const getSubscription = async (req, res) => {
+  //find
+  const subscription = await Subscription.find();
+  //return subscription&&
+  res.json({ subscription: subscription });
 };
 
-// Get subscription by ID
+//GET subscription by Id
 const getSubscriptionById = async (req, res) => {
-  const { subscriptionId } = req.params;
-
   try {
-    const subscription = await Subscription.findById(subscriptionId);
-
-    if (!subscription) {
-      return res.status(404).json({ error: "Subscription not found" });
-    }
-
-    res.status(200).json({ subscription });
+    const subscription = await Subscription.findById(req.params.id);
+    res.json({ subscription: subscription });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal server error" });
+    console.log(err.message);
+    res.json("subscription not found");
   }
 };
 
-// Update subscription
-const updateSubscription = async (req, res) => {
-  const { subscriptionId } = req.params;
-  const { user_id, formation_id, price } = req.body;
-
-  try {
-    const subscription = await Subscription.findById(subscriptionId);
-
-    if (!subscription) {
-      return res.status(404).json({ error: "Subscription not found" });
-    }
-
-    subscription.user_id = user_id;
-    subscription.formation_id = formation_id;
-    subscription.price = price;
-
-    await subscription.save();
-
-    res.status(200).json({ message: "Subscription updated successfully" });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal server error" });
-  }
-};
-
-// Delete subscription
+//DELETE
 const deleteSubscription = async (req, res) => {
-  const { subscriptionId } = req.params;
+  const subscription = await Subscription.findByIdAndDelete(req.params.id);
+  console.log("item deleted");
+  res.json("subscription deleted");
+};
 
+//UPDATE
+const updateSubscription = async (req, res) => {
   try {
-    const subscription = await Subscription.findById(subscriptionId);
-
-    if (!subscription) {
-      return res.status(404).json({ error: "Subscription not found" });
-    }
-
-    await subscription.remove();
-
-    res.status(200).json({ message: "Subscription deleted successfully" });
+    const subscription = await Subscription.findByIdAndUpdate(req.params.id, {
+      user_id: req.body.user_id,
+      formationList: req.body.formationList
+    });
+    res.json(`subscription updated successfully`);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal server error" });
+    console.log(err.message);
+    res.json("subscription not updated ");
   }
 };
-
-// Delete subscription
-const testNow = async (req, res) => {
-  console.log("in tst method");
-  res.status(200).json({ message: "In test Now method " });
-};
-
 module.exports = {
-  newSubscription,
-  getAllSubscriptions,
+  createSubscription,
+  getSubscription,
   getSubscriptionById,
-  updateSubscription,
   deleteSubscription,
-  testNow,
+  updateSubscription,
 };

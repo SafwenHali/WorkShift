@@ -1,18 +1,15 @@
-// Import necessary modules
 const express = require("express");
 const router = express.Router();
 const {
-  newSubscription,
-  getAllSubscriptions,
+  createSubscription,
+  getSubscription,
   getSubscriptionById,
   updateSubscription,
   deleteSubscription,
-  testNow,
 } = require("../controllers/Subscriptions");
 
 //post
-router.post("/", newSubscription);
-router.get("/tst", testNow);
+router.post("/", createSubscription);
 
 //get by id
 router.get("/:id", getSubscriptionById);
@@ -22,6 +19,6 @@ router.put("/:id", updateSubscription);
 router.delete("/:id", deleteSubscription);
 
 //get
-router.get("/", getAllSubscriptions);
+router.get("/", getSubscription);
 
 module.exports = router;
