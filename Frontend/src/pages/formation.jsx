@@ -28,7 +28,7 @@ const SubCategory =() => {
             <div className="container px-5 py-10 mx-auto flex flex-col ">
                 <div className="lg:w-4/6 mx-auto p-20 bg-neutral-200 rounded-lg">
                 <div className="rounded-lg h-64 overflow-hidden">
-                    {<img className="object-cover object-center h-full w-full" src="https://s.w-x.co/util/image/w/in-cat_in_glasses.jpg?crop=16:9&width=980&format=pjpg&auto=webp&quality=60"/>}
+                    {<img className="object-cover object-center h-full w-full" src=""/>}
                 </div>
                 <div className="flex flex-col sm:flex-row mt-10">
                     <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">

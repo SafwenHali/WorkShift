@@ -8,10 +8,9 @@ const {
   getFormationBySubCategoryID,
 } = require("../controllers/formations");
 const router = express.Router();
-const { checkProfile } = require("../middlewares/profileMiddleware");
 
 //post
-router.post("/", checkProfile, createFormation);
+router.post("/", createFormation);
 
 //get
 router.get("/", getFormation);
@@ -22,9 +21,9 @@ router.get("/:id", getFormationById);
 router.get("/formationbysub/:id", getFormationBySubCategoryID);
 
 //delete
-router.delete("/:id", checkProfile, deleteFormation);
+router.delete("/:id", deleteFormation);
 
 //update
-router.put("/:id", checkProfile, updateFormation);
+router.put("/:id", updateFormation);
 
 module.exports = router;

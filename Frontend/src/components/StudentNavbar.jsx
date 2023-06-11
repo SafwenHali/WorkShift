@@ -29,10 +29,7 @@ const Navbar = () => {
         <div className="lg:flex items-center justify-between py-4 lg:px-10 px-7">
           {/*Name and LOGO*/}
           <span className="cursor-pointer flex items-center font-bold text-neutral-50 font-sansserif ">
-            <img src="/icon/LOGO.svg" className="w-fit h-10" />
-            <a href="/" className="text-2xl block">
-              Work Shift |{" "}
-            </a>
+            <img src="/icon/Name.png" className="w-fit h-10" />
             <ul
               className={`
       ${open ? "top-20 " : "hidden"}

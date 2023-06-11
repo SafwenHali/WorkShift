@@ -30,7 +30,6 @@ const Category =() => {
                                 </a>
                             </li> 
                         </div>
-                    
                     ))}
                 </ul>
             </div>
