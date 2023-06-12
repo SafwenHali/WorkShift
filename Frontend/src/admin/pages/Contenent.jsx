@@ -7,8 +7,6 @@ const Contenent = () => {
     { name: " ARTICLES", link: "/Admin/Articles" },
     { name: " COURSES", link: "/Admin/Courses" },
     { name: "  QUIZ", link: "/Admin/Manage-Quiz" },
-    { name: " TESTS", link: "/Admin/" },
-    { name: " CERTIFICATIONS", link: "/Admin/" },
     { name: " CATEGORIES", link: "/Admin/Categories" },
   ];
   try {
@@ -54,7 +52,7 @@ const Contenent = () => {
             MANAGE CONTENENT :
           </h1>
           <div className=" px-3 md:lg:xl:px-40 py-20 bg-opacity-10">
-            <ul className="grid grid-cols-1 md:lg:xl:grid-cols-3 group lg:p-1">
+            <ul className="grid grid-cols-1 md:lg:xl:grid-cols-2 group lg:p-1">
               {pages.map((n) => (
                 <div className="p-1">
                   <a href={n.link}>

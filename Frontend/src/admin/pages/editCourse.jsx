@@ -22,7 +22,7 @@ const EditCourse = () => {
       .put("http://127.0.0.1:7000/api/formation/" + id, post)
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
-    window.location.href = "/Admin/Courses";
+   // window.location.href = "/Admin/Courses";
   };
   const handleButtonClick = () => {
     const confirmed = window.confirm(
@@ -101,9 +101,9 @@ const EditCourse = () => {
                   </label>
                   <input
                     className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    name="nom"
+                    name="formationName"
                     type="Title"
-                    defaultValue={data.nom}
+                    defaultValue={data.formationName}
                     onChange={handleInput}
                     onLoad={handleInput}
                   />
@@ -128,8 +128,8 @@ const EditCourse = () => {
                   </p>
                   <input
                     className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    name="cover"
-                    defaultValue="{data.cover}"
+                    name="Cover"
+                    defaultValue={data.Cover}
                     type="Link"
                     onChange={handleInput}
                     onLoad={handleInput}
@@ -139,30 +139,34 @@ const EditCourse = () => {
               <div className="flex flex-wrap -mx-3 mb-2">
                 <div className="w-full px-3">
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                    Formateur
-                  </label>
-                  <select
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    name="Formateur"
-                    defaultValue="{data.instructeur}"
-                    onChange={handleInput}
-                    onLoad={handleInput}
-                  ></select>
-                </div>
-              </div>
-              <div className="flex flex-wrap -mx-3 mb-2">
-                <div className="w-full px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                    Durée
+                    Length
                   </label>
                   <p className="text-gray-600 text-xs italic pb-1">
                     Course length in Hours
                   </p>
                   <input
                     className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    name="duree"
+                    name="formationDuration"
                     type="Number"
-                    defaultValue={data.duree}
+                    defaultValue={data.formationDuration}
+                    onChange={handleInput}
+                    onLoad={handleInput}
+                  />
+                </div>
+              </div>
+              <div className="flex flex-wrap -mx-3 mb-2">
+                <div className="w-full px-3">
+                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                    Price
+                  </label>
+                  <p className="text-gray-600 text-xs italic pb-1">
+                    Course Price in Tunisian Dianars
+                  </p>
+                  <input
+                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    name="formationPrice"
+                    type="Number"
+                    defaultValue={data.formationPrice}
                     onChange={handleInput}
                     onLoad={handleInput}
                   />
@@ -175,8 +179,8 @@ const EditCourse = () => {
                   </label>
                   <textarea
                     className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
-                    name="description"
-                    defaultValue={data.description}
+                    name="formationDescription"
+                    defaultValue={data.formationDescription}
                     onChange={handleInput}
                     onLoad={handleInput}
                   ></textarea>

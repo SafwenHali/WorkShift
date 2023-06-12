@@ -5,9 +5,7 @@ import jwt_decode from "jwt-decode";
 const Contenent = () => {
   const pages = [
     { name: " Jobs", link: "/Admin/Jobs" },
-    { name: " Recruiters Demand", link: "/Admin/Demand" },
     { name: "  Hobbies", link: "/Admin/Quiz/Hobbies" },
-    { name: " Work-fields", link: "/Admin/WorkFields" },
     { name: " Personalities", link: "/Admin/Personalities" },
   ];
   try {
@@ -52,8 +50,8 @@ const Contenent = () => {
           <h1 className="p-14 mb-4 text-4xl font-bold tracking-tight text-neutral-200 shadow-lg ">
             MANAGE THE SUGGESTION QUIZ :
           </h1>
-          <div className=" px-3 md:lg:xl:px-40 py-20 bg-opacity-10">
-            <ul className="grid grid-cols-1 md:lg:xl:grid-cols-2 group lg:p-1">
+          <div className=" px-3 md:lg:xl:px-80 py-20 bg-opacity-10">
+            <ul className="grid grid-cols-1 group lg:p-1">
               {pages.map((n) => (
                 <div className="p-1">
                   <a href={n.link}>

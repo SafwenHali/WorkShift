@@ -24,23 +24,14 @@ const Plans =() => {
                 location.href = code;
             }
         else
-            {
-                switch (code)
-                    {
-                        case"41":
-                            alert('9rayet el hena')
-                        break;
-                        case"51":
-                            alert('bayen makch taa 5edma')
-                        break;
-                        default:
-                            {   setnewprevious(prev)
-                                let id =getQuestionById(code)
-                                if (id)
-                                    setquestionSelected(id);}               
+            {    
+                setnewprevious(prev)
+                let id =getQuestionById(code)
+                if (id)
+                    setquestionSelected(id);              
                     }
             }
-    }
+    
     const handlePrevious = () =>{
         setquestionSelected(getQuestionById(previous));
          setnewprevious('');

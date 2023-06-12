@@ -9,7 +9,10 @@ const Sidebar = () => {
       link: "/User/Profile",
       icon: "person-circle-outline",
     },
-    { name: " Formations", link: "", icon: "pie-chart-outline" },
+    { 
+      name: " Formations", 
+      link: "", 
+      icon: "pie-chart-outline" },
 
     { name: " Etudiants", link: "/Admin/Users", icon: "people-outline" },
     {

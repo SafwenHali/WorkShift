@@ -88,7 +88,7 @@ const Category =() => {
                     <div className="pb-10 flex justify-between ">
                          <span></span>
                          <span className="">
-                         <a href="/Admin/New-Course"
+                        <a href="/Admin/New-Course"
                             className="border-2 border-green-700 bg-green-700 text-neutral-100 rounded-md px-4 py-2 m-2 transition duration-100 ease select-none hover:text-green-600 hover:bg-neutral-100">
                             + Add Course
                         </a>
@@ -121,7 +121,7 @@ const Category =() => {
                                         Name
                                     </th>
                                     <th scope="col" className="px-6 py-3">
-                                        formateur
+                                        Price
                                     </th>
                                     <th scope="col" className="px-6 py-3">
                                         Created on
@@ -156,11 +156,11 @@ const Category =() => {
                                 <tr className="bg-neutral-100 border-b ">
                                     <th scope="row" className="px-6 py-4 font-medium text-neutral-900 whitespace-nowrap">
                                        <a href={"/Formation/"+a._id} className="hover:underline">
-                                        {a.nom}
+                                        {a.formationName}
                                         </a> 
                                     </th>
                                     <td className="px-6 py-4">
-                                        {a.duree}
+                                        {a.formationPrice}
                                     </td>
                                     <td className="px-6 py-4">
                                         {DateC}

@@ -7,8 +7,8 @@ const createFormation = async (req, res) => {
 
   try {
     const formation = await Formation.create({
-      Cover: req.body.Cover,
-      formationDescription: req.body.formationDescription,
+        Cover: req.body.Cover,
+        formationDescription: req.body.formationDescription,
        formationName: req.body.formationName,
        formationDuration: req.body.formationDuration,
        formationPrice: req.body.formationPrice,
@@ -49,6 +49,12 @@ const getFormationBySubCategoryID = async (req, res) => {
   const formation = await Formation.find({ SubCategory: id });
   res.json({ formation: formation });
 };
+//get formation by sub id
+const getFormationByFormateur = async (req, res) => {
+  const id = req.params.id;
+  const formation = await Formation.find({ formationInstructor: id });
+  res.json({ formation: formation });
+};
 
 //DELETE
 const deleteFormation = async (req, res) => {
@@ -60,12 +66,11 @@ const deleteFormation = async (req, res) => {
 const updateFormation = async (req, res) => {
   try {
     formation = await Formation.findByIdAndUpdate(req.params.id, {
-      nom: req.body.nom,
-      description: req.body.description,
-      duree: req.body.duree,
-      subCategory: req.body.subCategory,
-      // Formateur: req.body.Formateur,
       Cover: req.body.Cover,
+        formationDescription: req.body.formationDescription,
+       formationName: req.body.formationName,
+       formationDuration: req.body.formationDuration,
+       formationPrice: req.body.formationPrice,
     });
     res.json("formation successfully updated");
   } catch (err) {
@@ -85,4 +90,5 @@ module.exports = {
   updateFormation,
   deleteFormation,
   getFormationBySubCategoryID,
+  getFormationByFormateur
 };

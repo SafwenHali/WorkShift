@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import useFetchCat from "../../hooks/useFetchCategories";
 import useFetchSubCat from "../../hooks/useFetchAllSubCategories";
@@ -11,12 +11,16 @@ const AddCourse =() => {
     setPost({...post,[event.target.name]: event.target.value})
   }
 
-  const handleSubmit = (event) =>{
-    event.preventDefault();
+  const handleSubmit = (event) =>{event.preventDefault();
+    try {
+      const token = localStorage.getItem("at");
+      const id = jwt_decode(token).id;
+    setPost({...post,formationInstructor:id });
     axios.post('http://127.0.0.1:7000/api/formation',post)
     .then(response=>console.log(response))
-    .catch(err=>console.log(err))
-    //window.location.href ="/Admin/Courses"
+    .catch(err=>console.log(err))}
+    catch{alert("err")}
+    window.location.href ="/Admin/Courses"
   }
 
     const cat = useFetchCat().data;
@@ -42,10 +46,11 @@ const AddCourse =() => {
             setSelectedSubCategoryValue(event.target.value);
             setPost({...post,[event.target.name]: event.target.value})
         };
-        try {
+         try {
           const token = localStorage.getItem("at");
           const role = jwt_decode(token).role;
-          console.log(role);
+          const id = jwt_decode(token).id;
+          console.log(id);
           if (role != "admin") {
             throw error;
           }
@@ -76,6 +81,7 @@ const AddCourse =() => {
             </div>
           );
         }
+       
     return(
         <div>
             <Sidebar/>
@@ -121,7 +127,7 @@ const AddCourse =() => {
                               Course Title
                             </label>
                             <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                            name="nom"               
+                            name="formationName"               
                             type="Title"
                             onChange={handleInput}/>
                           </div>
@@ -139,21 +145,9 @@ const AddCourse =() => {
                                 &nbsp; recommended  
                             </p>
                             <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                            name="cover" 
+                            name="Cover" 
                             type="Link"
                             onChange={handleInput}/>  
-                          </div>
-                        </div>
-                        <div className="flex flex-wrap -mx-3 mb-2">
-                          <div className="w-full px-3">
-                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                              Formateur
-                            </label>
-                            <select className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                             name="Formateur"
-                            onChange={handleInput}>
-
-                            </select>
                           </div>
                         </div>
                         <div className="flex flex-wrap -mx-3 mb-2">
@@ -165,7 +159,21 @@ const AddCourse =() => {
                                 Course length in Hours 
                             </p>
                             <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                             name="duree"
+                             name="formationDuration"
+                            type="Number"
+                            onChange={handleInput}/>
+                          </div>
+                        </div>
+                        <div className="flex flex-wrap -mx-3 mb-2">
+                          <div className="w-full px-3">
+                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                              Price
+                            </label>
+                            <p className="text-gray-600 text-xs italic pb-1">
+                                Course Price in Tunisian Dinars
+                            </p>
+                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
+                             name="formationPrice"
                             type="Number"
                             onChange={handleInput}/>
                           </div>
@@ -176,7 +184,7 @@ const AddCourse =() => {
                               Description
                             </label>
                             <textarea className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
-                            name="description"
+                            name="formationDescription"
                             onChange={handleInput}>
                             </textarea>
                           </div>

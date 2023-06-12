@@ -6,6 +6,7 @@ const {
   updateFormation,
   deleteFormation,
   getFormationBySubCategoryID,
+  getFormationByFormateur
 } = require("../controllers/formations");
 const router = express.Router();
 
@@ -17,8 +18,12 @@ router.get("/", getFormation);
 
 //get ByID
 router.get("/:id", getFormationById);
+
 // get by subid
 router.get("/formationbysub/:id", getFormationBySubCategoryID);
+
+// get by Formateur
+router.get("/formateur/:id", getFormationByFormateur);
 
 //delete
 router.delete("/:id", deleteFormation);

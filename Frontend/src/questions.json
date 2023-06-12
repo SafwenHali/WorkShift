@@ -2,7 +2,7 @@
 		"question_id" : "0",
 		"questionImg":"https://i.ibb.co/MZYtYkK/Untitled-6-01.jpg",
         "questionText": "I'm here to ...",
-        "questionDesc": "...",
+        "questionDesc": "The Explore Option takes you through a whole tour of our website along with many detailed guides to make a successful creere change or it's better to say a sucessful WORKSHIFT. if you choose the learn option you'll be answering a few more questions to get you where you need to be",
 		"answers": 
             [{
                 "answerText": "Explore",
@@ -47,7 +47,7 @@
     },{
 		"question_id" : "3",
 		"questionImg":"https://static.neris-assets.com/images/personality-types/headers/fb/entp-personality-type-header.png",
-        "questionText": "Do I know my MBTI personality?",
+        "questionText": "Do I know my MBTI Personality (take quiz if you don't)",
         "questionDesc": "...",
 		"answers": 
             [{
@@ -55,14 +55,14 @@
                 "value":"4"
             },
             {
-                "answerText": "No I don't",
-                "value":"MBTI"
+                "answerText": "No I don't, Take quiz",
+                "value":"https://www.16personalities.com/free-personality-test"
             }]
     },{
 		"question_id" : "4",
 		"questionImg":"https://i.ibb.co/K9fW6G2/Untitled-5-01.jpg",
         "questionText": "I'm here to learn a proffessional skill that matches me being a ...",
-        "questionDesc": "...",
+        "questionDesc": "If you dont know your personnality Type follow this link",
 		"answers": 
             [{
                 "answerText": "INTJ - The Architect",

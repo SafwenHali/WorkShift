@@ -28,7 +28,7 @@ const Jobs = () => {
             <div className=" px-3 md:lg:xl:px-40 py-20 bg-opacity-10">
                 <ul className="grid grid-cols-1 md:lg:xl:grid-cols-3 group lg:p-1">
                 {data.map(m=> (
-                  <div className="p-1">
+                  <a className="p-1" href={"/jobOffer/"+m._id}>
                 <li className="px-8 py-10 relative w-full bg-neutral-100 hover:bg-neutral-300 flex flex-col">
                     <center><h1 className="title-font text-xl font-medium text-teal-800 mb-3">
                     {m.jobName}
@@ -37,7 +37,7 @@ const Jobs = () => {
                       {m.jobDescription}
                     </h2>
                     </center>
-                  </li></div>
+                  </li></a>
                 ))}
                   
                 </ul>

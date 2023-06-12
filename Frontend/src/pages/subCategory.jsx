@@ -33,13 +33,13 @@ const SubCategory =() => {
                            <li key={n._id} className="m-1">
                                 <div className="h-full bg-neutral-300 px-4 pt-14 pb-16 rounded-lg overflow-hidden text-center relative">
                                     <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
-                                        {n.nom}
+                                        {n.formationName}
                                     </h1>
                                     <p className="leading-relaxed mb-3">
-                                        {n.description}
+                                        {n.formationDescription}
                                     </p>
                                     <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                                        {n.duree} Heures
+                                        {n.formationDuration} Heures
                                     </h2>
                                     <a className="text-teal-700 font-semibold hover:underline inline-flex items-center"
                                         href={"../Formation/"+n._id}>

@@ -75,7 +75,7 @@ const AddArticles =() => {
         <div>
             <Sidebar/>
             <div className="pl-20">
-                <div className="p-20 pl-64 min-h-screen h-full bg-teal-900"> 
+                <div className="p-20 pl-64 min-h-screen h-full bg-neutral-800"> 
                     <a href="/Admin/Articles" className="bg-teal-700 hover:bg-teal-600 hover:border rounded text-xl text-neutral-100 font-light">
                         &nbsp;<ion-icon name="arrow-back-outline"></ion-icon>
                         &nbsp; Back &nbsp;
@@ -142,13 +142,13 @@ const AddArticles =() => {
                         </div>
                       </form>
                     </div>
-                    <div>
+                   {/*<div>
                         <button 
                         onClick={handleButtonClick}
                         className="shadow bg-red-600 hover:bg-neutral-200 text-neutral-100 hover:text-red-600 border border-red-600 font-bold py-2 px-4 rounded" type="submit">
                             Delete Job Offer
                         </button>
-                    </div>
+                    </div> */} 
                 </div>
               </div>
             </div>

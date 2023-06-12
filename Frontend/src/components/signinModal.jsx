@@ -44,7 +44,10 @@ export default function signinModal(props) {
           )
           .then((r) => {
             console.log(r.data);
-            if (r.data.role === "instructor") {
+            //STAY
+            if(window.location.href.startsWith("http://127.0.0.1:5173/Formation/"))
+            location.reload();
+            else{if (r.data.role === "instructor") {
               navigate("/formateur", { replace: true });
             } else if (r.data.role === "student") {
               navigate("/student", { replace: true });
@@ -54,7 +57,8 @@ export default function signinModal(props) {
               navigate("/Enterprise", { replace: true });
             } else {
               alert("undefined Role");
-            }
+            }}
+            //NAVIGATE
           });
 
         // redirect to dash board profile

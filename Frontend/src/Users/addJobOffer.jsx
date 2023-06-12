@@ -59,7 +59,7 @@ const AddOffer = () => {
     <div>
       <Sidebar />
       <div className="pl-20">
-        <div className="p-20 pl-64 min-h-screen h-full bg-teal-900">
+        <div className="p-20 pl-64 min-h-screen h-full bg-neutral-800">
           <a
             href="/enterprise"
             className="bg-teal-700 hover:bg-teal-600 hover:border rounded text-xl text-neutral-100 font-light"
