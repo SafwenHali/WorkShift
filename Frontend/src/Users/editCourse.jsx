@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
-import useFetch from "../../hooks/useFetchFormation";
+import Sidebar from "../components/FormateurSidebar";
+import useFetch from "../hooks/useFetchFormation";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
@@ -24,27 +24,12 @@ const EditCourse = () => {
       .catch((err) => console.log(err));
    // window.location.href = "/Admin/Courses";
   };
-  const handleButtonClick = () => {
-    const confirmed = window.confirm(
-      "Are you sure you want to delete this Course?"
-    );
-    if (confirmed) {
-      axios
-        .delete("http://127.0.0.1:7000/api/formation/" + id)
-        .then((response) => console.log(response))
-        .catch((err) => console.log(err));
-      console.log("User confirmed action");
-      window.location.href = "/Admin/Courses";
-    } else {
-      // code to execute if user cancels
-      console.log("User cancelled action");
-    }
-  };
+  
   try {
     const token = localStorage.getItem("at");
     const role = jwt_decode(token).role;
     console.log(role);
-    if (role != "admin") {
+    if (role != "instructor") {
       throw error;
     }
   } catch (error) {
@@ -78,15 +63,15 @@ const EditCourse = () => {
     <div>
       <Sidebar />
       <div className="pl-20">
-        <div className="p-20 pl-64 min-h-screen h-full bg-teal-900">
+        <div className="p-20 pl-64 min-h-screen h-full bg-neutral-800">
           <a
-            href="/Admin/Courses"
+            href="/Formateur"
             className="bg-teal-700 hover:bg-teal-600 hover:border rounded text-xl text-neutral-100 font-light"
           >
             &nbsp;<ion-icon name="arrow-back-outline"></ion-icon>
             &nbsp; Back To Courses List &nbsp;
           </a>
-          <div className="pb-8 text-6xl text-neutral-100 font-light">
+          <div className="pb-8 text-6xl text-teal-600 font-light">
             Edit Course
           </div>
           <div className="flex justify-center">
@@ -197,15 +182,6 @@ const EditCourse = () => {
                 </div>
               </div>
             </form>
-          </div>
-          <div>
-            <button
-              onClick={handleButtonClick}
-              className="shadow bg-red-600 hover:bg-neutral-200 text-neutral-100 hover:text-red-600 border border-red-600 font-bold py-2 px-4 rounded"
-              type="submit"
-            >
-              Delete
-            </button>
           </div>
         </div>
       </div>

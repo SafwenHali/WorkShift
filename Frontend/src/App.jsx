@@ -43,6 +43,7 @@ import AdminAddSubCategory from "./admin/pages/addSubCategory";
 import AdminEditSubCategory from "./admin/pages/editSubCategory";
 import Formateur from "./Users/formateur";
 import FormateurAddCourse from "./Users/AddCourse";
+import FormateurEditCourse from "./Users/editCourse";
 import Student from "./Users/student";
 import Enterprise from "./Users/enterprise";
 import EnterpriseAddJobOffer from "./Users/addJobOffer";
@@ -112,6 +113,7 @@ function App() {
         {/*Formateur Routes*/}
         <Route path="/Formateur" element={<Formateur />} />
         <Route path="/Formateur/AddCourse" element={<FormateurAddCourse />} />
+        <Route path="/Formateur/Edit-Course/:id" element={<FormateurEditCourse />} />
         {/*student Routes*/}
         <Route path="/Student" element={<Student />} />
         {/*Enterprise Routes*/}

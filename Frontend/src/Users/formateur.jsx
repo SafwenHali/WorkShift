@@ -4,7 +4,8 @@ import useFetch from "../hooks/useFetchFormationsByFormateurId"
 import jwt_decode from "jwt-decode";
 
 const Formateur = () => {
-  const formationList = useFetch("648361cbd207e25381da9a3f")
+  const token = localStorage.getItem("at");
+  const formationList = useFetch(jwt_decode(token).id || [])
   const d = formationList.data
   try {
     const token = localStorage.getItem("at");
@@ -52,7 +53,7 @@ const Formateur = () => {
             <span></span>
             <span className="">
               <a href="/Formateur/AddCourse"
-                className="border-2 border-green-700 bg-green-700 text-neutral-100 rounded-md px-4 py-2 m-2 transition duration-100 ease select-none hover:text-green-600 hover:bg-neutral-100">
+                className="border-2 border-teal-700 bg-teal-700 text-neutral-100 rounded-md px-4 py-2 m-2 transition duration-100 ease select-none hover:text-teal-600 hover:bg-neutral-100">
                 + Add Course
               </a>
             </span>
@@ -120,7 +121,7 @@ const Formateur = () => {
                                         {DateU}
                                     </td>
                                     <td className="px-6 py-4">
-                                        <a href={"/Admin/Edit-Course/"+a._id} className="font-medium text-blue-500  hover:underline">
+                                        <a href={"/Formateur/Edit-Course/"+a._id} className="font-medium text-blue-500  hover:underline">
                                             Edit
                                         </a>
                                     </td>

@@ -6,7 +6,9 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 
 const formateurAddCourse =() => {
-  const [post, setPost] =useState()
+  const token = localStorage.getItem("at")
+  const id = jwt_decode(token).id || "";
+  const [post, setPost] =useState({formationInstructor:id })
   const handleInput = (event) =>{
     setPost({...post,[event.target.name]: event.target.value})
   }
@@ -20,7 +22,7 @@ const formateurAddCourse =() => {
     .then(response=>console.log(response))
     .catch(err=>console.log(err))}
     catch{alert("err")}
-    //window.location.href ="/Admin/Courses"
+    window.location.href ="/Admin/Courses"
   }
     const cat = useFetchCat().data;
     const subCat=useFetchSubCat().data
@@ -86,11 +88,11 @@ const formateurAddCourse =() => {
             <Sidebar/>
             <div className="pl-20">
                 <div className="p-20 pl-64 min-h-screen h-full bg-neutral-800">  
-                <a href="/Admin/Courses" className="bg-teal-700 hover:bg-teal-600 hover:border rounded text-xl text-neutral-100 font-light">
+                <a href="/Formateur" className="bg-teal-700 hover:bg-teal-600 hover:border rounded text-xl text-neutral-100 font-light">
                         &nbsp;<ion-icon name="arrow-back-outline"></ion-icon>
                         &nbsp; Back To Courses &nbsp;
                     </a>
-                    <div className="pb-8 text-6xl text-neutral-100 font-light">
+                    <div className="pb-8 text-6xl text-teal-600 font-light">
                             Add A New Course
                     </div>
                     <div className="flex justify-center">   
