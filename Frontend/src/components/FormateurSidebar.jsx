@@ -11,13 +11,15 @@ const Sidebar = () => {
     },
     { 
       name: " Formations", 
-      link: "", 
+      link: "/Formateur", 
       icon: "pie-chart-outline" },
 
-    { name: " Etudiants", link: "/Admin/Users", icon: "people-outline" },
+    { name: " Etudiants",
+     link: "/Formateur",
+    icon: "people-outline" },
     {
       name: " QCM",
-      link: "/Admin/Manage-Contenent",
+      link: "/Formateur",
       icon: "folder-open-outline",
     },
     
@@ -39,7 +41,7 @@ const Sidebar = () => {
       <div>
         <div className="-mx-6 px-6 py-4">
           <a href="/Home">
-            <img src="/icon/LOGO.svg" />
+            <img src="/icon/LOGO.svg" className="bg-neutral-700 rounded-full" />
           </a>
         </div>
 
