@@ -18,6 +18,11 @@ import JobOffer from "./pages/JobOffer"
 import Explore from "./pages/Explore";
 import Quiz from "./pages/Quiz/discover";
 import QuizHobbies from "./pages/Quiz/hobbies";
+import QuizPersonalityUnknown from "./pages/Quiz/PersonalityUnknown"
+import QuizPersonalities from "./pages/Quiz/Personalities"
+import MBTI from "./pages/Quiz/MBTI"
+import JobDemand from "./pages/Quiz/job-demand"
+import JobsRelated from "./pages/Quiz/jobsRelated"
 import Categories from "./pages/allCategories";
 import Category from "./pages/category";
 import SubCategory from "./pages/subCategory";
@@ -59,8 +64,6 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/welcome" element={<Home />} />
 
-
-
         <Route path="/*" element={<NotFound />} />
 
         <Route path="/register" element={<SignUp />} />
@@ -71,12 +74,17 @@ function App() {
         <Route path="/Edit-Profile" element={<EditProfile />} />
         <Route path="/Plans" element={<Plans />} />
         <Route path="/Explore" element={<Explore />} />
-        {/*Quiz*/}
+        {/*JobOffer*/}
         <Route path="/Find-A-Job" element={<Jobs />} />
         <Route path="/JobOffer/:id" element={<JobOffer />} />
         {/*Quiz*/}
         <Route path="/Discover" element={<Quiz />} />
         <Route path="/Hobbies" element={<QuizHobbies />} />
+        <Route path="/Personalities" element={<QuizPersonalities/>}/>
+        <Route path="/MBTI/:personalityCode" element={<MBTI/>}/>
+        <Route path="/PersonalityUnknown" element={<QuizPersonalityUnknown/>}/>
+        <Route path="/Job-Demand" element={<JobDemand/>}/>
+        <Route path="/Job-Related" element={<JobsRelated/>}/>
         {/*list all Categories*/}
         <Route path="/Categories" element={<Categories />} />
         {/*list all Sub Categories by category id*/}

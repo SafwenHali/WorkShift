@@ -75,7 +75,7 @@ const profile = () => {
                           {   data.role==="student" ? 
                               ("2") 
                           :   data.role==="enterprise" ? 
-                              ("2")
+                              ("1")
                           :   data.role==="admin" ? 
                               ("")
                           :   data.role==="instructor" ? 
@@ -124,7 +124,7 @@ const profile = () => {
                     </h1>
                     <p className="font-light text-neutral-100 mt-3">@{data.userName}</p>
 
-                    <p className="mt-8 text-neutral-300">{/*Job*/}</p>
+                    <p className="mt-8 text-neutral-300">{/*Job*/}{data.email}</p>
                 </div>
 
                 <div className="mt-12 flex flex-col justify-center">

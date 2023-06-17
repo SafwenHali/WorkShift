@@ -7,7 +7,6 @@ const createJobs = async (req, res) => {
     const jobs = await Jobs.create({
       jobTitle: req.body.jobTitle,
       unempRate: req.body.unempRate,
-      field: req.body.field,
       formations: req.body.formations,
     });
     res.json({ jobs: jobs });
@@ -23,6 +22,15 @@ const getJobs = async (req, res) => {
   const jobs = await Jobs.find();
   //return Jobs&&
   res.json({ jobs: jobs });
+};
+
+const getJobsByRate = async (req, res) => {
+  try {
+    const jobs = await Jobs.find().sort({ unempRate: 1 }).limit(10);
+  //return Jobs&&
+  res.json({ jobs: jobs });}
+  catch(err)
+  {console.log(err)}
 };
 
 //GET Jobs by Id
@@ -49,7 +57,6 @@ const updateJobs = async (req, res) => {
     const jobs = await Jobs.findByIdAndUpdate(req.params.id, {
       jobTitle: req.body.jobTitle,
       unempRate: req.body.unempRate,
-      field: req.body.field,
       formations: req.body.formations,
     });
     res.json(`Job updated successfully`);
@@ -61,6 +68,7 @@ const updateJobs = async (req, res) => {
 module.exports = {
   createJobs,
   getJobs,
+  getJobsByRate,
   getJobsById,
   deleteJobs,
   updateJobs,

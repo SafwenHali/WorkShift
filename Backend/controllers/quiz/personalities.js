@@ -37,6 +37,17 @@ const getPersonById = async (req, res) => {
   }
 };
 
+//get personality by code
+const getPersonByCode = async (req,res)  =>{
+  try{
+    const person = await Person.findOne({personalityCode: req.params.personalityCode})
+    res.json({person: person})
+  }catch(err){
+    console.log(err.message);
+    res.json("Person not found");
+  }
+}
+
 //DELETE
 const deletePerson = async (req, res) => {
   const person = await Person.findByIdAndDelete(req.params.id);
@@ -66,4 +77,5 @@ module.exports = {
   getPersonById,
   deletePerson,
   updatePerson,
+  getPersonByCode
 };

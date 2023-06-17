@@ -21,8 +21,7 @@ const personalitiesSchema = new schema({
     jobsList:[{
         job_id: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "jobs",
-            required: true
+            ref: "jobs"
           }
         }]
     });

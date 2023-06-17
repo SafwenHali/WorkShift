@@ -5,6 +5,7 @@ const {
   getPersonById,
   getPerson,
   createPerson,
+  getPersonByCode
 } = require("../../controllers/quiz/personalities");
 const router = express.Router();
 
@@ -16,6 +17,9 @@ router.get("/", getPerson);
 
 //get PersonByID
 router.get("/:id", getPersonById);
+
+//get PersonByCode
+router.get("/code/:personalityCode", getPersonByCode);
 
 //delete Person
 router.delete("/:id", deletePerson);

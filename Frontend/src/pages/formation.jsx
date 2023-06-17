@@ -64,11 +64,15 @@ const SubCategory =() => {
                         <p className="leading-relaxed text-lg mb-4">
                             {data.formationDescription} 
                         </p>
-                        {!singin && (<button onClick={()=>{setVisible(true)}} className=" w-28 h-10 lg:rounded-lg text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-teal-900 duration-300">
-                            SUBSCRIBE
-                        </button>)}
-                        {singin && (<button className=" w-32 h-10 lg:rounded-lg text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-teal-900 duration-300">
-                            Get This Course
+                        
+                        {!singin && (<div>
+                            <h1>Sign in as a student: </h1>
+                            <button onClick={()=>{setVisible(true)}} className=" w-32 h-10 lg:rounded-lg text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-teal-900 duration-300">
+                            Get Course
+                        </button></div>)}
+                        {singin && (<button
+                        className=" w-40 h-10 lg:rounded-lg text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-teal-900 duration-300">
+                            Add to your Courses
                         </button>)}
                        
                         

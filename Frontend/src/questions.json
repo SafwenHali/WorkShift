@@ -38,79 +38,10 @@
             },
             {
                 "answerText": "My personality",
-                "value":"3"
+                "value":"PersonalityUnknown"
             },
             {
                 "answerText": "The demand of recruiters",
                 "value":"Job-Demand"
-            }]
-    },{
-		"question_id" : "3",
-		"questionImg":"https://static.neris-assets.com/images/personality-types/headers/fb/entp-personality-type-header.png",
-        "questionText": "Do I know my MBTI Personality (take quiz if you don't)",
-        "questionDesc": "...",
-		"answers": 
-            [{
-                "answerText": "Yes I do",
-                "value":"4"
-            },
-            {
-                "answerText": "No I don't, Take quiz",
-                "value":"https://www.16personalities.com/free-personality-test"
-            }]
-    },{
-		"question_id" : "4",
-		"questionImg":"https://i.ibb.co/K9fW6G2/Untitled-5-01.jpg",
-        "questionText": "I'm here to learn a proffessional skill that matches me being a ...",
-        "questionDesc": "If you dont know your personnality Type follow this link",
-		"answers": 
-            [{
-                "answerText": "INTJ - The Architect",
-                "value":"MBTI/INTJ"
-            },{
-                "answerText": "INTP - The Logician",
-                "value":"MBTI/INTP"
-            },{
-                "answerText": "ENTJ - The Commander",
-                "value":"MBTI/ENTJ"
-            },{
-                "answerText": "ENTP - The Debater",
-                "value":"MBTI/ENTP"
-            },{
-                "answerText": "INFJ - The Advocate",
-                "value":"MBTI/INFJ"
-            },{
-                "answerText": "INFP - The Mediator",
-                "value":"MBTI/INFP"
-            },{
-                "answerText": "ENFJ - The Protagonist",
-                "value":"MBTI/ENFJ"
-            },{
-                "answerText": "ENFP - The Compaigner",
-                "value":"MBTI/ENFP"
-            },{
-                "answerText": "ISTJ - The Logistican",
-                "value":"MBTI/ISTJ"
-            },{
-                "answerText": "ISFJ - The Defender",
-                "value":"MBTI/ISFJ"
-            },{
-                "answerText": "ESTJ - The Executive",
-                "value":"MBTI/ESTJ"
-            },{
-                "answerText": "ESFJ - The Consul",
-                "value":"MBTI/ESFJ"
-            },{
-                "answerText": "ISTP - The Virtioso",
-                "value":"MBTI/ISTP"
-            },{
-                "answerText": "ISFP - The Adventurer",
-                "value":"MBTI/ISFP"
-            },{
-                "answerText": "ESTP - The Entrepreneur",
-                "value":"MBTI/ESTP"
-            },{
-                "answerText": "ESFP - The Entertainer",
-                "value":"MBTI/ESFP"
             }]
     }]

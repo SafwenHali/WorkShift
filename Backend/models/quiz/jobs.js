@@ -13,11 +13,6 @@ const jobsSchema = new schema({
         maximum: 100,
         required: true
       },
-    field: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "careerFields",
-        required: true,
-    },
     formations: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "subcategory",
