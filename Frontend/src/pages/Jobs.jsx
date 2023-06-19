@@ -1,9 +1,7 @@
 import React from "react";
 import Nav from "../components/Navbar";
 import Footer from "../components/Footer";
-
 import useFetch from "../hooks/useFetchJobOffers";
-import useFetchUser from "../hooks/useFetchUser"
 import Loading from "../components/muiLoadingCircule"
 
 const Jobs = () => {

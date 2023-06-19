@@ -4,9 +4,9 @@ import jwt_decode from "jwt-decode";
 
 const Contenent = () => {
   const pages = [
-    { name: " Jobs", link: "/Admin/Jobs" },
+    { name: " Jobs", link: "/Admin/Quiz/Jobs" },
     { name: "  Hobbies", link: "/Admin/Quiz/Hobbies" },
-    { name: " Personalities", link: "/Admin/Personalities" },
+    { name: " Personalities", link: "/Admin/Quiz/Personalities" },
   ];
   try {
     const token = localStorage.getItem("at");

@@ -99,7 +99,7 @@ const editCategory =() => {
                                 {data.map((n)=>(
                                   <tr className="bg-neutral-100 border-b ">
                                     <th scope="row" className="px-6 py-4 font-medium text-neutral-900 whitespace-nowrap">
-                                        <a href={"/Category/"+n._id} className="hover:underline">
+                                        <a href={"/SubCategory/"+n._id} className="hover:underline">
                                             {n.name}
                                         </a> 
                                     </th>

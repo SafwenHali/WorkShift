@@ -6,7 +6,7 @@ const Sidebar = () => {
   let Menu = [
     {
       name: " Profile",
-      link: "User/Profile",
+      link: "/User/Profile",
       icon: "person-circle-outline",
     },
     {

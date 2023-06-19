@@ -1,3 +1,4 @@
+const { string } = require("joi");
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
@@ -22,7 +23,11 @@ const personalitiesSchema = new schema({
         job_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "jobs"
-          }
+          },
+          jobName: {
+            type: String,
+            required: true
+          },
         }]
     });
 const Personalities = mongoose.model("personalities", personalitiesSchema);

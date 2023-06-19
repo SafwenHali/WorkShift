@@ -29,7 +29,7 @@ const Personalities =() =>{
       </p>
     </div>
     <div className="flex flex-wrap m-4">
-    {data.map( m => {return(
+   {data.map( m => {return( 
       <a className="xl:w-1/4 md:w-1/2 w-full p-4" href={"MBTI/"+m.personalityCode}>
         <div className="flex relative h-80">
           <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src={m.personalityImage}/>

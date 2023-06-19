@@ -48,6 +48,28 @@ const getPersonByCode = async (req,res)  =>{
   }
 }
 
+//get jobs by personality code
+const getJobsByCode = async (req, res) => {
+  const { personalityCode } = req.params;
+
+  try {
+    // Find the personality object with the matching code
+    const personality = await Person.findOne({ personalityCode });
+
+    if (!personality) {
+      return res.status(404).json({ error: 'Personality not found' });
+    }
+
+    const { jobsList } = personality;
+
+    // Return the list of jobs
+    return res.json({ jobsList });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
 //DELETE
 const deletePerson = async (req, res) => {
   const person = await Person.findByIdAndDelete(req.params.id);
@@ -77,5 +99,6 @@ module.exports = {
   getPersonById,
   deletePerson,
   updatePerson,
-  getPersonByCode
+  getPersonByCode,
+  getJobsByCode
 };

@@ -23,6 +23,7 @@ import QuizPersonalities from "./pages/Quiz/Personalities"
 import MBTI from "./pages/Quiz/MBTI"
 import JobDemand from "./pages/Quiz/job-demand"
 import JobsRelated from "./pages/Quiz/jobsRelated"
+import Job from "./pages/Job"
 import Categories from "./pages/allCategories";
 import Category from "./pages/category";
 import SubCategory from "./pages/subCategory";
@@ -30,6 +31,7 @@ import Formation from "./pages/formation";
 import Article from "./pages/article";
 import ArticleList from "./pages/articleList";
 import Admin from "./admin/Admin";
+import Users from "./admin/pages/Users"
 import AdminContenent from "./admin/pages/Contenent";
 import AdminArticles from "./admin/pages/Articles";
 import AdminAddArticle from "./admin/pages/addArticle";
@@ -41,6 +43,10 @@ import AdminQuiz from "./admin/pages/quiz/Quiz";
 import AdminHobbies from "./admin/pages/quiz/Hobbies";
 import AdminAddHobby from "./admin/pages/quiz/addHobby";
 import AdminEditHobby from "./admin/pages/quiz/editHobby";
+import AdminQuizJobs from "./admin/pages/quiz/jobs"
+import AdminQuizAddJob from "./admin/pages/quiz/addJobs"
+import AdminEditJob from "./admin/pages/quiz/editJob"
+import AdminQuizPersonalities from "./admin/pages/quiz/personalities"
 import AdminCategories from "./admin/pages/Categories";
 import AdminAddCategory from "./admin/pages/addCategory";
 import AdminEditCategory from "./admin/pages/editCategory";
@@ -85,6 +91,7 @@ function App() {
         <Route path="/PersonalityUnknown" element={<QuizPersonalityUnknown/>}/>
         <Route path="/Job-Demand" element={<JobDemand/>}/>
         <Route path="/Job-Related" element={<JobsRelated/>}/>
+        <Route path="/Job/:id" element={<Job/>}/>
         {/*list all Categories*/}
         <Route path="/Categories" element={<Categories />} />
         {/*list all Sub Categories by category id*/}
@@ -101,6 +108,7 @@ function App() {
         <Route path="/Admin" element={<Admin />} />
         <Route path="/Admin/Dashboard" element={<Admin />} />
         <Route path="/Admin/Manage-Contenent" element={<AdminContenent />} />
+        <Route path="/Admin/Users" element={<Users />} />
         <Route path="/Admin/Contenent" element={<AdminContenent />} />
         <Route path="/Admin/Articles" element={<AdminArticles />} />
         <Route path="/Admin/New-Article" element={<AdminAddArticle />} />
@@ -110,9 +118,16 @@ function App() {
         <Route path="/Admin/Edit-Course/:id" element={<AdminEditCourse />} />
         <Route path="/Admin/Manage-Quiz" element={<AdminQuiz />} />
         <Route path="/Admin/Quiz" element={<AdminQuiz />} />
+        
+        <Route path="/Admin/Quiz/Jobs" element={<AdminQuizJobs />} />
+        <Route path="/Admin/Quiz/New-Job" element={<AdminQuizAddJob />} />
+        <Route path="/Admin/Quiz/Edit-Job/:id" element={<AdminEditJob />} />
         <Route path="/Admin/Quiz/Hobbies" element={<AdminHobbies />} />
         <Route path="/Admin/Quiz/New-Hobby" element={<AdminAddHobby />} />
         <Route path="/Admin/Quiz/Edit-Hobby/:id" element={<AdminEditHobby />} />
+        <Route path="/Admin/Quiz/Personality/:id" element={<AdminQuizPersonalities />} />
+        
+        <Route path="/Admin/Quiz/Personalities" element={<AdminQuizPersonalities />} />
         <Route path="/Admin/Categories" element={<AdminCategories />} />
         <Route path="/Admin/New-Category" element={<AdminAddCategory />} />
         <Route path="/Admin/Edit-Category/:id" element={<AdminEditCategory />}/>
