@@ -41,7 +41,21 @@ const Student = () => {
     <div>
       <Navbar />
       <div className="h-screen bg-neutral-200">
-        
+        <center>
+        <h1 className="pt-40  px-20 mb-4 text-4xl font-bold tracking-tight text-teal-900 ">
+             Welcome</h1>
+          <h1 className="pt-20  px-20 mb-4 text-xl font-bold tracking-tight text-teal-900 ">
+             You'll soon be ready to claim your courses</h1>
+             <h1 className="px-20 mb-10 text-lg font-bold tracking-tight text-teal-900 ">
+             We'll make sure to notify you via E-mail</h1>
+             <a href="/Discover">
+             <h1 className="px-20 mb-4 font-bold tracking-tight text-neutral-500 ">
+                Continue to Discover</h1> 
+              <button className=" w-48 h-10 rounded-lg border border-teal-900 text-neutral-100 bg-teal-700 hover:shadow-2xl hover:bg-neutral-100 hover:text-neutral-900 font-semibold duration-300">
+                Discover
+              </button></a> 
+             </center>
+            
       </div>
     </div>
   );

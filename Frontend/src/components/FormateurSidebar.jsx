@@ -13,15 +13,6 @@ const Sidebar = () => {
       name: " Formations", 
       link: "/Formateur", 
       icon: "pie-chart-outline" },
-
-    { name: " Etudiants",
-     link: "/Formateur",
-    icon: "people-outline" },
-    {
-      name: " QCM",
-      link: "/Formateur",
-      icon: "folder-open-outline",
-    },
     
   ];
 

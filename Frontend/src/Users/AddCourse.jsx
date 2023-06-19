@@ -22,7 +22,7 @@ const formateurAddCourse =() => {
     .then(response=>console.log(response))
     .catch(err=>console.log(err))}
     catch{alert("err")}
-    window.location.href ="/Admin/Courses"
+    window.location.href ="/formateur"
   }
     const cat = useFetchCat().data;
     const subCat=useFetchSubCat().data
